@@ -19,7 +19,7 @@ public class LootTableBase : ScriptableObject
 [Serializable]
 public struct ItemLootTable
 {
-    public List<ItemLootTable> loot;
+    public List<PseudoItemClass> loot;
     public int chance;
 }
 public enum AcceptedTools
