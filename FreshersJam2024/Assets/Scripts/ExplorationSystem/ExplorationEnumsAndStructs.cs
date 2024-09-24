@@ -32,12 +32,15 @@ public enum PseudoItemId
     Cloth = 2,
     Knife = 3,
     Axe = 4,
-    Wrench = 5
+    Wrench = 5,
+    GunParts = 6
 }
 public enum AcceptedTools
 {
     None = 0,
     Knife = 1,
     Axe = 2,
-    Wrench = 3
+    Wrench = 3,
+    HeavyKnife = 4,
+    ImprovisedGun = 5
 }
