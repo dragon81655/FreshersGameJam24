@@ -10,27 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63751357b7346d9489130409d36686a3, type: 3}
-  m_Name: LootTable1
+  m_Name: LootTable2
   m_EditorClassIdentifier: 
-  description: Found an zombie
-  toolTypes: 0000000001000000
+  description: I found a bitch!
+  toolTypes: 
   chance: 10
   itemLootTables:
-  - item:
-    - id: 1
-      count: 1
-    addedDesc: The zombie is my bitch
+  - item: []
+    addedDesc: '
+
+      She is my zombie'
     baseDes: 
-    chance: 1
-    onRoll:
-      m_PersistentCalls:
-        m_Calls: []
-  - item:
-    - id: 2
-      count: 1
-    addedDesc: The zombie is my whore
-    baseDes: 
-    chance: 1
+    chance: 0
     onRoll:
       m_PersistentCalls:
         m_Calls: []

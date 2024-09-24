@@ -10,6 +10,8 @@ public struct ItemLootTable
     public List<ListItemsItem> item;
     [TextArea(2, 10)]
     public string addedDesc;
+    [HideInInspector]
+    public string baseDes;
     public int chance;
     public UnityEvent onRoll;
 
