@@ -10,11 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63751357b7346d9489130409d36686a3, type: 3}
-  m_Name: New Loot Table Base
+  m_Name: LootTable2
   m_EditorClassIdentifier: 
-  description: 
+  description: I found a bitch!
   toolTypes: 
-  itemLootTables: []
+  chance: 10
+  itemLootTables:
+  - item: []
+    addedDesc: '
+
+      She is my zombie'
+    baseDes: 
+    chance: 0
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
   onRoll:
     m_PersistentCalls:
       m_Calls: []

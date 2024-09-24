@@ -85,7 +85,9 @@ public class LootTablesController : MonoBehaviour
                 value -= lootTable.chance;
                 if(value <= 0)
                 {
-                    return lootTable.RollTable();
+                    ItemLootTable t = lootTable.RollTable();
+                    t.baseDes = lootTable.description;
+                    return t;
                 }
             }
         }
