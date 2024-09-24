@@ -21,7 +21,7 @@ public class ExplorationManager : MonoBehaviour
 
     public void RollLootTables()
     {
-        //Debug.Log("Rolled loot tables");
+        Debug.Log("Rolled loot tables");
         ItemLootTable t = lootTablesController.RollTables(AcceptedTools.None);
         Debug.Log(t);
     }
