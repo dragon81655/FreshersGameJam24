@@ -12,10 +12,164 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63751357b7346d9489130409d36686a3, type: 3}
   m_Name: KnifeLootTable
   m_EditorClassIdentifier: 
-  description: 
-  toolTypes: 
-  chance: 0
-  itemLootTables: []
+  description: '#TEST# Knife was used.'
+  toolTypes: 01000000
+  chance: 100
+  itemLootTables:
+  - item:
+    - id: 2
+      count: 1
+    addedDesc: 'You found a defunct flag in some debris.
+
+      Using the knife,
+      you obtained 1 Cloth.'
+    baseDes: 
+    chance: 10
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 2
+      count: 1
+    addedDesc: 'You had a bit of a scuffle, but escaped with the a torn portion of
+      the assailant''s jacket.
+
+      Obtained 1 Cloth.'
+    baseDes: 
+    chance: 10
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 2
+      count: 2
+    addedDesc: 'You found a pair of trousers in the ruins of a house.
+
+      Using
+      the knife, you obtained 2 Cloth.'
+    baseDes: 
+    chance: 15
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 2
+      count: 3
+    addedDesc: 'You spotted a target for negotiations.
+
+      Using the knife, you
+      obtained 3 Cloth.'
+    baseDes: 
+    chance: 7
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 2
+      count: 4
+    addedDesc: 'You scavenged the jacket off an attacker.
+
+      Using the knife,
+      you obtained 4 Cloth.'
+    baseDes: 
+    chance: 3
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 1
+      count: 1
+    addedDesc: 'You loot the pockets of a fallen scavenger.
+
+      Obtained 1 Scrap.'
+    baseDes: 
+    chance: 12
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 0
+      count: 1
+    addedDesc: 'You loot the pockets of a fallen scavenger.
+
+      Obtained 1 Wood.'
+    baseDes: 
+    chance: 12
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 0
+      count: 1
+    - id: 1
+      count: 1
+    addedDesc: 'You loot the pockets of a fallen scavenger.
+
+      Obtained 1 Wood
+      and 1 Scrap. Lucky!'
+    baseDes: 
+    chance: 8
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 3
+      count: 1
+    addedDesc: 'You defeated an assailant using your Knife.
+
+      Obtained another,
+      brand new Knife.'
+    baseDes: 
+    chance: 1
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 5
+      count: 1
+    addedDesc: 'You defeated an assailant using your Knife.
+
+      Obtained a brand
+      new Wrench.'
+    baseDes: 
+    chance: 2
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 4
+      count: 1
+    addedDesc: 'You defeated an assailant using your Knife.
+
+      Obtained a brand
+      new Axe.'
+    baseDes: 
+    chance: 2
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 6
+      count: 1
+    addedDesc: 'You salvaged what you could from the rusted firearm your foe was
+      carrying.
+
+      Obtained 1 bunch of Gun Parts.'
+    baseDes: 
+    chance: 5
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item: []
+    addedDesc: 'You fought a knife-wielding assailant and retreated.
+
+      The clash
+      of metal damaged your knife.'
+    baseDes: 
+    chance: 13
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
   onRoll:
     m_PersistentCalls:
       m_Calls: []

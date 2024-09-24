@@ -12,10 +12,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63751357b7346d9489130409d36686a3, type: 3}
   m_Name: AxeLootTable
   m_EditorClassIdentifier: 
-  description: 
-  toolTypes: 
-  chance: 0
-  itemLootTables: []
+  description: '#TEST# Axe was used.'
+  toolTypes: 02000000
+  chance: 100
+  itemLootTables:
+  - item:
+    - id: 0
+      count: 1
+    addedDesc: 'You found what remained of a park bench.
+
+      Using the Axe, you
+      obtained 1 Wood.'
+    baseDes: 
+    chance: 30
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 0
+      count: 2
+    addedDesc: 'You spotted a sole standing fencing panel.
+
+      Using the Axe,
+      you obtained 2 Wood.'
+    baseDes: 
+    chance: 30
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 0
+      count: 3
+    addedDesc: 'You found a tree. How rare!
+
+      Using the Axe, you obtained 3
+      Wood.'
+    baseDes: 
+    chance: 20
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item:
+    - id: 0
+      count: 4
+    addedDesc: 'You stumbled across a locked warehouse.
+
+      Using the Axe to break
+      the lock, you found a stash of 4 Wood.'
+    baseDes: 
+    chance: 5
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item: []
+    addedDesc: 'You experienced a bit of a scare.
+
+      You dropped your Axe, damaging
+      it.'
+    baseDes: 
+    chance: 5
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+  - item: []
+    addedDesc: 'You came across a wooden door.
+
+      You find out the door is metal,
+      using your Axe and damaging it.'
+    baseDes: 
+    chance: 10
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
   onRoll:
     m_PersistentCalls:
       m_Calls: []
