@@ -15,4 +15,19 @@ public class BaseManager : MonoBehaviour
     {
         
     }
+
+    void ZoomIn()
+    {
+
+    }
+
+    void ZoomOut()
+    {
+
+    }
+
+    void CreateRoom()
+    {
+
+    }
 }

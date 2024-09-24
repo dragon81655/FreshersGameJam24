@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BaseRoom : MonoBehaviour
 {
+    [SerializeField] 
+    public Sprite RoomSprite;
+
     // Start is called before the first frame update
     void Start()
     {

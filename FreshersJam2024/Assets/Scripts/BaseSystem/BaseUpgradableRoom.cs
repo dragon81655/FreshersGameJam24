@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseStorageRoom : BaseUpgradableRoom
+public class BaseUpgradableRoom : BaseRoom
 {
+    [SerializeField]
+    private Sprite NewRoomSpriteAfterUpgrade;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,19 +19,8 @@ public class BaseStorageRoom : BaseUpgradableRoom
         
     }
 
-    void OpenBackpack()
+    public virtual void UpgradeRoom()
     {
-
-    }
-
-    void OpenChest()
-    {
-
-    }
-
-    public override void UpgradeRoom()
-    {
-        // Call the base class method
-        base.UpgradeRoom();
+        RoomSprite = NewRoomSpriteAfterUpgrade;
     }
 }
