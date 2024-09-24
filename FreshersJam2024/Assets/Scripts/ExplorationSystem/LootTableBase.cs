@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(menuName ="LootTable")]
 public class LootTableBase : ScriptableObject
@@ -11,20 +12,35 @@ public class LootTableBase : ScriptableObject
     [TextArea(3, 20)]
     public string description;
     public List<AcceptedTools> toolTypes;
-
-    [Header("Loot tables")]
-    public List<ItemLootTable> itemLootTables;
-}
-
-[Serializable]
-public struct ItemLootTable
-{
-    public List<PseudoItemClass> loot;
     public int chance;
+
+    [Header("Rolls")]
+    public List<ItemLootTable> itemLootTables;
+    public UnityEvent onRoll;
+
+    public ItemLootTable RollTable()
+    {
+        if (itemLootTables.Count != 0)
+        {
+            int totalChance = 0;
+            foreach (ItemLootTable i in itemLootTables)
+            {
+                totalChance += i.chance;
+            }
+            float value = totalChance * UnityEngine.Random.Range(0f, 1f);
+            foreach (ItemLootTable i in itemLootTables)
+            {
+                value -= i.chance;
+                if (value <= 0)
+                {
+                    return i;
+                }
+            }
+        }
+        return new ItemLootTable();
+        
+    }
 }
-public enum AcceptedTools
-{
-    None = 0,
-    Knife = 1,
-    Axe = 2
-}
+
+
+

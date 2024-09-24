@@ -7,7 +7,7 @@ using Unity.Properties;
 using UnityEditor;
 using UnityEngine;
 
-public class ExplorationController : MonoBehaviour
+public class LootTablesController : MonoBehaviour
 {
     private List<List<LootTableBase>> lootTables = new List<List<LootTableBase>>(); 
     void Start()
@@ -17,6 +17,7 @@ public class ExplorationController : MonoBehaviour
             lootTables.Add(new List<LootTableBase>());
         }
         GetScriptableObjects(Application.dataPath + "/LootTables/");
+        DebugLootTables();
     }
 
     private void DebugLootTables()
@@ -66,6 +67,34 @@ public class ExplorationController : MonoBehaviour
         {
             Debug.LogError("Folder not found.");
         }
+    }
+
+
+    public ItemLootTable RollTables(AcceptedTools item)
+    {
+        if (lootTables[(int)item].Count != 0)
+        {
+            int totalChance = 0;
+            foreach (LootTableBase lootTable in lootTables[(int)item])
+            {
+                totalChance += lootTable.chance;
+            }
+            float value = totalChance * UnityEngine.Random.Range(0f, 1f);
+            foreach(LootTableBase lootTable in lootTables[(int)item])
+            {
+                value -= lootTable.chance;
+                if(value <= 0)
+                {
+                    return lootTable.RollTable();
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError("No Loot Tables for the tool type: " + item.ToString());
+        }
+       
+        return new ItemLootTable();
     }
 
 }
