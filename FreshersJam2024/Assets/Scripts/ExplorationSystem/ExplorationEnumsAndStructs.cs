@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [Serializable]
 public struct ItemLootTable
@@ -10,6 +11,8 @@ public struct ItemLootTable
     [TextArea(2, 10)]
     public string addedDesc;
     public int chance;
+    public UnityEvent onRoll;
+
 
 }
 
