@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseManager : MonoBehaviour
+public class BaseUpgradableRoom : BaseRoom
 {
+    [SerializeField]
+    private Sprite NewRoomSpriteAfterUpgrade;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +19,8 @@ public class BaseManager : MonoBehaviour
         
     }
 
-    void ZoomIn()
+    public virtual void UpgradeRoom()
     {
-
-    }
-
-    void ZoomOut()
-    {
-
+        RoomSprite = NewRoomSpriteAfterUpgrade;
     }
 }

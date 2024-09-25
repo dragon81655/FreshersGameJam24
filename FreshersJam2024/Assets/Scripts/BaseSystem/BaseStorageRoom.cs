@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseStorageRoom : BaseRoom
+public class BaseStorageRoom : BaseStaticRoom
 {
+    [SerializeField]
+    Sprite Backpack;
+
+    [SerializeField]
+    Sprite Chest;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +20,20 @@ public class BaseStorageRoom : BaseRoom
     void Update()
     {
         
+    }
+
+    void OpenBackpack()
+    {
+
+    }
+
+    void OpenChest()
+    {
+
+    }
+
+    void UpgradeChest()
+    {
+
     }
 }

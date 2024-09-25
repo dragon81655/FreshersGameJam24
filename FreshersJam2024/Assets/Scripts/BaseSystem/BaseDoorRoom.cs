@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseManager : MonoBehaviour
+public class BaseDoorRoom : BaseStaticRoom
 {
     // Start is called before the first frame update
     void Start()
@@ -16,12 +16,7 @@ public class BaseManager : MonoBehaviour
         
     }
 
-    void ZoomIn()
-    {
-
-    }
-
-    void ZoomOut()
+    void OpenDoor()
     {
 
     }
