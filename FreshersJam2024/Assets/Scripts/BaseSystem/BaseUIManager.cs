@@ -11,6 +11,20 @@ public class BaseUIManager : MonoBehaviour
     [SerializeField]
     private Text WaterQuantityText;
 
+    [SerializeField]
+    private Sprite PotatoSprite;
+
+    [SerializeField]
+    private Text PotatoQuantityText;
+
+    [SerializeField]
+    private Button SelectBackpackButton;
+
+    [SerializeField]
+    private Button SelectChestButton;
+
+    [SerializeField]
+    private Button UpgradeRoomButton;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +35,6 @@ public class BaseUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
