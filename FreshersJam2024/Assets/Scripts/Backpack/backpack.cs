@@ -70,8 +70,15 @@ public class backpack : MonoBehaviour
         //var collider = Physics2D.OverlapPoint(worldPos, m_DragLayers);
 
         RaycastHit2D hit = Physics2D.Raycast(worldPos, -Vector2.up);
-        if(hit.collider == null)
+        if (hit.collider == null)
+        {
+            Debug.Log("collider not hit");
             return;
+        }
+        else
+        {
+            Debug.Log("collider hit");
+        }
 
         //if (!collider)
         //    return;
@@ -79,9 +86,14 @@ public class backpack : MonoBehaviour
         // Fetch the collider body.
         var body = hit.collider.attachedRigidbody;
         if (!body)
+        {
+            Debug.Log("rigid body not hit");
             return;
-
-        Debug.Log("hi0t");
+        }
+        else
+        {
+            Debug.Log("rigid body hit");
+        }
 
         // Add a target joint to the Rigidbody2D GameObject.
         m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
