@@ -19,6 +19,7 @@ public class backpack : MonoBehaviour
     public Color m_Color = Color.cyan;
 
     TargetJoint2D m_TargetJoint;
+    bool jointed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +36,12 @@ public class backpack : MonoBehaviour
         {
             setJoint();
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && jointed)
         {
             Destroy(m_TargetJoint);
+            Debug.Log("joint destroyed");
             m_TargetJoint = null;
+            jointed = false;
             return;
         }
 
@@ -99,6 +102,8 @@ public class backpack : MonoBehaviour
         m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
         m_TargetJoint.dampingRatio = m_Damping;
         m_TargetJoint.frequency = m_Frequency;
+
+        jointed = true;
 
         // Attach the anchor to the local-point where we clicked.
         m_TargetJoint.anchor = m_TargetJoint.transform.InverseTransformPoint(worldPos);

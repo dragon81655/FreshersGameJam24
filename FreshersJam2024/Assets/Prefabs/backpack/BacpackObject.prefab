@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4565474203223405432}
   - component: {fileID: 1906365444067973804}
   - component: {fileID: 4012026385781355749}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BacpackObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,10 +49,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -94,6 +94,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfe14a3ff1fbb6419a3b159287c4401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_DragLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Damping: 1
+  m_Frequency: 5
+  m_DrawDragLine: 1
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1 &4639910281539242527
 GameObject:
   m_ObjectHideFlags: 0
