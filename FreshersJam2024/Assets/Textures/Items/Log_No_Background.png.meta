@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a7db0e13cfc36ee47b75852932bf538b
+guid: dd4a3dda7fa7ca445bb61f70c6c95c3a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1886618493218620641
-    second: tempaxe_0
+      213: 5461184368311966762
+    second: Log_No_Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -165,13 +165,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tempaxe_0
+      name: Log_No_Background_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 7
-        width: 33
-        height: 83
+        x: 5
+        y: 5
+        width: 53
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e48afa168d9e2a10800000000000000
-      internalID: 1886618493218620641
+      spriteID: a2c96269f360acb40800000000000000
+      internalID: 5461184368311966762
       vertices: []
       indices: 
       edges: []

@@ -19,7 +19,6 @@ public class backpack : MonoBehaviour
     public Color m_Color = Color.cyan;
 
     TargetJoint2D m_TargetJoint;
-    bool jointed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,12 +35,11 @@ public class backpack : MonoBehaviour
         {
             setJoint();
         }
-        else if (Input.GetMouseButtonUp(0) && jointed)
+        else if (Input.GetMouseButtonUp(0) && m_TargetJoint)
         {
             Destroy(m_TargetJoint);
             Debug.Log("joint destroyed");
             m_TargetJoint = null;
-            jointed = false;
             return;
         }
 
@@ -51,8 +49,8 @@ public class backpack : MonoBehaviour
             m_TargetJoint.target = worldPos;
 
             // Draw the line between the target and the joint anchor.
-            if (m_DrawDragLine)
-                Debug.DrawLine(m_TargetJoint.transform.TransformPoint(m_TargetJoint.anchor), worldPos, m_Color);
+            //if (m_DrawDragLine)
+            //    Debug.DrawLine(m_TargetJoint.transform.TransformPoint(m_TargetJoint.anchor), worldPos, m_Color);
         }
     }
 
@@ -98,12 +96,15 @@ public class backpack : MonoBehaviour
             Debug.Log("rigid body hit");
         }
 
+        ////hit.collider.gameObject
+        //m_TargetJoint = hit.collider.gameObject.AddComponent<TargetJoint2D>();
+        //m_TargetJoint.dampingRatio = m_Damping;
+        //m_TargetJoint.frequency = m_Frequency;
+
         // Add a target joint to the Rigidbody2D GameObject.
         m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
         m_TargetJoint.dampingRatio = m_Damping;
         m_TargetJoint.frequency = m_Frequency;
-
-        jointed = true;
 
         // Attach the anchor to the local-point where we clicked.
         m_TargetJoint.anchor = m_TargetJoint.transform.InverseTransformPoint(worldPos);
