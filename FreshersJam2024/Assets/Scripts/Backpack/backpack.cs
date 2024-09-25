@@ -51,22 +51,11 @@ public class backpack : MonoBehaviour
             if (m_DrawDragLine)
                 Debug.DrawLine(m_TargetJoint.transform.TransformPoint(m_TargetJoint.anchor), worldPos, m_Color);
         }
-
-        //if (Input.GetMouseButton(0))
-        //{
-
-
-        //    Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        //    mouseWorldPos.z = 0f;
-
-        //    Debug.Log(mouseWorldPos.x + ", " + mouseWorldPos.y);
-        //}
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hit");
+        Debug.Log("hiit");
     }
 
     private void OnMouseDrag()
@@ -78,14 +67,21 @@ public class backpack : MonoBehaviour
     {
         // Fetch the first collider.
         // NOTE: We could do this for multiple colliders
-        var collider = Physics2D.OverlapPoint(worldPos, m_DragLayers);
-        if (!collider)
+        //var collider = Physics2D.OverlapPoint(worldPos, m_DragLayers);
+
+        RaycastHit2D hit = Physics2D.Raycast(worldPos, -Vector2.up);
+        if(hit.collider == null)
             return;
 
+        //if (!collider)
+        //    return;
+
         // Fetch the collider body.
-        var body = collider.attachedRigidbody;
+        var body = hit.collider.attachedRigidbody;
         if (!body)
             return;
+
+        Debug.Log("hi0t");
 
         // Add a target joint to the Rigidbody2D GameObject.
         m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
