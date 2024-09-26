@@ -10,9 +10,11 @@ public class CameraManager : MonoBehaviour
     private float defaultZoom;
 
     // Velocity of zoom
+    [SerializeField]
     private float zoomVelocity = 2f;
 
     // Smooth transition
+    [SerializeField]
     private float smoothTransition = 0.25f;
 
     // Time between clicks to consider it a double click

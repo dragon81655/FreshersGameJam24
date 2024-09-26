@@ -12946,6 +12946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857792351bb739e4bb4ca5d73d442600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomVelocity: 10
+  smoothTransition: 1.25
   doubleClickTime: 0.2
   cam: {fileID: 2007054401}
 --- !u!1660057539 &9223372036854775807
