@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db416ec40e3d4e4685f1263f4e96a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 0
-  durability: 0
+  itemId: 5
+  durability: 1
   tintColor: {r: 1, g: 0.42352942, b: 0.42352942, a: 1}
   origonalColor: {r: 1, g: 1, b: 1, a: 1}

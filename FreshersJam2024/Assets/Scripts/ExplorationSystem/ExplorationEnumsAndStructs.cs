@@ -33,7 +33,9 @@ public enum PseudoItemId
     Knife = 3,
     Axe = 4,
     Wrench = 5,
-    GunParts = 6
+    GunParts = 6,
+    Potato = 7,
+    Gun = 8
 }
 public enum AcceptedTools
 {
