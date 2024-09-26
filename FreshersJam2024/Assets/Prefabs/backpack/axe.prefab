@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3572512431356978329}
-  - component: {fileID: 2977092360656385837}
   - component: {fileID: 4482225077946522857}
   - component: {fileID: 6308003765434605529}
   - component: {fileID: 7527586088725601594}
@@ -42,20 +41,6 @@ Transform:
   - {fileID: 5046067685735886565}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2977092360656385837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207228436756480676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db416ec40e3d4e4685f1263f4e96a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 4
-  durability: 3
 --- !u!50 &4482225077946522857
 Rigidbody2D:
   serializedVersion: 4
@@ -442,6 +427,7 @@ GameObject:
   - component: {fileID: 5046067685735886565}
   - component: {fileID: 5351190054583967862}
   - component: {fileID: 6206147830961687862}
+  - component: {fileID: 1839599661984458544}
   m_Layer: 0
   m_Name: Axe_No_Background_0
   m_TagString: Untagged
@@ -554,3 +540,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.05962062, y: 0.0020558834}
   m_Radius: 0.2526647
+--- !u!114 &1839599661984458544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934759047258194588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db416ec40e3d4e4685f1263f4e96a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 0
+  durability: 0
+  tintColor: {r: 1, g: 0.42352942, b: 0.42352942, a: 1}
+  origonalColor: {r: 1, g: 1, b: 1, a: 1}

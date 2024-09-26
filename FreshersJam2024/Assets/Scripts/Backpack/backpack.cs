@@ -25,15 +25,21 @@ public class backpack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.parent.GetComponent<Item>())
+        if (collision.GetComponent<Item>())
         {
+            Debug.Log("got!");
             //Debug.Log(
             //    other.transform.parent.GetComponent<Item>().itemId + ", " +
             //    other.transform.parent.GetComponent<Item>().durability
             //    );
 
-            PseudoItemId newitem = collision.transform.parent.GetComponent<Item>().itemId;
-            int newDurability = collision.transform.parent.GetComponent<Item>().durability;
+            collision.GetComponent<Item>().untintItem();
+
+            PseudoItemId newitem = collision.GetComponent<Item>().itemId;
+            int newDurability = collision.GetComponent<Item>().durability;
+
+            //PseudoItemId newitem = collision.transform.parent.GetComponent<Item>().itemId;
+            //int newDurability = collision.transform.parent.GetComponent<Item>().durability;
 
             if (itemList.Count == 0)
             {
@@ -55,15 +61,22 @@ public class backpack : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            Debug.Log("not got");
+        }
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.parent.GetComponent<Item>())
+        if (collision.GetComponent<Item>())
         {
-            PseudoItemId olditem = collision.transform.parent.GetComponent<Item>().itemId;
-            int oldDurability = collision.transform.parent.GetComponent<Item>().durability;
+
+            collision.GetComponent<Item>().tintItem();
+
+            PseudoItemId olditem = collision.GetComponent<Item>().itemId;
+            int oldDurability = collision.GetComponent<Item>().durability;
 
             if (itemList.ContainsKey(olditem))
             {

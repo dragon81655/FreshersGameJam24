@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4977571415960990208}
-  - component: {fileID: 8444174465725416638}
   - component: {fileID: 7104712222107420238}
   - component: {fileID: 9059980921967105094}
   - component: {fileID: 6395602095803007005}
@@ -40,20 +39,6 @@ Transform:
   - {fileID: 7911692050063044226}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8444174465725416638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43980049618277257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db416ec40e3d4e4685f1263f4e96a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 2
-  durability: 3
 --- !u!50 &7104712222107420238
 Rigidbody2D:
   serializedVersion: 4
@@ -328,6 +313,7 @@ GameObject:
   - component: {fileID: 7911692050063044226}
   - component: {fileID: 1566941259590302945}
   - component: {fileID: 7546018797438615079}
+  - component: {fileID: 723167650165073229}
   m_Layer: 0
   m_Name: Cloth_No_Background_0
   m_TagString: Untagged
@@ -440,3 +426,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.025983874, y: 0}
   m_Radius: 0.3104326
+--- !u!114 &723167650165073229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3979306318051274848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db416ec40e3d4e4685f1263f4e96a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 0
+  durability: 0
+  tintColor: {r: 1, g: 0.42352942, b: 0.42352942, a: 1}
+  origonalColor: {r: 1, g: 1, b: 1, a: 1}

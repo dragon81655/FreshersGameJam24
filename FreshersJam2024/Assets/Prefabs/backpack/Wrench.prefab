@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3889484710862509715}
-  - component: {fileID: 2474172145228781085}
   - component: {fileID: 8156799932854283300}
   - component: {fileID: 2917048335704251677}
   - component: {fileID: 4878529127712577260}
@@ -40,20 +39,6 @@ Transform:
   - {fileID: 6325284843052198454}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2474172145228781085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556566133583986818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db416ec40e3d4e4685f1263f4e96a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 5
-  durability: 3
 --- !u!50 &8156799932854283300
 Rigidbody2D:
   serializedVersion: 4
@@ -308,6 +293,7 @@ GameObject:
   - component: {fileID: 6325284843052198454}
   - component: {fileID: 4114365929582357970}
   - component: {fileID: 3385518054609706272}
+  - component: {fileID: 211754919224818350}
   m_Layer: 0
   m_Name: Wrench_No_Background_-_Copy_0
   m_TagString: Untagged
@@ -420,3 +406,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.019465135}
   m_Radius: 0.3614169
+--- !u!114 &211754919224818350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137854390370069927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db416ec40e3d4e4685f1263f4e96a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 0
+  durability: 0
+  tintColor: {r: 1, g: 0.42352942, b: 0.42352942, a: 1}
+  origonalColor: {r: 1, g: 1, b: 1, a: 1}
