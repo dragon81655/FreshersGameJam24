@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class backpack : MonoBehaviour
 {
     public LayerMask m_DragLayers;
+    //public LayerMask inventoryTrigger = 7;
 
     [Range(0.0f, 100.0f)]
     public float m_Damping = 1.0f;
@@ -56,7 +59,8 @@ public class backpack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hiit");
+
+        Debug.Log(other);
     }
 
     private void OnMouseDrag()
@@ -86,9 +90,17 @@ public class backpack : MonoBehaviour
 
         // Fetch the collider body.
         var body = hit.collider.attachedRigidbody;
+        //var body = hit.collider.GetComponentInParent<Rigidbody2D>();
+        //Rigidbody2D body = hit.collider.transform.parent.GetComponent<Rigidbody2D>();
         if (!body)
         {
-            Debug.Log("rigid body not hit");
+            //Debug.Log("rigid body not hit - " + hit.collider.name);
+            //if(hit.collider.transform.parent != null)
+            //body = hit.collider.transform.parent.GetComponent<Rigidbody2D>();
+
+            //if(!body)
+            //    return;
+
             return;
         }
         else
