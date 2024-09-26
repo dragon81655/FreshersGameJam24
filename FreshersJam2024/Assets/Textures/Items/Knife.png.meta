@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f7dc4a4a01f9a9f439c8b94d6898af61
+guid: cf9d6d37a16acf34885a16c71c4402f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8803348066354139939
-    second: FarmRoom_0
+      213: 6764707825347140516
+    second: Knife_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Standalone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -165,13 +165,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FarmRoom_0
+      name: Knife_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 798
-        height: 296
+        x: 5
+        y: 6
+        width: 34
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32319299c66cb2a70800000000000000
-      internalID: 8803348066354139939
+      spriteID: 4ab1f1b1de111ed50800000000000000
+      internalID: 6764707825347140516
       vertices: []
       indices: 
       edges: []
@@ -195,8 +195,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      FarmRoom_0: 8803348066354139939
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

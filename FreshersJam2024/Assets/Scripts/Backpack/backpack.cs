@@ -60,6 +60,8 @@ public class backpack : MonoBehaviour
                     //Debug.Log(newitem + " added as new item with " + newDurability + " durability");
                 }
             }
+
+            Debug.Log(itemList);
         }
         else
         {
@@ -98,6 +100,8 @@ public class backpack : MonoBehaviour
             {
                 Debug.LogError("BUG " + olditem + "  WAS REMOVED WHIE DIDNT EXIST");
             }
+
+            Debug.Log(itemList);
         }
     }
 
