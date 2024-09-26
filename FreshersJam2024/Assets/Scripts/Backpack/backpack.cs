@@ -2,26 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class backpack : MonoBehaviour
 {
-    public LayerMask m_DragLayers;
-    //public LayerMask inventoryTrigger = 7;
-
-    [Range(0.0f, 100.0f)]
-    public float m_Damping = 1.0f;
-
-    [Range(0.0f, 100.0f)]
-    public float m_Frequency = 5.0f;
-
-    Vector3 worldPos;
-
-    public bool m_DrawDragLine = true;
-    public Color m_Color = Color.cyan;
-
-    TargetJoint2D m_TargetJoint;
+    Dictionary<PseudoItemId, int> itemList = new Dictionary<PseudoItemId, int>();
 
     // Start is called before the first frame update
     void Start()
@@ -33,34 +21,71 @@ public class backpack : MonoBehaviour
     void Update()
     {
 
-        worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0))
-        {
-            setJoint();
-        }
-        else if (Input.GetMouseButtonUp(0) && m_TargetJoint)
-        {
-            Destroy(m_TargetJoint);
-            Debug.Log("joint destroyed");
-            m_TargetJoint = null;
-            return;
-        }
-
-        // Update the joint target.
-        if (m_TargetJoint)
-        {
-            m_TargetJoint.target = worldPos;
-
-            // Draw the line between the target and the joint anchor.
-            //if (m_DrawDragLine)
-            //    Debug.DrawLine(m_TargetJoint.transform.TransformPoint(m_TargetJoint.anchor), worldPos, m_Color);
-        }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.transform.parent.GetComponent<Item>())
+        {
+            //Debug.Log(
+            //    other.transform.parent.GetComponent<Item>().itemId + ", " +
+            //    other.transform.parent.GetComponent<Item>().durability
+            //    );
 
-        Debug.Log(other);
+            PseudoItemId newitem = collision.transform.parent.GetComponent<Item>().itemId;
+            int newDurability = collision.transform.parent.GetComponent<Item>().durability;
+
+            if (itemList.Count == 0)
+            {
+                itemList.Add(newitem, newDurability);
+
+                //Debug.Log(newitem + " added as new item with " + newDurability + " durability");
+            }
+            else {
+
+                if (itemList.ContainsKey(newitem))
+                {
+                    itemList[newitem] = itemList[newitem] + newDurability;
+                    //Debug.Log( newDurability + " durability added to " + newitem);
+                }
+                else
+                {
+                    itemList.Add(newitem, newDurability);
+                    //Debug.Log(newitem + " added as new item with " + newDurability + " durability");
+                }
+            }
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.parent.GetComponent<Item>())
+        {
+            PseudoItemId olditem = collision.transform.parent.GetComponent<Item>().itemId;
+            int oldDurability = collision.transform.parent.GetComponent<Item>().durability;
+
+            if (itemList.ContainsKey(olditem))
+            {
+                itemList[olditem] = itemList[olditem] - oldDurability;
+                //Debug.Log(oldDurability + " durability removed from " + olditem);
+
+                if(itemList[olditem] == 0)
+                {
+                    //Debug.Log(olditem + " was removed");
+                    itemList.Remove(olditem);
+                }
+                else if(itemList[olditem] < 0)
+                {
+                    Debug.LogError("BUG " + olditem + " HAS DURABILIY OF " + itemList[olditem]);
+                    itemList.Remove(olditem);
+                }
+            }
+            else
+            {
+                Debug.LogError("BUG " + olditem + "  WAS REMOVED WHIE DIDNT EXIST");
+            }
+        }
     }
 
     private void OnMouseDrag()
@@ -68,57 +93,8 @@ public class backpack : MonoBehaviour
 
     }
 
-    void setJoint()
+    public Dictionary<PseudoItemId, int> getItemsInBag()
     {
-        // Fetch the first collider.
-        // NOTE: We could do this for multiple colliders
-        //var collider = Physics2D.OverlapPoint(worldPos, m_DragLayers);
-
-        RaycastHit2D hit = Physics2D.Raycast(worldPos, -Vector2.up);
-        if (hit.collider == null)
-        {
-            Debug.Log("collider not hit");
-            return;
-        }
-        else
-        {
-            Debug.Log("collider hit");
-        }
-
-        //if (!collider)
-        //    return;
-
-        // Fetch the collider body.
-        var body = hit.collider.attachedRigidbody;
-        //var body = hit.collider.GetComponentInParent<Rigidbody2D>();
-        //Rigidbody2D body = hit.collider.transform.parent.GetComponent<Rigidbody2D>();
-        if (!body)
-        {
-            //Debug.Log("rigid body not hit - " + hit.collider.name);
-            //if(hit.collider.transform.parent != null)
-            //body = hit.collider.transform.parent.GetComponent<Rigidbody2D>();
-
-            //if(!body)
-            //    return;
-
-            return;
-        }
-        else
-        {
-            Debug.Log("rigid body hit");
-        }
-
-        ////hit.collider.gameObject
-        //m_TargetJoint = hit.collider.gameObject.AddComponent<TargetJoint2D>();
-        //m_TargetJoint.dampingRatio = m_Damping;
-        //m_TargetJoint.frequency = m_Frequency;
-
-        // Add a target joint to the Rigidbody2D GameObject.
-        m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
-        m_TargetJoint.dampingRatio = m_Damping;
-        m_TargetJoint.frequency = m_Frequency;
-
-        // Attach the anchor to the local-point where we clicked.
-        m_TargetJoint.anchor = m_TargetJoint.transform.InverseTransformPoint(worldPos);
+        return itemList;
     }
 }
