@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 852aa5441a6af7b4286fc8621c4d3d46
+guid: f7dc4a4a01f9a9f439c8b94d6898af61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9048740333133382730
-    second: Treasure Cave - Pixel Art _ 2D Environments _ Unity Asset Store_0
+      213: 8803348066354139939
+    second: FarmRoom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Treasure Cave - Pixel Art _ 2D Environments _ Unity Asset Store_0
+      name: FarmRoom_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 735
-        height: 414
+        width: 798
+        height: 296
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a444a250465939d70800000000000000
-      internalID: 9048740333133382730
+      spriteID: 32319299c66cb2a70800000000000000
+      internalID: 8803348066354139939
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Treasure Cave - Pixel Art _ 2D Environments _ Unity Asset Store_0: 9048740333133382730
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
