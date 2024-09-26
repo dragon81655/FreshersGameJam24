@@ -195,7 +195,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Revolver_0: 4011165979584494121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
