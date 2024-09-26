@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class backpack : MonoBehaviour
 {
     public LayerMask m_DragLayers;
+    //public LayerMask inventoryTrigger = 7;
 
     [Range(0.0f, 100.0f)]
     public float m_Damping = 1.0f;
@@ -35,9 +38,10 @@ public class backpack : MonoBehaviour
         {
             setJoint();
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && m_TargetJoint)
         {
             Destroy(m_TargetJoint);
+            Debug.Log("joint destroyed");
             m_TargetJoint = null;
             return;
         }
@@ -48,14 +52,15 @@ public class backpack : MonoBehaviour
             m_TargetJoint.target = worldPos;
 
             // Draw the line between the target and the joint anchor.
-            if (m_DrawDragLine)
-                Debug.DrawLine(m_TargetJoint.transform.TransformPoint(m_TargetJoint.anchor), worldPos, m_Color);
+            //if (m_DrawDragLine)
+            //    Debug.DrawLine(m_TargetJoint.transform.TransformPoint(m_TargetJoint.anchor), worldPos, m_Color);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hiit");
+
+        Debug.Log(other);
     }
 
     private void OnMouseDrag()
@@ -70,18 +75,43 @@ public class backpack : MonoBehaviour
         //var collider = Physics2D.OverlapPoint(worldPos, m_DragLayers);
 
         RaycastHit2D hit = Physics2D.Raycast(worldPos, -Vector2.up);
-        if(hit.collider == null)
+        if (hit.collider == null)
+        {
+            Debug.Log("collider not hit");
             return;
+        }
+        else
+        {
+            Debug.Log("collider hit");
+        }
 
         //if (!collider)
         //    return;
 
         // Fetch the collider body.
         var body = hit.collider.attachedRigidbody;
+        //var body = hit.collider.GetComponentInParent<Rigidbody2D>();
+        //Rigidbody2D body = hit.collider.transform.parent.GetComponent<Rigidbody2D>();
         if (!body)
-            return;
+        {
+            //Debug.Log("rigid body not hit - " + hit.collider.name);
+            //if(hit.collider.transform.parent != null)
+            //body = hit.collider.transform.parent.GetComponent<Rigidbody2D>();
 
-        Debug.Log("hi0t");
+            //if(!body)
+            //    return;
+
+            return;
+        }
+        else
+        {
+            Debug.Log("rigid body hit");
+        }
+
+        ////hit.collider.gameObject
+        //m_TargetJoint = hit.collider.gameObject.AddComponent<TargetJoint2D>();
+        //m_TargetJoint.dampingRatio = m_Damping;
+        //m_TargetJoint.frequency = m_Frequency;
 
         // Add a target joint to the Rigidbody2D GameObject.
         m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
