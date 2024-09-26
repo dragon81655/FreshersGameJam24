@@ -11,11 +11,12 @@ public class BaseSteamRoom : BaseUpgradableRoom
     [SerializeField]
     private Text WaterQuantityText;
 
-    // Number of bottles of water we currently have
-    private int CurrentWaterQuantity;
-
     // Max number of water bottles we can have (increase after upgrade)
     private int MaxWaterQuantity;
+
+    // Number of bottles of water we want to collect every day
+    [SerializeField]
+    private int WaterBottlesPerDayQuantity;
 
     // Number of water bottles we want to increase every time we upgrade the room
     [SerializeField]
@@ -35,7 +36,7 @@ public class BaseSteamRoom : BaseUpgradableRoom
 
     void CollectWater()
     {
-
+        base.resourcesManager.waterBottles += MaxWaterQuantity;
     }
 
     public override void UpgradeRoom()

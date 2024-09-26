@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseDoorRoom : BaseStaticRoom
+public class BaseDoorRoom : BaseRoom
 {
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,11 @@ public class BaseDoorRoom : BaseStaticRoom
     void Update()
     {
         
+    }
+
+    protected override void OnClick()
+    {
+
     }
 
     void OpenDoor()

@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class BaseFarmRoom : BaseUpgradableRoom
 {
-    // Number of bottles of water we currently have
-    private int CurrentPotatoesQuantity;
 
     // Max number of ptatoes we can have (increase after upgrade)
     private int MaxPotatoesQuantity;
 
+    // Number of potatoes we want to collect every day
+    [SerializeField]
+    private int PotatoesPerDayQuantity;
+
     // Number of potatoes we want to increase every time we upgrade the room
     [SerializeField]
-    private int UpgradePotatoesQuantity;
+    private int PotatoesUpdateQuantity;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class BaseFarmRoom : BaseUpgradableRoom
 
     void CollectPotatoes()
     {
-
+        base.resourcesManager.potatoes += MaxPotatoesQuantity;
     }
 
     public override void UpgradeRoom()
@@ -37,6 +39,6 @@ public class BaseFarmRoom : BaseUpgradableRoom
         base.UpgradeRoom();
 
         // Increase max potatoes quantity we can collect
-        MaxPotatoesQuantity += UpgradePotatoesQuantity;
+        PotatoesPerDayQuantity += PotatoesUpdateQuantity;
     }
 }

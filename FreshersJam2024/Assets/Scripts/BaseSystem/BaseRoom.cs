@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseRoom : MonoBehaviour
+public abstract class BaseRoom : MonoBehaviour
 {
     [SerializeField] 
-    public Sprite RoomSprite;
+    public SpriteRenderer BaseRoomSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +17,10 @@ public class BaseRoom : MonoBehaviour
     void Update()
     {
         
+    }
+
+    protected virtual void OnClick()
+    {
+
     }
 }

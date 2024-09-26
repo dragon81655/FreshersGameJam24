@@ -5,7 +5,13 @@ using UnityEngine;
 public class BaseUpgradableRoom : BaseRoom
 {
     [SerializeField]
-    private Sprite NewRoomSpriteAfterUpgrade;
+    private SpriteRenderer NewRoomSpriteAfterUpgrade;
+
+    protected int level;
+
+    protected ResourceManager resourcesManager;
+
+    // Cost to upgrade to the next level
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +27,11 @@ public class BaseUpgradableRoom : BaseRoom
 
     public virtual void UpgradeRoom()
     {
-        RoomSprite = NewRoomSpriteAfterUpgrade;
+        BaseRoomSprite = NewRoomSpriteAfterUpgrade;
+    }
+
+    void GetUpgradeCost()
+    {
+
     }
 }

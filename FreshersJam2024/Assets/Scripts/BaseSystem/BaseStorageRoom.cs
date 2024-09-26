@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseStorageRoom : BaseStaticRoom
+public class BaseStorageRoom : BaseRoom
 {
     [SerializeField]
-    Sprite Backpack;
+    Sprite BackpackSprite;
 
     [SerializeField]
-    Sprite Chest;
+    Sprite ChestSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,11 @@ public class BaseStorageRoom : BaseStaticRoom
     void Update()
     {
         
+    }
+
+    protected override void OnClick()
+    {
+
     }
 
     void OpenBackpack()
