@@ -14,6 +14,18 @@ public class Item : MonoBehaviour
     [SerializeField] public Color tintColor;
     [SerializeField] public Color origonalColor;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+
+    //}
+
     public void tintItem()
     {
         GetComponent<Renderer>().material.color = tintColor;
@@ -25,16 +37,4 @@ public class Item : MonoBehaviour
         GetComponent<Renderer>().material.color = origonalColor;
         Debug.Log("untinted!");
     }
-
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
 }
