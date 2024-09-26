@@ -195,7 +195,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cloth_No_Background_0: -3634147392252391977
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

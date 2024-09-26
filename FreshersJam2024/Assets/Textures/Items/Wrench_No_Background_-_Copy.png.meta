@@ -195,7 +195,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Wrench_No_Background_-_Copy_0: -1243654652962424583
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
