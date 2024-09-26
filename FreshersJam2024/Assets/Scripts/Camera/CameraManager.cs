@@ -31,9 +31,7 @@ public class CameraManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        zoom = cam.orthographicSize;
-        //cam.orthographicSize = 10;
-        zoom = 10;
+
     }
 
     // Update is called once per frame

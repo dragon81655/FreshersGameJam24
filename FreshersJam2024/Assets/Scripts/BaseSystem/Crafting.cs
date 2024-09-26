@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseDoorRoom : BaseRoom
+public class Crafting : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,8 @@ public class BaseDoorRoom : BaseRoom
         
     }
 
-    protected override void OnClick()
+    void OpenCrafting()
     {
-
+        // Open crafting menu
     }
 }
