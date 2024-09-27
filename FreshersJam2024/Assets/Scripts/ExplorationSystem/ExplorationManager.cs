@@ -18,6 +18,7 @@ public class ExplorationManager : MonoBehaviour
         lootTablesController= GetComponent<LootTablesController>();
         optionController = FindAnyObjectByType<OptionControllerTables>();
         optionController.gameObject.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
     public void StartExploration ()
     {
