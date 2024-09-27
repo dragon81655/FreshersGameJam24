@@ -1,0 +1,3 @@
+physics works like 50% of the time, some issue ith the ray getting the collider, but for some reason not the connected rigid body.
+
+maybe something with the assets overlapping?
