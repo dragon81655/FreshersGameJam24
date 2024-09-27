@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using Unity.VisualScripting.ReorderableList;
 using UnityEditor;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
@@ -13,11 +15,33 @@ public class backpack : MonoBehaviour
 {
     //Dictionary<PseudoItemId, int> itemList = new Dictionary<PseudoItemId, int>();
 
+    public List<GameObject> prefabs;
+    List<GameObject> objects = new List<GameObject>();
+
     Dictionary<PseudoItemId, List<Item>> itemList = new Dictionary<PseudoItemId, List<Item>>();
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+
+        foreach (GameObject pref in prefabs)
+        {
+            GameObject tempG = Instantiate(pref, new Vector3(-3, 0, 0), Quaternion.identity);
+            if (tempG)
+            {
+                Debug.Log("Instantiate success");
+                objects.Add(tempG);
+            }
+            else
+            {
+                Debug.Log("Instantiate unsuccess");
+            }
+        }
+
+        foreach(GameObject ob in objects)
+        {
+            ob.GetComponent<Item>().destroyRigidBody();
+        }
     }
 
     // Update is called once per frame
@@ -41,7 +65,9 @@ public class backpack : MonoBehaviour
                 itemList.Add(collision.GetComponent<Item>().itemId, new List<Item>());
                 itemList[collision.GetComponent<Item>().itemId].Add(collision.GetComponent<Item>());
             }
-
+            //List<Item> test = new List<Item>();
+            //test.Add(collision.GetComponent<Item>());
+            //addItemsToBag(test);
 
 
         //    Debug.Log("got!");
@@ -50,39 +76,39 @@ public class backpack : MonoBehaviour
         //    //    other.transform.parent.GetComponent<Item>().durability
         //    //    );
 
-        //    collision.GetComponent<Item>().untintItem();
+            //    collision.GetComponent<Item>().untintItem();
 
-        //    PseudoItemId newitem = collision.GetComponent<Item>().itemId;
-        //    int newDurability = collision.GetComponent<Item>().durability;
+            //    PseudoItemId newitem = collision.GetComponent<Item>().itemId;
+            //    int newDurability = collision.GetComponent<Item>().durability;
 
-        //    //PseudoItemId newitem = collision.transform.parent.GetComponent<Item>().itemId;
-        //    //int newDurability = collision.transform.parent.GetComponent<Item>().durability;
+            //    //PseudoItemId newitem = collision.transform.parent.GetComponent<Item>().itemId;
+            //    //int newDurability = collision.transform.parent.GetComponent<Item>().durability;
 
-        //    if (itemList.Count == 0)
-        //    {
-        //        itemList.Add(newitem, newDurability);
+            //    if (itemList.Count == 0)
+            //    {
+            //        itemList.Add(newitem, newDurability);
 
-        //        //Debug.Log(newitem + " added as new item with " + newDurability + " durability");
-        //    }
-        //    else {
+            //        //Debug.Log(newitem + " added as new item with " + newDurability + " durability");
+            //    }
+            //    else {
 
-        //        if (itemList.ContainsKey(newitem))
-        //        {
-        //            itemList[newitem] = itemList[newitem] + newDurability;
-        //            //Debug.Log( newDurability + " durability added to " + newitem);
-        //        }
-        //        else
-        //        {
-        //            itemList.Add(newitem, newDurability);
-        //            //Debug.Log(newitem + " added as new item with " + newDurability + " durability");
-        //        }
-        //    }
+            //        if (itemList.ContainsKey(newitem))
+            //        {
+            //            itemList[newitem] = itemList[newitem] + newDurability;
+            //            //Debug.Log( newDurability + " durability added to " + newitem);
+            //        }
+            //        else
+            //        {
+            //            itemList.Add(newitem, newDurability);
+            //            //Debug.Log(newitem + " added as new item with " + newDurability + " durability");
+            //        }
+            //    }
 
-        //    Debug.Log(itemList);
-        //}
-        //else
-        //{
-        //    Debug.Log("not got");
+            //    Debug.Log(itemList);
+            //}
+            //else
+            //{
+            //    Debug.Log("not got");
         }
 
     }
@@ -142,5 +168,37 @@ public class backpack : MonoBehaviour
     public Dictionary<PseudoItemId, List<Item>> getItemsInBag()
     {
         return itemList;
+    }
+
+    public void addItemsToBag(Dictionary<PseudoItemId, List<Item>> items)
+    {
+
+    }
+
+    public void addItemsToBag(List<Item> items)
+    {
+
+        //Debug.Log("item hit");
+
+        foreach(Item it in items)
+        {
+            Instantiate(objects[0], gameObject.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
+
+            foreach (GameObject ob in objects)
+            {
+                if (ob.GetComponent<Item>() &&
+                    ob.GetComponent<Item>().itemId == it.itemId)
+                {
+                    //Instantiate(ob, gameObject.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
+
+                    Debug.Log("instatteate hit");
+                }
+                else
+                {
+                    Debug.Log("inst not hit");
+                    //Debug.Log("instatteate no hit - object" + ob.GetComponent<Item>().itemId + ", item to add" + it.itemId);
+                }
+            }
+        }
     }
 }

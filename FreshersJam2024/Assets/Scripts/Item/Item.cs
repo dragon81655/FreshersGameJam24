@@ -37,4 +37,12 @@ public class Item : MonoBehaviour
         GetComponent<Renderer>().material.color = origonalColor;
         Debug.Log("untinted!");
     }
+
+    public void destroyRigidBody()
+    {
+        if (gameObject.GetComponent<Rigidbody2D>())
+        {
+            Destroy(gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>());
+        }
+    }
 }
