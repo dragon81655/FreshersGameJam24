@@ -16,8 +16,8 @@ public class BaseDoorRoom : BaseRoom
         
     }
 
-    protected override void OnClick()
+    protected override void OnRoomEntered()
     {
-
+        // Activate door button click possibility for door
     }
 }

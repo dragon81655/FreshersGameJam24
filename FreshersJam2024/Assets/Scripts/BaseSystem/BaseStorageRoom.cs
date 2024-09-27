@@ -22,9 +22,9 @@ public class BaseStorageRoom : BaseRoom
         
     }
 
-    protected override void OnClick()
+    protected override void OnRoomEntered()
     {
-
+        // Activate crafting button click possibility for backpack and chest
     }
 
     void OpenBackpack()

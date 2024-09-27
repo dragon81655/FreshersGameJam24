@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crafting : MonoBehaviour
+public class CraftingButton : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,5 @@ public class Crafting : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void OpenCrafting()
-    {
-        // Open crafting menu
     }
 }
