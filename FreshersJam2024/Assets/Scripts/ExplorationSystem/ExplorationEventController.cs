@@ -11,6 +11,7 @@ public class ExplorationEventController : MonoBehaviour
     private int maxTimeToTriggerEvent;
     //Just set to the time you want
     private float currentTimer = 0;
+    private bool paused = false;
 
     [SerializeField]
     private bool exploring = false;
@@ -41,11 +42,19 @@ public class ExplorationEventController : MonoBehaviour
         if (pseudoPotatos > 0 && !wishToStop) return true;
         return false;
     }
-
+    public void SetPause()
+    {
+        paused = !paused;
+    }
+    public void SetPause(bool value)
+    {
+        paused = value;
+    }
     private void Update()
     {
         if(exploring)
         {
+            if(!paused)
             currentTimer -= Time.deltaTime;
             if(currentTimer <= 0)
             {

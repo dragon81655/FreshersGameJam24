@@ -15,7 +15,9 @@ public struct ItemLootTable
     public int chance;
     public UnityEvent onRoll;
 
-
+    [Header("Options")]
+    public bool hasOptions;
+    public OptionBaseExploration options;
 }
 
 [Serializable]
@@ -45,4 +47,10 @@ public enum AcceptedTools
     Wrench = 3,
     HeavyKnife = 4,
     ImprovisedGun = 5
+}
+[Serializable]
+public struct Options
+{
+    public string text;
+    public LootTableBase output;
 }

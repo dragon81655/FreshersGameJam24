@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63751357b7346d9489130409d36686a3, type: 3}
-  m_Name: LootTable2
+  m_Name: TestTableForOptions
   m_EditorClassIdentifier: 
-  description: I found a bitch!
-  toolTypes: 
-  chance: 10
+  description: A fucking test
+  toolTypes: 00000000
+  chance: 0
   itemLootTables:
   - item: []
-    addedDesc: '
-
-      She is my zombie'
+    addedDesc: Fuck it
     baseDes: 
-    chance: 0
+    chance: 1
     onRoll:
       m_PersistentCalls:
         m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
   onRoll:
     m_PersistentCalls:
       m_Calls: []
