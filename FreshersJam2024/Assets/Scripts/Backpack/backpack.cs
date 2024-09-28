@@ -14,11 +14,16 @@ using static UnityEditor.Progress;
 using static UnityEditor.Timeline.Actions.MenuPriority;
 
 [Serializable]
+public struct theItemsToCraftWith
+{
+    public GameObject itemToCraftWith;
+    public int amount;
+}
+[Serializable]
 public struct craftingItem
 {
     public GameObject itemToCraft;
-    public GameObject itemToCraftWith;
-    public int amount;
+    public List<theItemsToCraftWith> itemsToCraftWith;
 }
 
 public class backpack : MonoBehaviour
