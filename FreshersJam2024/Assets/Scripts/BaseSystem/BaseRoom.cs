@@ -7,6 +7,8 @@ public abstract class BaseRoom : MonoBehaviour
     [SerializeField] 
     public SpriteRenderer BaseRoomSprite;
 
+    public bool ZoomedIn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +18,11 @@ public abstract class BaseRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (CameraManager.instance.HasZoomedIn)
+        {
+            OnRoomEntered();
+        }
     }
 
-    protected virtual void OnClick()
-    {
-
-    }
+    protected virtual void OnRoomEntered(){}
 }

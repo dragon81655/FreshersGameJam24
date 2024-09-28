@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    public static CameraManager instance { get; private set; }
+
     // Zoom level
     private float targetZoom;
     private float defaultZoom;
@@ -25,7 +27,7 @@ public class CameraManager : MonoBehaviour
     private float lastClickTime;
 
     // Flag to see if we've already zoom in
-    private bool HasZoomedIn = false;
+    public bool HasZoomedIn { get; private set; } = false;
 
     // Flag to check if we're in the process of zooming in or out
     private bool isZooming = false;
@@ -36,6 +38,19 @@ public class CameraManager : MonoBehaviour
 
     // Target position for the camera to move
     private Vector3 targetPosition;
+
+    // Called before Start
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

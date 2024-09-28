@@ -20,6 +20,11 @@ public class BaseTableRoom : BaseRoom
         
     }
 
+    protected override void OnRoomEntered()
+    {
+        // Activate crafting button click possibility for backpack and chest
+    }
+
     void AddFamilyMember() 
     { 
     

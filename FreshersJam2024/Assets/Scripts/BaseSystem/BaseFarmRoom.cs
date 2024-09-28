@@ -28,7 +28,11 @@ public class BaseFarmRoom : BaseUpgradableRoom
         
     }
 
-    void CollectPotatoes()
+    protected override void OnRoomEntered()
+    {
+    }
+
+    public void CollectPotatoes()
     {
         base.resourcesManager.potatoes += MaxPotatoesQuantity;
     }
