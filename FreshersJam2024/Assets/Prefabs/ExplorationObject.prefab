@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88bf5c8840163bf4589a2780f4ce53e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lootTableBases:
+  - {fileID: 11400000, guid: 0d0ab1a884e08ae40bb7564e33044545, type: 2}
+  - {fileID: 11400000, guid: 7c573312bc27d0345bbc4f697dae6497, type: 2}
+  - {fileID: 11400000, guid: fc239924127452e48b9c26e808b5d807, type: 2}
+  - {fileID: 11400000, guid: c13aa5016d9ff8e4abe571541c88b54e, type: 2}
 --- !u!114 &3489549314056909247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,3 +80,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4d1842bb48c6c4a9d9b6ba0e4c9a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onLootTableRolled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ExplorationLogUIController, Assembly-CSharp
+        m_MethodName: NewLootTableSelected
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onExplorationStarted:
+    m_PersistentCalls:
+      m_Calls: []

@@ -37,7 +37,7 @@ public class LootTableBase : ScriptableObject
                 }
             }
         }
-        return new ItemLootTable();
+        return new ItemLootTable(1);
         
     }
 }

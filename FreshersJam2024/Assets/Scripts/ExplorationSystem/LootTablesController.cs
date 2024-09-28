@@ -75,7 +75,7 @@ public class LootTablesController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No Loot Tables for the tool type: " + item.ToString());
+            Debug.LogWarning("No Loot Tables for the tool type: " + item.ToString());
         }
        
         return new ItemLootTable();

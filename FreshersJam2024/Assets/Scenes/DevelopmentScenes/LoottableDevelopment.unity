@@ -496,37 +496,9 @@ PrefabInstance:
       value: ExplorationObject
       objectReference: {fileID: 0}
     - target: {fileID: 3760241900093200203, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: onLootTableRolled.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3760241900093200203, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: onExplorationStarted.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3760241900093200203, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
       propertyPath: onLootTableRolled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1586307336}
-    - target: {fileID: 3760241900093200203, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: onLootTableRolled.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3760241900093200203, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: onLootTableRolled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NewLootTableSelected
-      objectReference: {fileID: 0}
-    - target: {fileID: 3760241900093200203, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: onExplorationStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3760241900093200203, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: onLootTableRolled.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ExplorationLogUIController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3760241900093200203, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: onLootTableRolled.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8255820645286950801, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.72023255
@@ -567,30 +539,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: lootTableBases.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: 'lootTableBases.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 0d0ab1a884e08ae40bb7564e33044545, type: 2}
-    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: 'lootTableBases.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c573312bc27d0345bbc4f697dae6497, type: 2}
-    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: 'lootTableBases.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: fc239924127452e48b9c26e808b5d807, type: 2}
-    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: 'lootTableBases.Array.data[3]'
-      value: 
-      objectReference: {fileID: 11400000, guid: c13aa5016d9ff8e4abe571541c88b54e, type: 2}
-    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
-      propertyPath: 'lootTableBases.Array.data[4]'
-      value: 
-      objectReference: {fileID: 11400000, guid: c13aa5016d9ff8e4abe571541c88b54e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
