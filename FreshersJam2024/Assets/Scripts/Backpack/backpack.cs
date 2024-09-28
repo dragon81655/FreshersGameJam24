@@ -32,6 +32,7 @@ public class backpack : MonoBehaviour
 
     public List<Vector3> backPackUpgradeScales;
     public List<int> backpackUpgradeAmounts;
+    public GameObject backpackCraftingItem;
     int backpackAtUpgrade = 0;
     
     
