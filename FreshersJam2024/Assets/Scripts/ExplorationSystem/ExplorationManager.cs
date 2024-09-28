@@ -15,6 +15,8 @@ public class ExplorationManager : MonoBehaviour
     private backpack backpackC;
     [SerializeField] private UnityEvent<ItemLootTable> onLootTableRolled;
     [SerializeField] private UnityEvent onExplorationStarted;
+
+    [SerializeField] private ExplorationLogUIController logs;
     
 
     private void Start()
@@ -32,7 +34,7 @@ public class ExplorationManager : MonoBehaviour
         optionController = FindAnyObjectByType<OptionControllerTables>();
         optionController.gameObject.SetActive(false);
         backpackC = GameObject.Find("BacpackObject")?.GetComponent<backpack>();
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
     public void StartExploration ()
     {
@@ -43,8 +45,12 @@ public class ExplorationManager : MonoBehaviour
     public void NextTurn()
     {
         List<Item> items = backpackC.getItemsInBag()[PseudoItemId.Potato];
+        if (items.Count == 0)
+        {
+            logs.AddMessage("No more potatos! You can't keep exploring!\n");
+            return;
+        }
         Item item = items[0];
-        if (!item) return;
         if (item.durability > 0)
         {
             item.reduceDurability();

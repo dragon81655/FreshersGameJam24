@@ -10,7 +10,7 @@ public class ExplorationLogUIController : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(transform.parent.gameObject);
+        //DontDestroyOnLoad(transform.parent.gameObject);
     }
     public void NewLootTableSelected(ItemLootTable lootTable)
     {
