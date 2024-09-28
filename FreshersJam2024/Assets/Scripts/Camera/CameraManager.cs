@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class CameraManager : MonoBehaviour
 {
@@ -85,23 +86,28 @@ public class CameraManager : MonoBehaviour
 
     void ZoomIn(BaseRoom room)
     {
-        // Set the target position to the center of the room
-        targetPosition = new Vector3(room.transform.position.x, room.transform.position.y, cam.transform.position.z);
+        if (room != null)
+        {
+            Vector3 tilemapCenter = room.GetTilemapCenter();
 
-        // Set the target zoom level to be closer
-        targetZoom = defaultZoom / 2f;
+            // Set the target position to the center of the room
+            targetPosition.Set(tilemapCenter.x, tilemapCenter.y, cam.transform.position.z);
 
-        // Set the zoom in flag to true
-        HasZoomedIn = true;
+            // Set the target zoom level to be closer
+            targetZoom = defaultZoom / 2f;
 
-        // Start the zooming process
-        isZooming = true;
+            // Set the zoom in flag to true
+            HasZoomedIn = true;
+
+            // Start the zooming process
+            isZooming = true;
+        }
     }
 
     void ZoomOut()
     {
         // reset to the original position and zoom
-        targetPosition = new Vector3(0, 0, cam.transform.position.z);
+        targetPosition.Set(0, 0, cam.transform.position.z);
         targetZoom = defaultZoom;
 
         // Set the zoom in flag to true

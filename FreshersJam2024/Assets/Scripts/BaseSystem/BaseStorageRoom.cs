@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public class BaseStorageRoom : BaseRoom
 {
     [SerializeField]
-    private Button craftingMenuButton;
+    Tilemap storageTileMap;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,13 @@ public class BaseStorageRoom : BaseRoom
 
     protected override void OnRoomEntered()
     {
-        // Activate crafting button click possibility for backpack and chest
+        // Get door collider for click possibility for storage management
+        TilemapCollider2D storageTileMapCollider = storageTileMap.GetComponent<TilemapCollider2D>();
+
+        if (CameraManager.instance.HasZoomedIn)
+        {
+            // Activate the collider for the door
+            storageTileMapCollider.gameObject.SetActive(true);
+        }
     }
 }

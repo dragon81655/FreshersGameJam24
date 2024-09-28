@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class BaseUpgradableRoom : BaseRoom
 {
     [SerializeField]
-    private SpriteRenderer NewRoomSpriteAfterUpgrade;
+    private TilemapRenderer NewRoomAfterUpgrade;
 
     protected int level;
 
@@ -27,7 +28,6 @@ public class BaseUpgradableRoom : BaseRoom
 
     public virtual void UpgradeRoom()
     {
-        BaseRoomSprite = NewRoomSpriteAfterUpgrade;
     }
 
     void GetUpgradeCost()
