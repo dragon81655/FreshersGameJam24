@@ -12,19 +12,23 @@ GunLootTable
 
 UnarmedLootTable
 20%	20^	1 Scrap
-20%	40^	1 Wood
-10%	50^	1 Cloth
-10%	60^	1 Scrap, 1 Wood
-2%	62^	1 Axe
-2%	64^	1 Wrench
-2%	76^	1 Knife
-34%	100^	Nothing
+24%	44^	1 Wood
+10%	54^	1 Cloth
+10%	64^	1 Scrap, 1 Wood
+2%	66^	1 Axe
+2%	68^	1 Wrench
+2%	70^	1 Knife
+30%	100^	Nothing
 
 50% to get 1 Scrap or 1 Wood
  - 30% to get at least 1 Scrap
  - 30% to get at least 1 Wood
  - 10% to get both
 6% to get a tool
+
+Avg ([resource]/roll):
+0.3 Scrap
+0.34 Wood
 
 ----------------------------------------------
 
@@ -39,7 +43,8 @@ AxeLootTable
 85% to get >= 1 Wood
 15% to get -1 Axe HP
 
-Avg 1.7 Wood/roll
+Avg:
+1.7 Wood/roll
 
 ----------------------------------------------
 
@@ -52,10 +57,13 @@ WrenchLootTable
 10%	75^	1 Wood
 25%	100^	-1 Wrench HP
 
-55% to get >= 1 Cloth
+55% to get >= 1 Scrap
 25% to get -1 Wrench HP
 
-Avg 1.1 Scrap/roll
+Avg ([resource]/roll):
+1.1 Scrap
+0.1 Wood
+0.1 Gun Parts
 
 ----------------------------------------------
 
@@ -80,10 +88,11 @@ KnifeLootTable
  - 32% to get non-Cloth, non-Gun Parts resource
 13% to get -1 Knife HP
 
-Avg:
-0.83 Cloth/roll
-0.2 Scrap/roll
-0.2 Wood/roll
+Avg ([resource]/roll):
+0.83 Cloth
+0.2 Scrap
+0.2 Wood
+0.05 Gun Parts
 
 ----------------------------------------------
 
@@ -105,21 +114,28 @@ HeavyKnifeLootTable
 
 Not possible to get 4 Cloth in a roll
 
-Avg:
-1.1 Cloth/roll
+Avg ([resource]/roll):
+1.1 Cloth
+0.15 Scrap
+0.15 Wood
+0.1 Gun Parts
 
 ----------------------------------------------
 
 GunLootTable
-16%	16^	5 Scrap
-16%	32^	5 Wood
+16%	16^	8 Scrap
+16%	32^	8 Wood
 16%	48^	4 Cloth
-16%	64^	3 Scrap, 3 Wood
+16%	64^	5 Scrap, 5 Wood
 16%	80^	2 Potato
 16%	96^	3 Gun Parts
 4%	100^	-1 Gun HP
 
+48% to get any Scrap or Wood
 
-
-
-
+Avg ([resource]/roll):
+2.08 Scrap
+2.08 Wood
+0.64 Cloth
+0.32 Potato
+0.48 Gun Parts
