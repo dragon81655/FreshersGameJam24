@@ -18,6 +18,17 @@ public struct ItemLootTable
     [Header("Options")]
     public bool hasOptions;
     public OptionBaseExploration options;
+
+    public ItemLootTable(int i)
+    {
+        this.item = null;
+        this.addedDesc = "";
+        this.baseDes = "";
+        this.chance = 0;
+        this.onRoll= null;
+        this.hasOptions= false;
+        this.options = null;
+    }
 }
 
 [Serializable]
@@ -37,7 +48,8 @@ public enum PseudoItemId
     Wrench = 5,
     GunParts = 6,
     Potato = 7,
-    Gun = 8
+    Gun = 8,
+    HeavyKnife = 9
 }
 public enum AcceptedTools
 {
