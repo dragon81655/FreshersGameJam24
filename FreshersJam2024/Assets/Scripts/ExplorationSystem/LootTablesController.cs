@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class LootTablesController : MonoBehaviour
 {
+    [SerializeField]
+    private List<LootTableBase> lootTableBases;
     private List<List<LootTableBase>> lootTables = new List<List<LootTableBase>>(); 
     void Start()
     {
@@ -16,7 +18,7 @@ public class LootTablesController : MonoBehaviour
         {
             lootTables.Add(new List<LootTableBase>());
         }
-        GetScriptableObjects(Application.dataPath + "/LootTables/");
+        GetScriptableObjects();
         DebugLootTables();
     }
 
@@ -31,41 +33,21 @@ public class LootTablesController : MonoBehaviour
         }
     }
 
-    private void GetScriptableObjects(string folderPath)
+    private void GetScriptableObjects()
     {
-        if (Directory.Exists(folderPath))
+        foreach (LootTableBase loadedData in lootTableBases)
         {
-            string[] scriptableObjects = Directory.GetFiles(folderPath, "*.asset", SearchOption.AllDirectories);
-
-            foreach (string asset in scriptableObjects)
+            if (loadedData.toolTypes.Count != 0)
             {
-
-                string relativePath = "Assets" + asset.Substring(Application.dataPath.Length);
-                LootTableBase loadedData = AssetDatabase.LoadAssetAtPath<LootTableBase>(relativePath);
-
-                if (loadedData != null)
+                foreach (int i in loadedData.toolTypes)
                 {
-                    if(loadedData.toolTypes.Count != 0)
-                    {
-                        foreach(int i in loadedData.toolTypes)
-                        {
-                            lootTables[i].Add(loadedData);
-                        }
-                    }
-                    else
-                    {
-                        lootTables[0].Add(loadedData);
-                    }
-                }
-                else
-                {
-                    Debug.LogWarning("Failed to load ScriptableObject at path: " + relativePath + " or it isn't a LootTableBase.");
+                    lootTables[i].Add(loadedData);
                 }
             }
-        }
-        else
-        {
-            Debug.LogError("Folder not found.");
+            else
+            {
+                lootTables[0].Add(loadedData);
+            }
         }
     }
 
