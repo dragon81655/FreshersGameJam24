@@ -18,7 +18,7 @@ MonoBehaviour:
   itemLootTables:
   - item:
     - id: 1
-      count: 5
+      count: 8
     addedDesc: 
     baseDes: 
     chance: 16
@@ -29,7 +29,7 @@ MonoBehaviour:
     options: {fileID: 0}
   - item:
     - id: 0
-      count: 5
+      count: 8
     addedDesc: 
     baseDes: 
     chance: 16
@@ -51,9 +51,9 @@ MonoBehaviour:
     options: {fileID: 0}
   - item:
     - id: 1
-      count: 3
+      count: 5
     - id: 0
-      count: 3
+      count: 5
     addedDesc: 
     baseDes: 
     chance: 16

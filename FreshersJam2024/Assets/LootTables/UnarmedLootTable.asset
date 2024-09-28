@@ -32,7 +32,7 @@ MonoBehaviour:
       count: 1
     addedDesc: 
     baseDes: 
-    chance: 20
+    chance: 24
     onRoll:
       m_PersistentCalls:
         m_Calls: []
@@ -98,7 +98,7 @@ MonoBehaviour:
   - item: []
     addedDesc: 
     baseDes: 
-    chance: 34
+    chance: 30
     onRoll:
       m_PersistentCalls:
         m_Calls: []
