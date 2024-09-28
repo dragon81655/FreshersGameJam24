@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 [Serializable]
 public class CraftingManager : MonoBehaviour
@@ -53,7 +54,7 @@ public class CraftingManager : MonoBehaviour
                         int itemAmount = 0;
                         foreach(GameObject anItem in items)
                         {
-                            if(anItem == titcw.itemToCraftWith)
+                            if (anItem.GetComponentInChildren<Item>().itemId == titcw.itemToCraftWith.GetComponentInChildren<Item>().itemId)
                             {
                                 itemAmount++;
                             }
@@ -72,16 +73,16 @@ public class CraftingManager : MonoBehaviour
 
             if (craftable)
             {
-                //button.GetComponent<Button>().SetEnabled(true);
+                button.GetComponent<Button>().interactable = true;
                 Debug.Log(item.name + " craftable");
             }
             else
             {
                 //button.GetComponent<Button>().SetEnabled(false);
+                button.GetComponent<Button>().interactable = false;
+
                 Debug.Log(item.name + " not craftable");
-
             }
-
         }
     }
 }
