@@ -13,9 +13,86 @@ MonoBehaviour:
   m_Name: GunLootTable
   m_EditorClassIdentifier: 
   description: 
-  toolTypes: 
-  chance: 0
-  itemLootTables: []
+  toolTypes: 05000000
+  chance: 100
+  itemLootTables:
+  - item:
+    - id: 1
+      count: 5
+    addedDesc: 
+    baseDes: 
+    chance: 16
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 0
+      count: 5
+    addedDesc: 
+    baseDes: 
+    chance: 16
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 2
+      count: 4
+    addedDesc: 
+    baseDes: 
+    chance: 16
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 1
+      count: 3
+    - id: 0
+      count: 3
+    addedDesc: 
+    baseDes: 
+    chance: 16
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 7
+      count: 2
+    addedDesc: 
+    baseDes: 
+    chance: 16
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 6
+      count: 3
+    addedDesc: 
+    baseDes: 
+    chance: 16
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item: []
+    addedDesc: 
+    baseDes: 
+    chance: 4
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
   onRoll:
     m_PersistentCalls:
       m_Calls: []

@@ -13,9 +13,97 @@ MonoBehaviour:
   m_Name: HeavyKnifeLootTable
   m_EditorClassIdentifier: 
   description: 
-  toolTypes: 
-  chance: 0
-  itemLootTables: []
+  toolTypes: 04000000
+  chance: 100
+  itemLootTables:
+  - item:
+    - id: 2
+      count: 1
+    addedDesc: 
+    baseDes: 
+    chance: 25
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 2
+      count: 2
+    addedDesc: 
+    baseDes: 
+    chance: 20
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 2
+      count: 3
+    addedDesc: 
+    baseDes: 
+    chance: 15
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 6
+      count: 1
+    addedDesc: 
+    baseDes: 
+    chance: 10
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 1
+      count: 1
+    addedDesc: 
+    baseDes: 
+    chance: 10
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 0
+      count: 1
+    addedDesc: 
+    baseDes: 
+    chance: 10
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 1
+      count: 1
+    - id: 0
+      count: 1
+    addedDesc: 
+    baseDes: 
+    chance: 5
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item: []
+    addedDesc: 
+    baseDes: 
+    chance: 5
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
   onRoll:
     m_PersistentCalls:
       m_Calls: []
