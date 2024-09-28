@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4012026385781355749}
   m_Layer: 7
   m_Name: BacpackObject
-  m_TagString: Untagged
+  m_TagString: Backpack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,13 @@ MonoBehaviour:
   - {fileID: 429364360177878400, guid: 4861458c57042d145ac73d301d83a796, type: 3}
   - {fileID: 9079123634513935674, guid: 314d85223814bfb4da9b2ef9ee68f3c5, type: 3}
   - {fileID: 1556566133583986818, guid: 10dd4bc7c9fb72248be93038c90f59f9, type: 3}
-  craftingList: []
+  craftingList:
+  - itemToCraft: {fileID: 207228436756480676, guid: 520beb11768cd3744bf31dec92180ab6, type: 3}
+    itemsToCraftWith:
+    - itemToCraftWith: {fileID: 9079123634513935674, guid: 314d85223814bfb4da9b2ef9ee68f3c5, type: 3}
+      amount: 2
+    - itemToCraftWith: {fileID: 2236597399989580576, guid: 5bc75268f409a854ab8680c7c8a57625, type: 3}
+      amount: 2
   backPackUpgradeScales:
   - {x: 0.3, y: 0.3, z: 0.3}
   - {x: 0.4, y: 0.4, z: 0.4}

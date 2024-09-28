@@ -118,7 +118,7 @@ public class backpack : MonoBehaviour
                     pr.GetComponentInChildren<Item>().itemId == it.itemId)
                 {
                     Instantiate(pr, gameObject.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
-
+                    Debug.Log("reeee");
                     //Debug.Log("instatteate hit - " + pr.GetComponentInChildren<Item>().itemId);
                 }
                 else
