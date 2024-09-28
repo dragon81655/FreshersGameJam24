@@ -105,6 +105,21 @@ MonoBehaviour:
   - {fileID: 429364360177878400, guid: 4861458c57042d145ac73d301d83a796, type: 3}
   - {fileID: 9079123634513935674, guid: 314d85223814bfb4da9b2ef9ee68f3c5, type: 3}
   - {fileID: 1556566133583986818, guid: 10dd4bc7c9fb72248be93038c90f59f9, type: 3}
+  craftingList:
+  - itemToCraft: {fileID: 429364360177878400, guid: 4861458c57042d145ac73d301d83a796, type: 3}
+    itemToCraftWith: {fileID: 7736397321803940944, guid: 3fa59d91b98242740a2e5359f3591064, type: 3}
+    amount: 3
+  - itemToCraft: {fileID: 4093083384644202469, guid: 312d362430a6f7149a7d1c457e6cf7c9, type: 3}
+    itemToCraftWith: {fileID: 9079123634513935674, guid: 314d85223814bfb4da9b2ef9ee68f3c5, type: 3}
+    amount: 3
+  - itemToCraft: {fileID: 1556566133583986818, guid: 10dd4bc7c9fb72248be93038c90f59f9, type: 3}
+    itemToCraftWith: {fileID: 9079123634513935674, guid: 314d85223814bfb4da9b2ef9ee68f3c5, type: 3}
+    amount: 3
+  backPackUpgradeScales:
+  - {x: 0.3, y: 0.3, z: 0.3}
+  - {x: 0.4, y: 0.4, z: 0.4}
+  - {x: 0.5, y: 0.5, z: 0.5}
+  backpackUpgradeAmounts: 020000000300000004000000
 --- !u!1 &2903806701337363380
 GameObject:
   m_ObjectHideFlags: 0

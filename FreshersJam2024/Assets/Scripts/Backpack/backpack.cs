@@ -9,17 +9,32 @@ using UnityEditor;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 using static UnityEditor.Progress;
 using static UnityEditor.Timeline.Actions.MenuPriority;
 
+[Serializable]
+public struct craftingItem
+{
+    public GameObject itemToCraft;
+    public GameObject itemToCraftWith;
+    public int amount;
+}
+
 public class backpack : MonoBehaviour
 {
-    //Dictionary<PseudoItemId, int> itemList = new Dictionary<PseudoItemId, int>();
 
     public List<GameObject> prefabs;
-    //List<GameObject> objects = new List<GameObject>();
 
     Dictionary<PseudoItemId, List<Item>> itemList = new Dictionary<PseudoItemId, List<Item>>();
+
+    public List<craftingItem> craftingList;
+
+    public List<Vector3> backPackUpgradeScales;
+    public List<int> backpackUpgradeAmounts;
+    int backpackAtUpgrade = 0;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -107,5 +122,11 @@ public class backpack : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void upgradeBackpack()
+    {
+        //backpackAtUpgrade++;
+
     }
 }
