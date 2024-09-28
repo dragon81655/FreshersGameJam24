@@ -24,7 +24,5 @@ public abstract class BaseRoom : MonoBehaviour
         }
     }
 
-    protected virtual void OnRoomEntered()
-    {
-    }
+    protected virtual void OnRoomEntered(){}
 }

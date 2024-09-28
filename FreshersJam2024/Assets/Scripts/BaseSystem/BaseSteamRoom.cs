@@ -16,4 +16,9 @@ public class BaseSteamRoom : BaseUpgradableRoom
     {
         
     }
+
+    protected override void OnRoomEntered()
+    {
+
+    }
 }
