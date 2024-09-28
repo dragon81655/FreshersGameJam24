@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/InventoryScene.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: 104c0d44a278d234d82210624d6788af
+  - enabled: 1
+    path: Assets/Scenes/LoadingDNDObjectsScene.unity
     guid: 972e47af392217547ab3b006c158502b
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity

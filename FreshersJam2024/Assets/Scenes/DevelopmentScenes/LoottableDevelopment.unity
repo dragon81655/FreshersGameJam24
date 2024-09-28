@@ -393,9 +393,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3324030279935636510, guid: e07ac779c70ec1a44830414a2a6509a4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324030279935636510, guid: e07ac779c70ec1a44830414a2a6509a4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324030279935636510, guid: e07ac779c70ec1a44830414a2a6509a4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5352210857328525266, guid: e07ac779c70ec1a44830414a2a6509a4, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630064676583800477, guid: e07ac779c70ec1a44830414a2a6509a4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429887634384736956, guid: e07ac779c70ec1a44830414a2a6509a4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429887634384736956, guid: e07ac779c70ec1a44830414a2a6509a4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -543,6 +567,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: lootTableBases.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d0ab1a884e08ae40bb7564e33044545, type: 2}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c573312bc27d0345bbc4f697dae6497, type: 2}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: fc239924127452e48b9c26e808b5d807, type: 2}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c13aa5016d9ff8e4abe571541c88b54e, type: 2}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c13aa5016d9ff8e4abe571541c88b54e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
