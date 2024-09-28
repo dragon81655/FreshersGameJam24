@@ -37,4 +37,13 @@ public class Item : MonoBehaviour
         GetComponent<Renderer>().material.color = origonalColor;
         Debug.Log("untinted!");
     }
+
+    void reduceDurability()
+    {
+        durability--;
+        if (durability <= 0)
+        {
+            Destroy(gameObject.transform.parent.gameObject);
+        }
+    }
 }

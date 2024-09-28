@@ -127,7 +127,6 @@ public class backpack : MonoBehaviour
 
     public void upgradeBackpack()
     {
-        //backpackAtUpgrade++;
 
     }
 }
