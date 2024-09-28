@@ -32,13 +32,31 @@ public class ExplorationManager : MonoBehaviour
         optionController = FindAnyObjectByType<OptionControllerTables>();
         optionController.gameObject.SetActive(false);
         backpackC = GameObject.Find("BacpackObject")?.GetComponent<backpack>();
-        Debug.Log(backpackC);
         DontDestroyOnLoad(gameObject);
     }
     public void StartExploration ()
     {
         eventController.StartExploration();
         onExplorationStarted.Invoke();
+    }
+
+    public void NextTurn()
+    {
+        List<Item> items = backpackC.getItemsInBag()[PseudoItemId.Potato];
+        Item item = items[0];
+        if (!item) return;
+        if (item.durability > 0)
+        {
+            item.reduceDurability();
+            if(item == null) items.RemoveAt(0);
+            eventController.NextTurn();
+        } 
+    }
+
+    public void QuitExploring(int scene)
+    {
+        SceneManagerGame.ChangeScene(scene);
+        gameObject.SetActive(false);
     }
 
     public void RollLootTables()
@@ -82,7 +100,6 @@ public class ExplorationManager : MonoBehaviour
         {
             optionController.gameObject.SetActive(true);
             optionController.LoadOptions(t.options);
-            eventController.SetPause(true);
         }
         onLootTableRolled.Invoke(t);
     }
@@ -104,6 +121,5 @@ public class ExplorationManager : MonoBehaviour
             backpackC.addItemsToBag(items);
             Debug.Log("Added items on option: " + items.Count);
         }
-        eventController.SetPause(false);
     }
 }

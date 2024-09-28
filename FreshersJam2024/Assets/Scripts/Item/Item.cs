@@ -38,7 +38,7 @@ public class Item : MonoBehaviour
         Debug.Log("untinted!");
     }
 
-    void reduceDurability()
+    public void reduceDurability()
     {
         durability--;
         if (durability <= 0)

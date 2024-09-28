@@ -195,7 +195,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Steak_Knife_2.0_0: 4354711869799325035
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
