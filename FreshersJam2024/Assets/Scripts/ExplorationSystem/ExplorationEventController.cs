@@ -30,7 +30,7 @@ public class ExplorationEventController : MonoBehaviour
     public void StartExploration()
     {
         CalculateNextEvent();
-        exploring = true;
+        exploring = !exploring;
     }
 
     private void CalculateNextEvent()
