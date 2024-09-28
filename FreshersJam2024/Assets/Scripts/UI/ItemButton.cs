@@ -17,4 +17,9 @@ public class ItemButton : MonoBehaviour
     {
         
     }
+
+    void go()
+    {
+
+    }
 }

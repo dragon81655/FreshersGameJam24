@@ -7,9 +7,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
+public struct buttonsToItems
+{
+    public GameObject button;
+    public GameObject item;
+}
+
+[Serializable]
 public class CraftingManager : MonoBehaviour
 {
-    public List<GameObject> buttons;
+    public List<buttonsToItems> buttons;
 
     GameObject backpack;
     List<GameObject> items;
@@ -20,6 +27,11 @@ public class CraftingManager : MonoBehaviour
     {
         backpack = GameObject.FindGameObjectsWithTag("Backpack")[0];
         craftingList = backpack.GetComponent<backpack>().craftingList;
+
+        foreach(buttonsToItems buttonI in buttons)
+        {
+            buttonI.button.GetComponent<Button>().onClick.AddListener(() => craftItem(buttonI.item));
+        }
 
         checkCraftable();
     }
@@ -36,8 +48,10 @@ public class CraftingManager : MonoBehaviour
 
         Debug.Log("amount of items - " + items.Count);
 
-        foreach(GameObject button in buttons)
+        foreach(buttonsToItems buttonI in buttons)
         {
+            GameObject button = buttonI.button;
+
             bool craftable = true;
             //the item to craft
             GameObject item = button.GetComponent<ItemButton>().item;
@@ -84,5 +98,37 @@ public class CraftingManager : MonoBehaviour
                 Debug.Log(item.name + " not craftable");
             }
         }
+    }
+
+    public void craftItem(GameObject item)
+    {
+        Debug.Log("craft item hit");
+        foreach(craftingItem cItem in craftingList)
+        {
+            if(cItem.itemToCraft == item)
+            {
+                Debug.Log("got item");
+                foreach (theItemsToCraftWith cItemCW in cItem.itemsToCraftWith)
+                {
+                    int itemcount = cItemCW.amount;
+                    foreach (GameObject it in items)
+                    {
+                        Debug.Log("item - " + it.name);
+                        if (it.GetComponentInChildren<Item>().itemId == cItemCW.itemToCraftWith.GetComponentInChildren<Item>().itemId)
+                        {
+                            Debug.Log("got item to remove");
+                            it.GetComponentInChildren<Item>().reduceDurability();
+                            itemcount--;
+                        }
+                        if (itemcount == 0)
+                            break;
+                    }
+                }
+                break;
+            }
+        }
+        List<Item> spawn = new List<Item>();
+        spawn.Add(item.GetComponentInChildren<Item>());
+        backpack.GetComponent<backpack>().addItemsToBag(spawn);
     }
 }

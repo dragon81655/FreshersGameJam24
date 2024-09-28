@@ -40,10 +40,14 @@ public class Item : MonoBehaviour
 
     public void reduceDurability()
     {
+        Debug.Log("reduceDurability hit");
         durability--;
         if (durability <= 0)
         {
             Destroy(gameObject.transform.parent.gameObject);
+
+            Debug.Log("destroy hit");
+
         }
     }
 }

@@ -121,7 +121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1074547067719039512}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: a4dad9972c67a49408c020ddd234f6ed, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &186879065563037663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,7 +946,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7961171069088489423}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3376621555594453736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,11 +1499,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
-  - {fileID: 1798253670154531082}
-  - {fileID: 6653730303370938016}
-  - {fileID: 6310183057851356994}
-  - {fileID: 7794506001836678583}
-  - {fileID: 3825904446233055786}
+  - button: {fileID: 1798253670154531082}
+    item: {fileID: 207228436756480676, guid: 520beb11768cd3744bf31dec92180ab6, type: 3}
+  - button: {fileID: 6653730303370938016}
+    item: {fileID: 4093083384644202469, guid: 312d362430a6f7149a7d1c457e6cf7c9, type: 3}
+  - button: {fileID: 6310183057851356994}
+    item: {fileID: 384212384921373326, guid: a43ef655beb996b4e8f5df830a021e1f, type: 3}
+  - button: {fileID: 7794506001836678583}
+    item: {fileID: 429364360177878400, guid: 4861458c57042d145ac73d301d83a796, type: 3}
+  - button: {fileID: 3825904446233055786}
+    item: {fileID: 1556566133583986818, guid: 10dd4bc7c9fb72248be93038c90f59f9, type: 3}
 --- !u!1 &8598644830441544481
 GameObject:
   m_ObjectHideFlags: 0
