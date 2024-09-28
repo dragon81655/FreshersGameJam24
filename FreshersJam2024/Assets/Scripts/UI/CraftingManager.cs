@@ -57,25 +57,25 @@ public class CraftingManager : MonoBehaviour
             GameObject item = button.GetComponent<ItemButton>().item;
 
             //get the items needed
-            foreach(craftingItem ci in craftingList)
+            foreach(craftingItem craftItem in craftingList)
             {
-                if(ci.itemToCraft == item)
+                if(craftItem.itemToCraft == item)
                 {
-                    Debug.Log("item to craft - " + ci.itemToCraft.name);
-                    foreach(theItemsToCraftWith titcw in ci.itemsToCraftWith)
+                    Debug.Log("item to craft - " + craftItem.itemToCraft.name);
+                    foreach(theItemsToCraftWith itemToCraftW in craftItem.itemsToCraftWith)
                     {
-                        Debug.Log("item to craft with - " + titcw.itemToCraftWith.name);
+                        Debug.Log("item to craft with - " + itemToCraftW.itemToCraftWith.name);
                         int itemAmount = 0;
                         foreach(GameObject anItem in items)
                         {
-                            if (anItem.GetComponentInChildren<Item>().itemId == titcw.itemToCraftWith.GetComponentInChildren<Item>().itemId)
+                            if (anItem.GetComponentInChildren<Item>().itemId == itemToCraftW.itemToCraftWith.GetComponentInChildren<Item>().itemId)
                             {
                                 itemAmount++;
                             }
                         }
                         Debug.Log("amount in level - " + itemAmount);
 
-                        if(titcw.amount > itemAmount)
+                        if(itemToCraftW.amount > itemAmount)
                         {
                             craftable = false;
                             Debug.Log("no crafty");
@@ -92,16 +92,19 @@ public class CraftingManager : MonoBehaviour
             }
             else
             {
-                //button.GetComponent<Button>().SetEnabled(false);
                 button.GetComponent<Button>().interactable = false;
 
                 Debug.Log(item.name + " not craftable");
             }
+
+            //Canvas.ForceUpdateCanvases();
         }
     }
 
     public void craftItem(GameObject item)
     {
+        items = GameObject.FindGameObjectsWithTag("Item").ToList();
+
         Debug.Log("craft item hit");
         foreach(craftingItem cItem in craftingList)
         {
