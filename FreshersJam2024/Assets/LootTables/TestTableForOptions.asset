@@ -14,10 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: A fucking test
   toolTypes: 00000000
-  chance: 0
+  chance: 200
   itemLootTables:
-  - item: []
+  - item:
+    - id: 1
+      count: 10
+    - id: 0
+      count: 1
     addedDesc: Fuck it
+    baseDes: 
+    chance: 1
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 0
+    options: {fileID: 0}
+  - item:
+    - id: 2
+      count: 10
+    - id: 4
+      count: 1
+    addedDesc: No Clue
     baseDes: 
     chance: 1
     onRoll:

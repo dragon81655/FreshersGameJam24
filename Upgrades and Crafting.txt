@@ -1,0 +1,25 @@
+Upgrades: (all values to 1.d.p.)
+Farm Upgrades: (remember that 1 Potato is consumed per day, per person at the bunker, and that 1 Potato = 2 rolls if in bag)
+1. N/A (start w/ it)		- 2/day
+2. 4 Wood			- 3/day
+3. 10 Wood			- 5/day
+4. 15 Wood, 5 Scrap		- 8/day
+5. 20 Wood, 10 Scrap		- 12/day
+
+Storage Upgrades: (+50% area each level, in u^2 (arbitrary units))
+1. N/A (start w/ it)		- 12:7		(84)
+2. 5 Scrap			- 14.7:8.6	(126)
+3. 10 Scrap, 5 Wood		- 18:10.5	(189)
+4. 15 Scrap, 10 Wood		- 22:12.9	(283.5)
+5. 20 Scrap, 15 Wood		- 27:15.8	(425.3)
+
+Backpack Upgrades: (+25% area each level, in u^2 (arbitrary units, equal to Storage Chest's arbitrary units))
+1. N/A (start w/ it)		- 6:7		(42)
+2. 5 Cloth			- 6.6:7.7	(52.5)
+3. 10 Cloth, 2 Wood		- 7.5:8.8	(62.6)
+4. 15 Cloth, 5 Scrap		- 8.4:9.8	(82.0)
+5. 20 Cloth, 2 Gun Parts	- 9.4:11.0	(102.5)
+
+--------------------------------------------------------------------------------------------
+
+Crafting:

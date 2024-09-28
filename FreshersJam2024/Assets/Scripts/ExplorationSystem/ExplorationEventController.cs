@@ -5,13 +5,7 @@ using UnityEngine;
 public class ExplorationEventController : MonoBehaviour
 {
     [Header("Exploration stats")]
-    [SerializeField]
-    private int minTimeToTriggerEvent;
-    [SerializeField]
-    private int maxTimeToTriggerEvent;
-    //Just set to the time you want
-    private float currentTimer = 0;
-    private bool paused = false;
+    public int currentTurn = 0;
 
     [SerializeField]
     private bool exploring = false;
@@ -29,45 +23,27 @@ public class ExplorationEventController : MonoBehaviour
 
     public void StartExploration()
     {
-        CalculateNextEvent();
-        exploring = !exploring;
-    }
-
-    private void CalculateNextEvent()
-    {
-        currentTimer = UnityEngine.Random.Range(minTimeToTriggerEvent,maxTimeToTriggerEvent);
+        //Add UI
+        NextTurn();
     }
     private bool KeepExploring()
     {
         if (pseudoPotatos > 0 && !wishToStop) return true;
         return false;
     }
-    public void SetPause()
+    public void StopExploring()
     {
-        paused = !paused;
+        //Remove UI
     }
-    public void SetPause(bool value)
+    public void NextTurn()
     {
-        paused = value;
-    }
-    private void Update()
-    {
-        if(exploring)
+        if (KeepExploring())
         {
-            if(!paused)
-            currentTimer -= Time.deltaTime;
-            if(currentTimer <= 0)
-            {
-                if(KeepExploring())
-                {
-                    manager.RollLootTables();
-                    CalculateNextEvent();
-                }
-                else
-                {
-                    exploring= false;
-                }
-            }
+            manager.RollLootTables();
+        }
+        else
+        {
+            StopExploring();
         }
     }
 }

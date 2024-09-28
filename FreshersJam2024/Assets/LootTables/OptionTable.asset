@@ -21,7 +21,18 @@ MonoBehaviour:
       count: 10
     addedDesc: Create option
     baseDes: 
-    chance: 0
+    chance: 1
+    onRoll:
+      m_PersistentCalls:
+        m_Calls: []
+    hasOptions: 1
+    options: {fileID: 11400000, guid: 7e2bf33b133e4f149bd29c2873d92a09, type: 2}
+  - item:
+    - id: 3
+      count: 10
+    addedDesc: Created another option
+    baseDes: 
+    chance: 1
     onRoll:
       m_PersistentCalls:
         m_Calls: []
