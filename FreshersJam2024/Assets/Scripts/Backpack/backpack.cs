@@ -39,11 +39,15 @@ public class backpack : MonoBehaviour
     public List<int> backpackUpgradeAmounts;
     public GameObject backpackCraftingItem;
     int backpackAtUpgrade = 0;
+
+    private float factor = 1;
     
     
     // Start is called before the first frame update
     void Start()
     {
+        PauseMenu.toDestroy.Add(gameObject);
+
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -52,7 +56,19 @@ public class backpack : MonoBehaviour
     {
 
     }
-
+    public void UpgradeBackPack(float factor)
+    {
+        foreach(List<Item> item in itemList.Values)
+        {
+            foreach(Item item2 in item)
+            {
+                Vector3 val = item2.gameObject.transform.localScale;
+                val *= factor;
+                item2.gameObject.transform.localScale = new Vector3(val.x, val.y, 1);
+                this.factor*= factor;
+            }
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Item>())
@@ -117,7 +133,10 @@ public class backpack : MonoBehaviour
                 if (pr.GetComponentInChildren<Item>() &&
                     pr.GetComponentInChildren<Item>().itemId == it.itemId)
                 {
-                    Instantiate(pr, gameObject.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
+                    GameObject item2 =Instantiate(pr, gameObject.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
+                    Vector3 val = item2.gameObject.transform.localScale;
+                    val *= factor;
+                    item2.gameObject.transform.localScale = new Vector3(val.x, val.y, 1);
                     Debug.Log("reeee");
                     //Debug.Log("instatteate hit - " + pr.GetComponentInChildren<Item>().itemId);
                 }

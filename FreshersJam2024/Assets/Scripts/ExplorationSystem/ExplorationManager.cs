@@ -69,6 +69,7 @@ public class ExplorationManager : MonoBehaviour
     {
         Debug.Log("Rolled loot tables");
         List<AcceptedTools> tools = new List<AcceptedTools>();
+        tools.Add(AcceptedTools.None);
         AcceptedTools tool = AcceptedTools.None;
         if (backpackC) {
             Dictionary<PseudoItemId, List<Item>> itemL = backpackC.getItemsInBag();

@@ -17,6 +17,9 @@ public class ItemDragController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        PauseMenu.toDestroy.Add(gameObject);
+
         DontDestroyOnLoad(gameObject);
     }
 
