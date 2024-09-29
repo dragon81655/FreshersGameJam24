@@ -19,10 +19,10 @@ MonoBehaviour:
   - item:
     - id: 2
       count: 1
-    addedDesc: 'You found a defunct flag in some debris.
+    addedDesc: 'You found a defunct flag in some debris, cutting it with your Knife.
 
-      Using the knife,
-      you obtained 1 Cloth.'
+      +1
+      Cloth'
     baseDes: 
     chance: 10
     onRoll:
@@ -33,10 +33,10 @@ MonoBehaviour:
   - item:
     - id: 2
       count: 1
-    addedDesc: 'You had a bit of a scuffle, but escaped with the a torn portion of
-      the assailant''s jacket.
+    addedDesc: 'You had a bit of a scuffle, but escaped with the a Knife-torn portion
+      of the assailant''s jacket.
 
-      Obtained 1 Cloth.'
+      +1 Cloth'
     baseDes: 
     chance: 10
     onRoll:
@@ -47,10 +47,10 @@ MonoBehaviour:
   - item:
     - id: 2
       count: 2
-    addedDesc: 'You found a pair of trousers in the ruins of a house.
+    addedDesc: 'You found a pair of trousers in the ruins of a house. You tore it
+      up with the Knife.
 
-      Using
-      the knife, you obtained 2 Cloth.'
+      +2 Cloth'
     baseDes: 
     chance: 15
     onRoll:
@@ -61,10 +61,10 @@ MonoBehaviour:
   - item:
     - id: 2
       count: 3
-    addedDesc: 'You spotted a target for negotiations.
+    addedDesc: 'You spotted a target for negotiations. You used the Knife.
 
-      Using the knife, you
-      obtained 3 Cloth.'
+      +3
+      Cloth'
     baseDes: 
     chance: 7
     onRoll:
@@ -75,10 +75,8 @@ MonoBehaviour:
   - item:
     - id: 2
       count: 4
-    addedDesc: 'You scavenged the jacket off an attacker.
-
-      Using the knife,
-      you obtained 4 Cloth.'
+    addedDesc: "You scavenged a jacket off an attacker and repurposed it with the
+      Knife. \n+4 Cloth"
     baseDes: 
     chance: 3
     onRoll:
@@ -89,9 +87,7 @@ MonoBehaviour:
   - item:
     - id: 1
       count: 1
-    addedDesc: 'You loot the pockets of a fallen scavenger.
-
-      Obtained 1 Scrap.'
+    addedDesc: "You loot the pockets of a scavenger fell by your Knife. \n+1 Scrap"
     baseDes: 
     chance: 12
     onRoll:
@@ -102,9 +98,7 @@ MonoBehaviour:
   - item:
     - id: 0
       count: 1
-    addedDesc: 'You loot the pockets of a fallen scavenger.
-
-      Obtained 1 Wood.'
+    addedDesc: "You loot the pockets of a scavenger fell by your Knife. \n+1 Wood"
     baseDes: 
     chance: 12
     onRoll:
@@ -117,10 +111,8 @@ MonoBehaviour:
       count: 1
     - id: 1
       count: 1
-    addedDesc: 'You loot the pockets of a fallen scavenger.
-
-      Obtained 1 Wood
-      and 1 Scrap. Lucky!'
+    addedDesc: "You loot the pockets of a scavenger fell by your Knife. \n+1 Wood,
+      +1 Scrap"
     baseDes: 
     chance: 8
     onRoll:
@@ -131,10 +123,8 @@ MonoBehaviour:
   - item:
     - id: 3
       count: 1
-    addedDesc: 'You defeated an assailant using your Knife.
-
-      Obtained another,
-      brand new Knife.'
+    addedDesc: You defeated an assailant using your Knife, picking up theirs. +1
+      Knife
     baseDes: 
     chance: 1
     onRoll:
@@ -145,10 +135,8 @@ MonoBehaviour:
   - item:
     - id: 5
       count: 1
-    addedDesc: 'You defeated an assailant using your Knife.
-
-      Obtained a brand
-      new Wrench.'
+    addedDesc: You defeated an assailant using your Knife, picking up their Wrench.
+      +1 Wrench
     baseDes: 
     chance: 2
     onRoll:
@@ -159,10 +147,8 @@ MonoBehaviour:
   - item:
     - id: 4
       count: 1
-    addedDesc: 'You defeated an assailant using your Knife.
-
-      Obtained a brand
-      new Axe.'
+    addedDesc: You defeated an assailant using your Knife, picking up their Axe.
+      +1 Axe
     baseDes: 
     chance: 2
     onRoll:
@@ -173,10 +159,8 @@ MonoBehaviour:
   - item:
     - id: 6
       count: 1
-    addedDesc: 'You salvaged what you could from the rusted firearm your foe was
-      carrying.
-
-      Obtained 1 Toolset.'
+    addedDesc: "You fought and won against someone. You salvaged what you could from
+      the rusted firearm your foe was carrying. \n+1 Toolset"
     baseDes: 
     chance: 5
     onRoll:
@@ -185,10 +169,8 @@ MonoBehaviour:
     hasOptions: 0
     options: {fileID: 0}
   - item: []
-    addedDesc: 'You fought a knife-wielding assailant and retreated.
-
-      The clash
-      of metal damaged your knife.'
+    addedDesc: You fought a knife-wielding assailant and retreated. The clash of
+      metal damaged your knife.
     baseDes: 
     chance: 13
     onRoll:
