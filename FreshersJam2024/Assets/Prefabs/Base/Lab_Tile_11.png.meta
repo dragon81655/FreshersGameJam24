@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4b658dcdf13619e449d40d70b6e85156
+guid: 17cad71ab3eff724c986cad1856db3dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6916486906063661816
-    second: Metal_Panel_0
+      213: 7812067769161795021
+    second: Lab_Tile_11_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Metal_Panel_0
+      name: Lab_Tile_11_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8faa099223c4cff50800000000000000
-      internalID: 6916486906063661816
+      spriteID: dc5ca26fe3a0a6c60800000000000000
+      internalID: 7812067769161795021
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Metal_Panel_0: 6916486906063661816
+      Lab_Tile_11_0: 7812067769161795021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

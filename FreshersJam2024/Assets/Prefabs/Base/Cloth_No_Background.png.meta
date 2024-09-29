@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4b658dcdf13619e449d40d70b6e85156
+guid: 0b083294362c4f247a1cc0b5294fdffb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6916486906063661816
-    second: Metal_Panel_0
+      213: -3634147392252391977
+    second: Cloth_No_Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Metal_Panel_0
+      name: Cloth_No_Background_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 128
+        x: 7
+        y: 3
+        width: 46
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8faa099223c4cff50800000000000000
-      internalID: 6916486906063661816
+      spriteID: 7dd4267833ae09dc0800000000000000
+      internalID: -3634147392252391977
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Metal_Panel_0: 6916486906063661816
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

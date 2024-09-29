@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      logoFalloutPacker2_0: -2202615199181803558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
