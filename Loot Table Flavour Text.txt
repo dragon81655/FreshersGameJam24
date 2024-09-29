@@ -1,0 +1,60 @@
+UnarmedLootTable
+20%	1 Scrap		- You found a bit of old metal on the ground. +1 Scrap
+24%	1 Wood		- You picked up a twig on the side of the road. +1 Wood
+10%	1 Cloth		- You spotted a loose bit of curtain and were able to tear it off. +1 Cloth
+10%	1 Scrap, 1 Wood	- You found a broken trowel in a bin. Dissassembly was easy. +1 Scrap, +1 Wood
+2%	1 Axe		- Stopping by the fire department, you noticed an unscavenged Axe. +1 Axe
+2%	1 Wrench	- You peeked under a car bonnet and was greeted by a Wrench. +1 Wrench
+2%	1 Knife		- A steak knife caught your attention while rummaging through a kitchen. +1 Knife
+30%	Nothing		- You found nothing while wandering around.
+
+AxeLootTable
+30%	1 Wood		- You found what remained of a park bench and chopped it up with your Axe. +1 Wood
+30%	2 Wood		- You spotted a sole standing fencing panel and hacked away with your Axe. +2 Wood
+20%	3 Wood		- You found and a tree. How rare! You felled it using your Axe. +3 Wood
+5%	4 Wood		- You used your Axe to break the lock on a warehouse door. Inside was a stack of Wood. +4 Wood
+5%	-1 HP		- You experienced a bit of a scare and momentarily dropped your Axe, damaging it.
+10%	-1 HP		- You came across a wooden door. You find out the door is metal, only after using your Axe and damaging it.
+
+WrenchLootTable
+20%	1 Scrap		- You were able to hit a jagged bit of metal with your Wrench out of a wall. +1 Scrap
+20%	2 Scrap		- Wrenching the bolts keeping a car together, you were able to salvage some scrap. +2 Scrap
+10%	3 Scrap		- Opening a fusebox with your Wrench granted you quite a few miscellaneous metal parts. +3 Scrap
+5%	4 Scrap		- Using the Wrench to get into a warehouse, you spotted a heap of scrap metal. +4 Scrap
+10%	1 Gun Parts	- You opened up a safe using your Wrench, finding a toolset within. +1 Toolset
+10%	1 Wood		- Using the Wrench as a bludgeon, you were able to take the wooden club off an assailant. +1 Wood
+25%	-1 HP		- The door you kept hitting doesn't want to budge, despite the damage done to the Wrench.
+
+KnifeLootTable
+10%	1 Cloth		- You found a defunct flag in some debris, cutting it with your Knife. +1 Cloth
+10%	1 Cloth		- You had a bit of a scuffle, but escaped with the a Knife-torn portion of the assailant's jacket. +1 Cloth
+15%	2 Cloth		- You found a pair of trousers in the ruins of a house. You tore it up with the Knife. +2 Cloth
+7%	3 Cloth		- You spotted a target for negotiations. You used the Knife. +3 Cloth
+3%	4 Cloth		- You scavenged a jacket off an attacker and repurposed it with the Knife. +4 Cloth
+12%	1 Scrap		- You loot the pockets of a scavenger fell by your Knife. +1 Scrap
+12%	1 Wood		- You loot the pockets of a scavenger fell by your Knife. +1 Wood
+8%	1 Wood, 1 Scrap	- You loot the pockets of a scavenger fell by your Knife. +1 Wood, +1 Scrap
+1%	1 Knife		- You defeated an assailant using your Knife, picking up theirs. +1 Knife
+2%	1 Wrench	- You defeated an assailant using your Knife, picking up their Wrench. +1 Wrench
+2%	1 Axe		- You defeated an assailant using your Knife, picking up their Axe. +1 Axe
+5%	1 Gun Parts	- You fought and won against someone. You salvaged what you could from the rusted firearm your foe was carrying. +1 Toolset
+13%	-1 HP		- You fought a knife-wielding assailant and retreated. The clash of metal damaged your knife.
+
+HeavyKnifeLootTable
+25%	1 Cloth		- You used your Heavy Knife to tear some fabric out of a run-down sofa. +1 Cloth
+20%	2 Cloth		- You ripped some cloth from a dead enemy's jacket using the Heavy Knife. +2 Cloth
+15%	3 Cloth		- Noticing his tiny Knife was no match for your Heavy Knife, a foe surrendered some materials. +3 Cloth
+10%	1 Gun Parts	- You managed to defeat a rusty gun-wielding opponent with your Heavy Knife. +1 Toolset
+10%	1 Scrap		- You subdue a scavenger using your Heavy Knife. You take what was in their pockets. +1 Scrap
+10%	1 Wood		- You subdue a scavenger using your Heavy Knife. You take what was in their pockets. +1 Wood
+5%	1 Scrap, 1 Wood	- Noticing his tiny Knife was no match for your Heavy Knife, a foe surrendered some materials. +1 Scrap, +1 Wood
+5%	-1 HP		- A bullet almost hit you, ricocheting off your Heavy Knife, damaging the blade. You ran away.
+
+GunLootTable
+16%	8 Scrap		- A warning shot furthered negotiations with a scavenger. They give you all they had. +8 Scrap
+16%	8 Wood		- A warning shot furthered negotiations with a scavenger. They give you all they had. +8 Wood
+16%	4 Cloth		- You took and repurposed the backpack of a scavenger fallen to your gunshot. +4 Cloth
+16%	5 Scrap, 5 Wood	- A scavenger falls from a shot of your Improvised Gun. They had a lot of stuff on them. +5 Scrap, +5 Wood
+16%	5 Potato	- You used your Improvised Gun to demand food from a scavenger. +5 Potatoes
+16%	3 Gun Parts	- You shot a well-armed survivor, recycling their improvised parts for some Toolsets. +3 Toolsets
+4%	-1 HP		- You missed a shot.

@@ -19,10 +19,8 @@ MonoBehaviour:
   - item:
     - id: 0
       count: 1
-    addedDesc: 'You found what remained of a park bench.
-
-      Using the Axe, you
-      obtained 1 Wood.'
+    addedDesc: "You found what remained of a park bench and chopped it up with your
+      Axe. \n+1 Wood"
     baseDes: 
     chance: 30
     onRoll:
@@ -33,10 +31,8 @@ MonoBehaviour:
   - item:
     - id: 0
       count: 2
-    addedDesc: 'You spotted a sole standing fencing panel.
-
-      Using the Axe,
-      you obtained 2 Wood.'
+    addedDesc: "You spotted a sole standing fencing panel and hacked away with your
+      Axe. \n+2 Wood"
     baseDes: 
     chance: 30
     onRoll:
@@ -47,10 +43,10 @@ MonoBehaviour:
   - item:
     - id: 0
       count: 3
-    addedDesc: 'You found a tree. How rare!
+    addedDesc: 'You found and a tree. How rare! You felled it using your Axe.
 
-      Using the Axe, you obtained 3
-      Wood.'
+      +3
+      Wood'
     baseDes: 
     chance: 20
     onRoll:
@@ -61,10 +57,8 @@ MonoBehaviour:
   - item:
     - id: 0
       count: 4
-    addedDesc: 'You stumbled across a locked warehouse.
-
-      Using the Axe to break
-      the lock, you found a stash of 4 Wood.'
+    addedDesc: "You used your Axe to break the lock on a warehouse door. Inside was
+      a stack of Wood. \n+4 Wood"
     baseDes: 
     chance: 5
     onRoll:
@@ -73,10 +67,8 @@ MonoBehaviour:
     hasOptions: 0
     options: {fileID: 0}
   - item: []
-    addedDesc: 'You experienced a bit of a scare.
-
-      You dropped your Axe, damaging
-      it.'
+    addedDesc: You experienced a bit of a scare and momentarily dropped your Axe,
+      damaging it.
     baseDes: 
     chance: 5
     onRoll:
@@ -85,10 +77,8 @@ MonoBehaviour:
     hasOptions: 0
     options: {fileID: 0}
   - item: []
-    addedDesc: 'You came across a wooden door.
-
-      You find out the door is metal,
-      using your Axe and damaging it.'
+    addedDesc: You came across a wooden door. You find out the door is metal, only
+      after using your Axe and damaging it.
     baseDes: 
     chance: 10
     onRoll:

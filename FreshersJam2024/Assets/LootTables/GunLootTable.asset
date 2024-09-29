@@ -19,7 +19,8 @@ MonoBehaviour:
   - item:
     - id: 1
       count: 8
-    addedDesc: 
+    addedDesc: "A warning shot furthered negotiations with a scavenger. They give
+      you all they had. \n+8 Scrap"
     baseDes: 
     chance: 16
     onRoll:
@@ -30,7 +31,8 @@ MonoBehaviour:
   - item:
     - id: 0
       count: 8
-    addedDesc: 
+    addedDesc: "A warning shot furthered negotiations with a scavenger. They give
+      you all they had. \n+8 Wood"
     baseDes: 
     chance: 16
     onRoll:
@@ -41,7 +43,8 @@ MonoBehaviour:
   - item:
     - id: 2
       count: 4
-    addedDesc: 
+    addedDesc: "You took and repurposed the backpack of a scavenger fallen to your
+      gunshot. \n+4 Cloth"
     baseDes: 
     chance: 16
     onRoll:
@@ -54,7 +57,8 @@ MonoBehaviour:
       count: 5
     - id: 0
       count: 5
-    addedDesc: 
+    addedDesc: "A scavenger falls from a shot of your Improvised Gun. They had a
+      lot of stuff on them. \n+5 Scrap, +5 Wood"
     baseDes: 
     chance: 16
     onRoll:
@@ -64,8 +68,9 @@ MonoBehaviour:
     options: {fileID: 0}
   - item:
     - id: 7
-      count: 2
-    addedDesc: 
+      count: 5
+    addedDesc: "You used your Improvised Gun to demand food from a scavenger. \n+5
+      Potatoes"
     baseDes: 
     chance: 16
     onRoll:
@@ -76,7 +81,8 @@ MonoBehaviour:
   - item:
     - id: 6
       count: 3
-    addedDesc: 
+    addedDesc: "You shot a well-armed survivor, recycling their improvised parts
+      for some Toolsets. \n+3 Toolsets"
     baseDes: 
     chance: 16
     onRoll:
@@ -85,7 +91,7 @@ MonoBehaviour:
     hasOptions: 0
     options: {fileID: 0}
   - item: []
-    addedDesc: 
+    addedDesc: You missed a shot.
     baseDes: 
     chance: 4
     onRoll:

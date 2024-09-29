@@ -2,9 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+//using Unity.VisualScripting;
+//using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 //using UnityEngine.UIElements;
 using UnityEngine.UI;
+
+[Serializable]
+public enum upgradeNames
+{
+    Backpack = 0,
+    farm = 1
+}
 
 [Serializable]
 public struct buttonsToItems
@@ -14,9 +23,17 @@ public struct buttonsToItems
 }
 
 [Serializable]
+public struct buttonsToUpgrades
+{
+    public GameObject button;
+    public upgradeNames uName;
+}
+
+[Serializable]
 public class CraftingManager : MonoBehaviour
 {
     public List<buttonsToItems> buttons;
+    public List<buttonsToUpgrades> upgradeButtons;
 
     GameObject backpack;
     List<GameObject> items;
@@ -31,6 +48,23 @@ public class CraftingManager : MonoBehaviour
         foreach(buttonsToItems buttonI in buttons)
         {
             buttonI.button.GetComponent<Button>().onClick.AddListener(() => craftItem(buttonI.item));
+        }
+
+        foreach(buttonsToUpgrades upgradeButton in upgradeButtons)
+        {
+            Debug.Log("upg button " + upgradeButton.uName);
+
+            if(upgradeButton.uName == upgradeNames.Backpack)
+            {
+                Debug.Log("got backpack button");
+                upgradeButton.button.GetComponent<Button>().onClick.AddListener(upgradeBackpack);
+
+            }
+            else if(upgradeButton.uName == upgradeNames.farm)
+            {
+                Debug.Log("got farm button");
+                upgradeButton.button.GetComponent<Button>().onClick.AddListener(upgradeFarm);
+            }
         }
 
         UpadteItems();
@@ -54,7 +88,7 @@ public class CraftingManager : MonoBehaviour
 
         Debug.Log("amount of items - " + items.Count);
 
-        foreach(buttonsToItems buttonI in buttons)
+        foreach (buttonsToItems buttonI in buttons)
         {
             GameObject button = buttonI.button;
 
@@ -63,16 +97,16 @@ public class CraftingManager : MonoBehaviour
             GameObject item = button.GetComponent<ItemButton>().item;
 
             //get the items needed
-            foreach(craftingItem craftItem in craftingList)
+            foreach (craftingItem craftItem in craftingList)
             {
-                if(craftItem.itemToCraft == item)
+                if (craftItem.itemToCraft == item)
                 {
                     //Debug.Log("item to craft - " + craftItem.itemToCraft.name);
-                    foreach(theItemsToCraftWith itemToCraftW in craftItem.itemsToCraftWith)
+                    foreach (theItemsToCraftWith itemToCraftW in craftItem.itemsToCraftWith)
                     {
                         //Debug.Log("item to craft with - " + itemToCraftW.itemToCraftWith.name);
                         int itemAmount = 0;
-                        foreach(GameObject anItem in items)
+                        foreach (GameObject anItem in items)
                         {
                             if (anItem.GetComponentInChildren<Item>().itemId == itemToCraftW.itemToCraftWith.GetComponentInChildren<Item>().itemId)
                             {
@@ -81,7 +115,7 @@ public class CraftingManager : MonoBehaviour
                         }
                         //Debug.Log("amount in level - " + itemAmount);
 
-                        if(itemToCraftW.amount > itemAmount)
+                        if (itemToCraftW.amount > itemAmount)
                         {
                             craftable = false;
                             //Debug.Log("no crafty");
@@ -105,6 +139,64 @@ public class CraftingManager : MonoBehaviour
             //Canvas.ForceUpdateCanvases();
         }
     }
+
+    //public void checkUpgradesCraftable()
+    //{
+    //    //items = GameObject.FindGameObjectsWithTag("Item").ToList();
+
+    //    Debug.Log("amount of items - " + items.Count);
+
+    //    foreach (buttonsToItems buttonI in buttons)
+    //    {
+    //        GameObject button = buttonI.button;
+
+    //        bool craftable = true;
+    //        //the item to craft
+    //        GameObject item = button.GetComponent<ItemButton>().item;
+
+    //        //get the items needed
+    //        foreach (craftingItem craftItem in craftingList)
+    //        {
+    //            if (craftItem.itemToCraft == item)
+    //            {
+    //                //Debug.Log("item to craft - " + craftItem.itemToCraft.name);
+    //                foreach (theItemsToCraftWith itemToCraftW in craftItem.itemsToCraftWith)
+    //                {
+    //                    //Debug.Log("item to craft with - " + itemToCraftW.itemToCraftWith.name);
+    //                    int itemAmount = 0;
+    //                    foreach (GameObject anItem in items)
+    //                    {
+    //                        if (anItem.GetComponentInChildren<Item>().itemId == itemToCraftW.itemToCraftWith.GetComponentInChildren<Item>().itemId)
+    //                        {
+    //                            itemAmount++;
+    //                        }
+    //                    }
+    //                    //Debug.Log("amount in level - " + itemAmount);
+
+    //                    if (itemToCraftW.amount > itemAmount)
+    //                    {
+    //                        craftable = false;
+    //                        //Debug.Log("no crafty");
+    //                    }
+    //                }
+    //                break;
+    //            }
+    //        }
+
+    //        if (craftable)
+    //        {
+    //            button.GetComponent<Button>().interactable = true;
+    //            //Debug.Log(item.name + " craftable");
+    //        }
+    //        else
+    //        {
+    //            button.GetComponent<Button>().interactable = false;
+    //            //Debug.Log(item.name + " not craftable");
+    //        }
+
+    //        //Canvas.ForceUpdateCanvases();
+    //    }
+    //}
 
     public void craftItem(GameObject item)
     {
@@ -152,5 +244,16 @@ public class CraftingManager : MonoBehaviour
         }
 
         checkCraftable();
+    }
+
+    public void upgradeBackpack()
+    {
+        backpack.GetComponent<backpack>().UpgradeBackPack(0.5f);
+        Debug.Log("Upgrade backpack hit");
+    }
+
+    public void upgradeFarm()
+    {
+        Debug.Log("Upgradefarm hit");
     }
 }

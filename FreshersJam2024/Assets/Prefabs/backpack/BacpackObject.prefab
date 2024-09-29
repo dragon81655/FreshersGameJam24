@@ -117,6 +117,19 @@ MonoBehaviour:
   - {x: 0.4, y: 0.4, z: 0.4}
   - {x: 0.5, y: 0.5, z: 0.5}
   backpackUpgradeAmounts: 020000000300000004000000
+  craftingUpgradeList:
+  - name: 0
+    itemsToCraftWith:
+    - itemToCraftWith: {fileID: 43980049618277257, guid: dc880e356428c4242b4a6956c0a5e814, type: 3}
+      amount: 4
+    - itemToCraftWith: {fileID: 9079123634513935674, guid: 314d85223814bfb4da9b2ef9ee68f3c5, type: 3}
+      amount: 3
+  - name: 1
+    itemsToCraftWith:
+    - itemToCraftWith: {fileID: 2236597399989580576, guid: 5bc75268f409a854ab8680c7c8a57625, type: 3}
+      amount: 4
+    - itemToCraftWith: {fileID: 9079123634513935674, guid: 314d85223814bfb4da9b2ef9ee68f3c5, type: 3}
+      amount: 4
   backpackCraftingItem: {fileID: 43980049618277257, guid: dc880e356428c4242b4a6956c0a5e814, type: 3}
 --- !u!1 &2903806701337363380
 GameObject:
