@@ -19,7 +19,8 @@ MonoBehaviour:
   - item:
     - id: 2
       count: 1
-    addedDesc: 
+    addedDesc: "You used your Heavy Knife to tear some fabric out of a run-down sofa.
+      \n+1 Cloth"
     baseDes: 
     chance: 25
     onRoll:
@@ -30,7 +31,8 @@ MonoBehaviour:
   - item:
     - id: 2
       count: 2
-    addedDesc: 
+    addedDesc: "You ripped some cloth from a dead enemy's jacket using the Heavy
+      Knife. \n+2 Cloth"
     baseDes: 
     chance: 20
     onRoll:
@@ -41,7 +43,8 @@ MonoBehaviour:
   - item:
     - id: 2
       count: 3
-    addedDesc: 
+    addedDesc: "Noticing his tiny Knife was no match for your Heavy Knife, a foe
+      surrendered some materials. \n+3 Cloth"
     baseDes: 
     chance: 15
     onRoll:
@@ -52,7 +55,8 @@ MonoBehaviour:
   - item:
     - id: 6
       count: 1
-    addedDesc: 
+    addedDesc: "You managed to defeat a gun-wielding opponent with your Heavy Knife.
+      \n+1 Toolset"
     baseDes: 
     chance: 10
     onRoll:
@@ -63,7 +67,8 @@ MonoBehaviour:
   - item:
     - id: 1
       count: 1
-    addedDesc: 
+    addedDesc: "You subdue a scavenger using your Heavy Knife. You take what was
+      in their pockets. \n+1 Scrap"
     baseDes: 
     chance: 10
     onRoll:
@@ -74,7 +79,8 @@ MonoBehaviour:
   - item:
     - id: 0
       count: 1
-    addedDesc: 
+    addedDesc: "You subdue a scavenger using your Heavy Knife. You take what was
+      in their pockets. \n+1 Wood"
     baseDes: 
     chance: 10
     onRoll:
@@ -87,7 +93,8 @@ MonoBehaviour:
       count: 1
     - id: 0
       count: 1
-    addedDesc: 
+    addedDesc: "Noticing his tiny Knife was no match for your Heavy Knife, a foe
+      surrendered some materials. \n+1 Scrap, +1 Wood"
     baseDes: 
     chance: 5
     onRoll:
@@ -96,7 +103,8 @@ MonoBehaviour:
     hasOptions: 0
     options: {fileID: 0}
   - item: []
-    addedDesc: 
+    addedDesc: A bullet almost hit you, ricocheting off your Heavy Knife, damaging
+      the blade. You ran away.
     baseDes: 
     chance: 5
     onRoll:

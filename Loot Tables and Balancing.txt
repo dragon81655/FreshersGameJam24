@@ -1,8 +1,4 @@
 Unfinished:
-UnarmedLootTable
- - Flavour text
-WrenchLootTable
- - Flavour text
 HeavyKnifeLootTable
  - Flavour text
 GunLootTable
@@ -127,7 +123,7 @@ GunLootTable
 16%	32^	8 Wood
 16%	48^	4 Cloth
 16%	64^	5 Scrap, 5 Wood
-16%	80^	2 Potato
+16%	80^	5 Potato
 16%	96^	3 Gun Parts
 4%	100^	-1 Gun HP
 
@@ -137,5 +133,5 @@ Avg ([resource]/roll):
 2.08 Scrap
 2.08 Wood
 0.64 Cloth
-0.32 Potato
+0.8 Potato
 0.48 Gun Parts
