@@ -24,7 +24,7 @@ public class BaseStorageRoom : BaseUpgradableRoom
         // Activate door button click possibility for door
         TilemapCollider2D storageTileMapCollider = storageTileMap.GetComponent<TilemapCollider2D>();
 
-        if (storageTileMapCollider.isActiveAndEnabled)
+        if (storageTileMapCollider.gameObject.activeInHierarchy)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -52,5 +52,12 @@ public class BaseStorageRoom : BaseUpgradableRoom
     void OpenCraftingMenu()
     {
         Debug.Log("Opening Crafting Meu");
+    }
+
+    public override void UpgradeRoom()
+    {
+        base.UpgradeRoom();
+
+        UpgradesStaticClass.storageRoomLvl++;
     }
 }

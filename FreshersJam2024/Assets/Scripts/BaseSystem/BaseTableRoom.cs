@@ -17,16 +17,23 @@ public class BaseTableRoom : BaseRoom
     // Update is called once per frame
     void Update()
     {
-        
+        // if (NewFamilyMemberFound)
+        //{
+        //  for
+        //  AddFamilymember();
+        //}
+
     }
 
     protected override void OnRoomEntered()
     {
-        // Activate crafting button click possibility for backpack and chest
     }
 
-    void AddFamilyMember() 
+    void AddFamilyMember()
     { 
-    
+        if (FamilyMembersSprites.Count <= 3) 
+        {
+            FamilyMembersSprites.Add(new SpriteRenderer());
+        }
     }
 }

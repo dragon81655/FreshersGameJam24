@@ -26,7 +26,7 @@ public class BaseDoorRoom : BaseRoom
 
         if (doorTileMapCollider != null ) 
         { 
-            if (doorTileMapCollider.isActiveAndEnabled)
+            if (doorTileMapCollider.gameObject.activeInHierarchy)
             {
                 if(Input.GetMouseButtonDown(0)) 
                 {
@@ -50,10 +50,7 @@ public class BaseDoorRoom : BaseRoom
         TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
 
         // Activate the collider for the door
-        if(!doorTileMapCollider.isActiveAndEnabled) 
-        {
-            doorTileMapCollider.gameObject.SetActive(true);            
-        }        
+        doorTileMapCollider.gameObject.SetActive(true);
     }
 
     protected override void OnRoomExited() 

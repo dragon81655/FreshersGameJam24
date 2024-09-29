@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7690911615221558594}
   - component: {fileID: 1605719160697021125}
   - component: {fileID: 5236409616759738263}
+  - component: {fileID: 1652222617675805857}
   m_Layer: 0
   m_Name: BigKnife
   m_TagString: Item
@@ -101,8 +102,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.7199576, y: 2.0773513}
-  m_Radius: 0.36597705
+  m_Offset: {x: 1.7199576, y: 2.0421083}
+  m_Radius: 0.4012199
 --- !u!58 &3519522101483708011
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,8 +138,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.2173727, y: 1.351395}
-  m_Radius: 0.5000001
+  m_Offset: {x: 1.2173725, y: 1.3102787}
+  m_Radius: 0.5411171
 --- !u!58 &1864750369908121312
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -173,8 +174,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.61427075, y: 0.63660765}
-  m_Radius: 0.52233744
+  m_Offset: {x: 0.58490175, y: 0.6366077}
+  m_Radius: 0.55170655
 --- !u!58 &981295687617192319
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -209,8 +210,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.34622514, y: -0.8264731}
-  m_Radius: 0.6005169
+  m_Offset: {x: -0.26986557, y: -0.8264731}
+  m_Radius: 0.6768765
 --- !u!58 &7690911615221558594
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -245,8 +246,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0.058738142, y: 0}
+  m_Radius: 0.5587381
 --- !u!58 &1605719160697021125
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -319,6 +320,52 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -1.4407433, y: -1.999171}
   m_Radius: 0.47766352
+--- !u!61 &1652222617675805857
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093083384644202469}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.72247916, y: -0.1233501}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.51834714, y: 0.44786146}
+  m_EdgeRadius: 0
 --- !u!1 &4596891082501883175
 GameObject:
   m_ObjectHideFlags: 0
