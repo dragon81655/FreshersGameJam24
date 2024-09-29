@@ -44,7 +44,5 @@ public class BaseFarmRoom : BaseUpgradableRoom
 
         // Increase max potatoes quantity we can collect
         PotatoesPerDayQuantity += PotatoesUpdateQuantity;
-
-        UpgradesStaticClass.farmRoomLvl++;
     }
 }
