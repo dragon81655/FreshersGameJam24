@@ -53,4 +53,11 @@ public class BaseStorageRoom : BaseUpgradableRoom
     {
         Debug.Log("Opening Crafting Meu");
     }
+
+    public override void UpgradeRoom()
+    {
+        base.UpgradeRoom();
+
+        UpgradesStaticClass.storageRoomLvl++;
+    }
 }

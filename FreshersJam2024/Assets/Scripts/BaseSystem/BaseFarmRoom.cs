@@ -35,7 +35,6 @@ public class BaseFarmRoom : BaseUpgradableRoom
 
     public void CollectPotatoes()
     {
-        base.resourcesManager.potatoes += MaxPotatoesQuantity;
     }
 
     public override void UpgradeRoom()
@@ -45,5 +44,7 @@ public class BaseFarmRoom : BaseUpgradableRoom
 
         // Increase max potatoes quantity we can collect
         PotatoesPerDayQuantity += PotatoesUpdateQuantity;
+
+        UpgradesStaticClass.farmRoomLvl++;
     }
 }
