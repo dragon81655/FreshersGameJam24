@@ -14,15 +14,20 @@ public class BaseRoom : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void BaseRoomUpdate()
     {
         if (CameraManager.instance.HasZoomedIn)
         {
             OnRoomEntered();
         }
+        else
+        {
+            OnRoomExited();
+        }
     }
 
     protected virtual void OnRoomEntered(){}
+    protected virtual void OnRoomExited() { }
 
     public Vector3 GetTilemapCenter()
     {

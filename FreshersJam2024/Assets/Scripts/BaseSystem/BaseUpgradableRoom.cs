@@ -12,6 +12,9 @@ public class BaseUpgradableRoom : BaseRoom
 
     protected ResourceManager resourcesManager;
 
+    [SerializeField]
+    List<Item> upgradeItemsNeeded;
+
     // Cost to upgrade to the next level
 
     // Start is called before the first frame update
