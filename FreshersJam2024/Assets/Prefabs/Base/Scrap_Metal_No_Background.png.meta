@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Scrap_Metal_No_Background_0: -5669312308800952938
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
