@@ -44,6 +44,7 @@ public class ExplorationManager : MonoBehaviour
 
     public void NextTurn()
     {
+        if(!backpackC) backpackC = GameObject.Find("BacpackObject").GetComponent<backpack>();
         List<Item> items = backpackC.getItemsInBag()[PseudoItemId.Potato];
         if (items.Count == 0)
         {

@@ -16,6 +16,7 @@ public class SceneManagerGame : MonoBehaviour
     }
     public void ChangeScene(int i)
     {
+        Debug.Log("Before invoke");
         onExit.Invoke();
         SceneManager.LoadScene(i);
     }

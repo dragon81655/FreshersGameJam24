@@ -7,10 +7,18 @@ public class ItemActivatorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject b =GameObject.Find("ItemActivator");
-        if (b)
+    }
+    int a = 0;
+    private void Update()
+    {
+        if(a == 0)
         {
-            b.GetComponent<ItemActivator>().TurnOn();
+            GameObject b = GameObject.Find("ItemActivator");
+            if (b)
+            {
+                b.GetComponent<ItemActivator>().TurnOn();
+            }
+            a++;        
         }
     }
 }

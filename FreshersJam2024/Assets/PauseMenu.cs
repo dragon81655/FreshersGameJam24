@@ -21,6 +21,9 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMeunu()
     {
+        GameObject ia = GameObject.Find("ItemActivator");
+        ia.GetComponent<ItemActivator>().TurnOn();
+        Destroy(ia);
         DestroyDontDestroyOnLoadScene();
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Item"))
         {

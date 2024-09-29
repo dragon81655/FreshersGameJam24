@@ -22,9 +22,9 @@ public class BaseDoorRoom : BaseRoom
         BaseRoomUpdate();
 
         // Activate door button click possibility for door
-        TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
+        //TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
 
-        if (doorTileMapCollider != null ) 
+        /*if (doorTileMapCollider != null ) 
         { 
             if (doorTileMapCollider.gameObject.activeInHierarchy)
             {
@@ -41,25 +41,25 @@ public class BaseDoorRoom : BaseRoom
                 }
                 
             }
-        }
+        }*/
     }
 
     protected override void OnRoomEntered()
     {
         // Get door collider for click possibility for door
-        TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
+        //TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
 
         // Activate the collider for the door
-        doorTileMapCollider.enabled = true;
+        //doorTileMapCollider.enabled = true;
     }
 
     protected override void OnRoomExited() 
     {
         // Get door collider for click possibility for door
-        TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
+        //TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
 
         // Activate the collider for the door
-        doorTileMapCollider.enabled = false;
+        //doorTileMapCollider.enabled = false;
     }
 
     void OpenDoor()

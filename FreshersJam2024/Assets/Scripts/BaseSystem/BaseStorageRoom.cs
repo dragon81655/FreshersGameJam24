@@ -9,6 +9,8 @@ public class BaseStorageRoom : BaseUpgradableRoom
     [SerializeField]
     Tilemap storageTileMap;
 
+    [SerializeField] private int craftingMenuScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +64,8 @@ public class BaseStorageRoom : BaseUpgradableRoom
 
     void OpenCraftingMenu()
     {
-        Debug.Log("Opening Crafting Meu");
+        GameObject.Find("SceneManager")?.GetComponent<SceneManagerGame>().ChangeScene(craftingMenuScene);
+
     }
 
     public override void UpgradeRoom()

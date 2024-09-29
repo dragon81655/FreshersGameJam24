@@ -7,8 +7,7 @@ public class ItemActivator : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject[] gos;
-    public List<GameObject> toControl;
-    void Start()
+    void Awake()
     {
         CheckForNewItems();
         DontDestroyOnLoad(gameObject);
@@ -17,32 +16,51 @@ public class ItemActivator : MonoBehaviour
     {
         gos = GameObject.FindGameObjectsWithTag("Item");
     }
-
     public void TurnOff()
     {
+        Debug.Log("Reaching turn off point!");
+        Debug.Log(gos);
         foreach (GameObject go in gos)
         {
-            if(go!= null)
-            go.SetActive(false);
+            Debug.Log("Try to turn off item");
+            if (go != null)
+            {
+                Debug.Log("Foreach in turn off");
+                go.GetComponent<Rigidbody2D>().simulated = false;
+                go.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            }
         }
-        foreach(GameObject go in toControl)
-        {
-            go.SetActive(false);
-        }
+        GameObject go2 = GameObject.Find("Bag_No_Background_0");
+        Debug.Log(go2.name);
+
+        if (go2!= null)
+            {
+                go2.GetComponentInChildren<SpriteRenderer>().enabled = false;
+
+            }
+        
     }
 
     public void TurnOn()
     {
+        Debug.Log(gos.Length);
+        CheckForNewItems();
         foreach (GameObject go in gos)
         {
+            Debug.Log("Try to turn on item");
             if(go!= null)
             {
-                go.SetActive(true);
+                Debug.Log("Check foreach in turnon");
+                go.GetComponent<Rigidbody2D>().simulated = true;
+                go.GetComponentInChildren<SpriteRenderer>().enabled = true;
             }
         }
-        foreach (GameObject go in toControl)
+        GameObject go2 = GameObject.Find("Bag_No_Background_0");
+        Debug.Log(go2.name);
+        if (go2 != null)
         {
-            go.SetActive(true);
+            go2.GetComponentInChildren<SpriteRenderer>().enabled = true;
+
         }
     }
 }
