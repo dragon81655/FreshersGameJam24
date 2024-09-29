@@ -994,6 +994,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: lootTableBases.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e57802221d1920a4eaaf176c98032325, type: 2}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d0ab1a884e08ae40bb7564e33044545, type: 2}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b64b3fc77351e04e8d76a9a6e9f9ff0, type: 2}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c573312bc27d0345bbc4f697dae6497, type: 2}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d4512b392bc20c4681629d4389c4934, type: 2}
+    - target: {fileID: 9187970315094904573, guid: 78b0e970ea5077941baa867e1d0d7aed, type: 3}
+      propertyPath: 'lootTableBases.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 194c1108cbec2004d828943baee49efc, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
