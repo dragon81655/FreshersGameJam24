@@ -28,13 +28,13 @@ public class Item : MonoBehaviour
     public void tintItem()
     {
         GetComponent<Renderer>().material.color = tintColor;
-        Debug.Log("tinted!");
+        //Debug.Log("tinted!");
     }
 
     public void untintItem()
     {
         GetComponent<Renderer>().material.color = origonalColor;
-        Debug.Log("untinted!");
+        //Debug.Log("untinted!");
     }
 
     public void reduceDurability()

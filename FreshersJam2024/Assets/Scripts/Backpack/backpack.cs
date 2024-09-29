@@ -15,10 +15,18 @@ public struct theItemsToCraftWith
     public GameObject itemToCraftWith;
     public int amount;
 }
+
 [Serializable]
 public struct craftingItem
 {
     public GameObject itemToCraft;
+    public List<theItemsToCraftWith> itemsToCraftWith;
+}
+
+[Serializable]
+public struct craftingUpgrade
+{
+    public upgradeNames name;
     public List<theItemsToCraftWith> itemsToCraftWith;
 }
 
@@ -33,6 +41,7 @@ public class backpack : MonoBehaviour
 
     public List<Vector3> backPackUpgradeScales;
     public List<int> backpackUpgradeAmounts;
+    public List<craftingUpgrade> craftingUpgradeList;
     public GameObject backpackCraftingItem;
     int backpackAtUpgrade = 0;
 
@@ -54,6 +63,7 @@ public class backpack : MonoBehaviour
     }
     public void UpgradeBackPack(float factor)
     {
+        Debug.Log("UpgradeBackPack hit");
         foreach(List<Item> item in itemList.Values)
         {
             foreach(Item item2 in item)
