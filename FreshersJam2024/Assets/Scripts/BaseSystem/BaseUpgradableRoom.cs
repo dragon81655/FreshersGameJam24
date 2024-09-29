@@ -13,7 +13,7 @@ public class BaseUpgradableRoom : BaseRoom
     protected ResourceManager resourcesManager;
 
     [SerializeField]
-    List<Item> upgradeItemsNeeded;
+    List<ListItemsItem> upgradeItemsNeeded;
 
     // Cost to upgrade to the next level
 
