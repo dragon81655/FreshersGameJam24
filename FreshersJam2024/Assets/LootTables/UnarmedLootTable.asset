@@ -19,7 +19,7 @@ MonoBehaviour:
   - item:
     - id: 1
       count: 1
-    addedDesc: 
+    addedDesc: "You found a bit of old metal on the ground. \n+1 Scrap"
     baseDes: 
     chance: 20
     onRoll:
@@ -30,7 +30,7 @@ MonoBehaviour:
   - item:
     - id: 0
       count: 1
-    addedDesc: 
+    addedDesc: "You picked up a twig on the side of the road. \n+1 Wood"
     baseDes: 
     chance: 24
     onRoll:
@@ -41,7 +41,8 @@ MonoBehaviour:
   - item:
     - id: 2
       count: 1
-    addedDesc: 
+    addedDesc: "You spotted a loose bit of curtain and were able to tear it off.
+      \n+1 Cloth"
     baseDes: 
     chance: 10
     onRoll:
@@ -54,7 +55,8 @@ MonoBehaviour:
       count: 1
     - id: 0
       count: 1
-    addedDesc: 
+    addedDesc: "You found a broken trowel in a bin. Dissassembly was easy. \n+1 Scrap,
+      +1 Wood"
     baseDes: 
     chance: 10
     onRoll:
@@ -65,7 +67,8 @@ MonoBehaviour:
   - item:
     - id: 4
       count: 1
-    addedDesc: 
+    addedDesc: "Stopping by the fire department, you noticed an unscavenged Axe.
+      \n+1 Axe"
     baseDes: 
     chance: 2
     onRoll:
@@ -76,7 +79,7 @@ MonoBehaviour:
   - item:
     - id: 5
       count: 1
-    addedDesc: 
+    addedDesc: "You peeked under a car bonnet and was greeted by a Wrench. \n+1 Wrench"
     baseDes: 
     chance: 2
     onRoll:
@@ -87,7 +90,8 @@ MonoBehaviour:
   - item:
     - id: 3
       count: 1
-    addedDesc: 
+    addedDesc: A steak knife caught your attention while rummaging through a kitchen.
+      +1 Knife
     baseDes: 
     chance: 2
     onRoll:
@@ -96,7 +100,7 @@ MonoBehaviour:
     hasOptions: 0
     options: {fileID: 0}
   - item: []
-    addedDesc: 
+    addedDesc: You found nothing while wandering around.
     baseDes: 
     chance: 30
     onRoll:
