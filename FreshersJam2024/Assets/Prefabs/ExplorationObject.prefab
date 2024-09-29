@@ -47,10 +47,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTableBases:
+  - {fileID: 11400000, guid: e57802221d1920a4eaaf176c98032325, type: 2}
   - {fileID: 11400000, guid: 0d0ab1a884e08ae40bb7564e33044545, type: 2}
+  - {fileID: 11400000, guid: 4b64b3fc77351e04e8d76a9a6e9f9ff0, type: 2}
   - {fileID: 11400000, guid: 7c573312bc27d0345bbc4f697dae6497, type: 2}
-  - {fileID: 11400000, guid: fc239924127452e48b9c26e808b5d807, type: 2}
-  - {fileID: 11400000, guid: c13aa5016d9ff8e4abe571541c88b54e, type: 2}
+  - {fileID: 11400000, guid: 1d4512b392bc20c4681629d4389c4934, type: 2}
+  - {fileID: 11400000, guid: 194c1108cbec2004d828943baee49efc, type: 2}
 --- !u!114 &3489549314056909247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,8 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6214806f465fa4da64df482ac53ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeToTriggerEvent: 3
-  maxTimeToTriggerEvent: 7
+  currentTurn: 0
   exploring: 0
   wishToStop: 0
   pseudoPotatos: 3
@@ -85,7 +86,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ExplorationLogUIController, Assembly-CSharp
-        m_MethodName: NewLootTableSelected
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -98,3 +99,4 @@ MonoBehaviour:
   onExplorationStarted:
     m_PersistentCalls:
       m_Calls: []
+  logs: {fileID: 0}
