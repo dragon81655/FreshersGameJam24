@@ -24,19 +24,21 @@ public class BaseStorageRoom : BaseUpgradableRoom
         // Activate door button click possibility for door
         TilemapCollider2D storageTileMapCollider = storageTileMap.GetComponent<TilemapCollider2D>();
 
-        if (storageTileMapCollider.gameObject.activeInHierarchy)
+        if (storageTileMapCollider != null)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (storageTileMapCollider.gameObject.activeInHierarchy)
             {
-                Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector3Int tilePos = storageTileMap.WorldToCell(mouseWorldPos);
-
-                if (storageTileMap.HasTile(tilePos))
+                if (Input.GetMouseButtonDown(0))
                 {
-                    OpenCraftingMenu();
-                }                
-            }
+                    Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Vector3Int tilePos = storageTileMap.WorldToCell(mouseWorldPos);
 
+                    if (storageTileMap.HasTile(tilePos))
+                    {
+                        OpenCraftingMenu();
+                    }
+                }
+            }
         }
     }
 
@@ -47,6 +49,15 @@ public class BaseStorageRoom : BaseUpgradableRoom
 
         // Activate the collider for the door
         storageTileMapCollider.gameObject.SetActive(true);
+    }
+
+    protected override void OnRoomExited()
+    {
+        // Get door collider for click possibility for door
+        TilemapCollider2D storageTileMapCollider = storageTileMap.GetComponent<TilemapCollider2D>();
+
+        // Activate the collider for the door
+        storageTileMap.enabled = false;
     }
 
     void OpenCraftingMenu()

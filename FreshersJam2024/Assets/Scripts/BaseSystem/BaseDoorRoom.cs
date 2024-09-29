@@ -50,7 +50,7 @@ public class BaseDoorRoom : BaseRoom
         TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
 
         // Activate the collider for the door
-        doorTileMapCollider.gameObject.SetActive(true);
+        doorTileMapCollider.enabled = true;
     }
 
     protected override void OnRoomExited() 
@@ -59,7 +59,7 @@ public class BaseDoorRoom : BaseRoom
         TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
 
         // Activate the collider for the door
-        doorTileMapCollider.gameObject.SetActive(false);
+        doorTileMapCollider.enabled = false;
     }
 
     void OpenDoor()
