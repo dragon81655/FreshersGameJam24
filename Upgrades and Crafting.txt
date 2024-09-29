@@ -20,6 +20,13 @@ Backpack Upgrades: (+25% area each level, in u^2 (arbitrary units, equal to Stor
 4. 15 Cloth, 5 Scrap		- 8.4:9.8	(82.0)
 5. 20 Cloth, 2 Gun Parts	- 9.4:11.0	(102.5)
 
+Temporary Storage & Backpack Upgrades: (+50% area each level (-33.3% item scale))
+1. N/A (start w/ it)
+2. 5 Cloth, 5 Scrap
+3. 8 Cloth, 8 Scrap, 3 Wood
+4. 12 Cloth, 12 Scrap, 8 Wood
+5. 15 Cloth, 15 Scrap, 2 Gun Parts
+
 --------------------------------------------------------------------------------------------
 
 Key: 
