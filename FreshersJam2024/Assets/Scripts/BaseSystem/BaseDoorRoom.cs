@@ -18,6 +18,8 @@ public class BaseDoorRoom : BaseRoom
     // Update is called once per frame
     void Update()
     {
+        // Call the update from room parent class
+        BaseRoomUpdate();
 
         // Activate door button click possibility for door
         TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
@@ -26,7 +28,18 @@ public class BaseDoorRoom : BaseRoom
         { 
             if (doorTileMapCollider.isActiveAndEnabled)
             {
-                OpenDoor();
+                if(Input.GetMouseButtonDown(0)) 
+                {
+                    Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Vector3Int tilePos = doorTileMap.WorldToCell(mouseWorldPos);
+
+                    if (doorTileMap.HasTile(tilePos)) 
+                    {
+                        OpenDoor();
+                    }
+                    
+                }
+                
             }
         }
     }
@@ -36,15 +49,24 @@ public class BaseDoorRoom : BaseRoom
         // Get door collider for click possibility for door
         TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
 
-        if (CameraManager.instance.HasZoomedIn)
+        // Activate the collider for the door
+        if(!doorTileMapCollider.isActiveAndEnabled) 
         {
-            // Activate the collider for the door
-            doorTileMapCollider.gameObject.SetActive(true);
-        }
+            doorTileMapCollider.gameObject.SetActive(true);            
+        }        
+    }
+
+    protected override void OnRoomExited() 
+    {
+        // Get door collider for click possibility for door
+        TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
+
+        // Activate the collider for the door
+        doorTileMapCollider.gameObject.SetActive(false);
     }
 
     void OpenDoor()
     {
-
+        Debug.Log("Door Opened. Start Exploration");
     }
 }
