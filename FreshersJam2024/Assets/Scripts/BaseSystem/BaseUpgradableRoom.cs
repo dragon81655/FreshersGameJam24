@@ -12,10 +12,9 @@ public class BaseUpgradableRoom : BaseRoom
 
     protected ResourceManager resourcesManager;
 
+    // Cost to upgrade to the next level
     [SerializeField]
     List<ListItemsItem> upgradeItemsNeeded;
-
-    // Cost to upgrade to the next level
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +30,13 @@ public class BaseUpgradableRoom : BaseRoom
 
     public virtual void UpgradeRoom()
     {
-    }
-
-    void GetUpgradeCost()
-    {
-
+        if(upgradeItemsNeeded.Count == 0)
+        {
+            Debug.Log("Upgrade Room");
+        }
+        else 
+        {
+            Debug.Log("Materials Still Needed");
+        }
     }
 }
