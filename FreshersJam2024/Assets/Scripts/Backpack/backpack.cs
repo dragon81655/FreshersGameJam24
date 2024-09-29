@@ -3,15 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
-using Unity.VisualScripting;
-using Unity.VisualScripting.ReorderableList;
 using UnityEditor;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
-using static UnityEditor.Progress;
-using static UnityEditor.Timeline.Actions.MenuPriority;
+
 
 [Serializable]
 public struct theItemsToCraftWith
