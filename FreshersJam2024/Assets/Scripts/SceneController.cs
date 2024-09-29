@@ -5,8 +5,11 @@ using UnityEngine;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private int i;
+    SceneManagerGame game;
     private void Start()
     {
-        SceneManagerGame.ChangeScene(i);   
+        game = GetComponent<SceneManagerGame>();
+        if(game)
+        game.ChangeScene(i);   
     }
 }

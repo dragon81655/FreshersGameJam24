@@ -61,7 +61,7 @@ public class ExplorationManager : MonoBehaviour
 
     public void QuitExploring(int scene)
     {
-        SceneManagerGame.ChangeScene(scene);
+        GameObject.Find("SceneManager").GetComponent<SceneManagerGame>().ChangeScene(scene);
         gameObject.SetActive(false);
     }
 

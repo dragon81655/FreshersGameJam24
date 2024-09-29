@@ -19,7 +19,6 @@ public class ItemDragController : MonoBehaviour
     {
 
         PauseMenu.toDestroy.Add(gameObject);
-
         DontDestroyOnLoad(gameObject);
     }
 

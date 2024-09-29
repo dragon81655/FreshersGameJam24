@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SceneManagerGame : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private UnityEvent onExit;
     void Start()
     {
         PauseMenu.toDestroy.Add(gameObject);
         DontDestroyOnLoad(gameObject);
     }
-
-    public static void ChangeScene(int i)
+    public void ChangeScene(int i)
     {
+        onExit.Invoke();
         SceneManager.LoadScene(i);
     }
 

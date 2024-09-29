@@ -9,13 +9,19 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 104c0d44a278d234d82210624d6788af
   - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: 8465a167ba49bc04f9805351198aea86
+  - enabled: 1
     path: Assets/Scenes/LoadingDNDObjectsScene.unity
     guid: 972e47af392217547ab3b006c158502b
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/DevelopmentScenes/MainBaseDevelopment.unity
+    guid: 89ba6c7b008fb2d4e9ece7c6133ae892
   - enabled: 1
     path: Assets/Scenes/ExplorationScene.unity
     guid: 53ee415f64306374e8c3543f78b6d176
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: ca759630336d1b54890bdadb54ac6a24
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
