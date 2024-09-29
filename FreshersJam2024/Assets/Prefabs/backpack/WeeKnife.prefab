@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 3442743148668816794}
   - component: {fileID: 3687225418335761487}
   - component: {fileID: 995744462930057258}
+  - component: {fileID: 2098407998052422508}
   m_Layer: 0
   m_Name: Steak_Knife_2.0_0
   m_TagString: Untagged
@@ -442,3 +443,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.020517984, y: 0}
   m_Radius: 0.24077699
+--- !u!114 &2098407998052422508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2663105208102364815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db416ec40e3d4e4685f1263f4e96a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 3
+  durability: 12
+  tintColor: {r: 0, g: 0, b: 0, a: 0}
+  origonalColor: {r: 0, g: 0, b: 0, a: 0}

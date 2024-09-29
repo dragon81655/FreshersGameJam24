@@ -382,6 +382,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 8
-  durability: 3
+  durability: 6
   tintColor: {r: 1, g: 0.42352942, b: 0.42352942, a: 1}
   origonalColor: {r: 1, g: 1, b: 1, a: 1}
