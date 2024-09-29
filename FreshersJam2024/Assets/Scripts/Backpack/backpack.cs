@@ -119,21 +119,24 @@ public class backpack : MonoBehaviour
         return itemList;
     }
 
-    public void addItemsToBag(List<Item> items)
+    public GameObject addItemsToBag(List<Item> items)
     {
-
-        foreach(Item it in items)
+        GameObject item2 = new GameObject();
+        foreach (Item it in items)
         {
             foreach (GameObject pr in prefabs)
             {
                 if (pr.GetComponentInChildren<Item>() &&
                     pr.GetComponentInChildren<Item>().itemId == it.itemId)
                 {
-                    GameObject item2 =Instantiate(pr, gameObject.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
+                    item2 =Instantiate(pr, gameObject.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
                     Vector3 val = item2.gameObject.transform.localScale;
                     val *= factor;
                     item2.gameObject.transform.localScale = new Vector3(val.x, val.y, 1);
-                    Debug.Log("reeee");
+
+                    
+
+                    //Debug.Log("reeee");
                     //Debug.Log("instatteate hit - " + pr.GetComponentInChildren<Item>().itemId);
                 }
                 else
@@ -143,6 +146,8 @@ public class backpack : MonoBehaviour
                 }
             }
         }
+
+        return item2;
     }
 
     public void upgradeBackpack()

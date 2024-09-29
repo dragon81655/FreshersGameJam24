@@ -20,11 +20,10 @@ public class Item : MonoBehaviour
         DontDestroyOnLoad(gameObject.transform.parent.gameObject);
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
+    private void Update()
+    {
+        if (transform.position.y < -100) Destroy(transform.parent.gameObject);
+    }
 
     public void tintItem()
     {

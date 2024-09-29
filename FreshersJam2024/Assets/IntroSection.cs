@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroSection : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class IntroSection : MonoBehaviour
     private void Start()
     {
         textMeshPro.text = sections[i];
+        game = GameObject.FindFirstObjectByType<SceneManagerGame>();
     }
 
     // Update is called once per frame
@@ -24,7 +26,8 @@ public class IntroSection : MonoBehaviour
             i++;
             if (i >= sections.Count)
             {
-                game.ChangeScene(nextScene);
+                SceneManager.LoadScene(nextScene);
+                return;
             }
             textMeshPro.text = sections[i];
             
