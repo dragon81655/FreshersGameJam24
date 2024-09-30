@@ -22,6 +22,20 @@ public class EndDayManager : MonoBehaviour
 
     void EndDay()
     {
+        // Create the list that will hold the items
+        List<ListItemsItem> list = new List<ListItemsItem>();
 
+        // Create a single ListItemsItem for potatoes with the total count
+        ListItemsItem potatoItem = new ListItemsItem
+        {
+            id = PseudoItemId.Potato, // Set the id to Potato
+            count = BaseFarmRoom.instance.PotatoesPerDayQuantity // Set the total count
+        };
+
+        // Add the potato item to the list
+        list.Add(potatoItem);
+
+        // Debug to verify the total potatoes added
+        Debug.Log("Total Potatoes added to the list: " + potatoItem.count);
     }
 }

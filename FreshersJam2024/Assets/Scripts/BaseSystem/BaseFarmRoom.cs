@@ -5,17 +5,28 @@ using UnityEngine.Tilemaps;
 
 public class BaseFarmRoom : BaseUpgradableRoom
 {
-
-    // Max number of ptatoes we can have (increase after upgrade)
-    private int MaxPotatoesQuantity;
+    public static BaseFarmRoom instance { get; private set; }
 
     // Number of potatoes we want to collect every day
     [SerializeField]
-    private int PotatoesPerDayQuantity;
+    public int PotatoesPerDayQuantity;
 
     // Number of potatoes we want to increase every time we upgrade the room
     [SerializeField]
     private int PotatoesUpdateQuantity;
+
+    // Called before Start
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
