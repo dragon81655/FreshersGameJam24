@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Profiling.Memory.Experimental;
+
 //using Unity.VisualScripting;
 //using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
@@ -38,14 +40,16 @@ public class CraftingManager : MonoBehaviour
     GameObject backpack;
     List<GameObject> items;
     List<craftingItem> craftingList;
+    List<craftingUpgrade> craftingUpgradeList;
 
     // Start is called before the first frame update
     void Start()
     {
         backpack = GameObject.FindGameObjectsWithTag("Backpack")[0];
         craftingList = backpack.GetComponent<backpack>().craftingList;
+        craftingUpgradeList = backpack.GetComponent<backpack>().craftingUpgradeList;
 
-        foreach(buttonsToItems buttonI in buttons)
+        foreach (buttonsToItems buttonI in buttons)
         {
             buttonI.button.GetComponent<Button>().onClick.AddListener(() => craftItem(buttonI.item));
         }
@@ -54,21 +58,12 @@ public class CraftingManager : MonoBehaviour
         {
             Debug.Log("upg button " + upgradeButton.uName);
 
-            if(upgradeButton.uName == upgradeNames.Backpack)
-            {
-                Debug.Log("got backpack button");
-                upgradeButton.button.GetComponent<Button>().onClick.AddListener(upgradeBackpack);
-
-            }
-            else if(upgradeButton.uName == upgradeNames.farm)
-            {
-                Debug.Log("got farm button");
-                upgradeButton.button.GetComponent<Button>().onClick.AddListener(upgradeFarm);
-            }
+            upgradeButton.button.GetComponent<Button>().onClick.AddListener(() => craftUprade(upgradeButton.uName));
         }
 
         UpadteItems();
         checkCraftable();
+        checkUpgradesCraftable();
     }
 
     // Update is called once per frame
@@ -88,6 +83,11 @@ public class CraftingManager : MonoBehaviour
             craftingList = backpack.GetComponent<backpack>().craftingList;
             Debug.Log("no backpack craftig list");
             //checkCraftable();
+        }
+
+        if(craftingUpgradeList.Count < 1)
+        {
+            craftingUpgradeList = backpack.GetComponent<backpack>().craftingUpgradeList;
         }
     }
 
@@ -154,63 +154,65 @@ public class CraftingManager : MonoBehaviour
         }
     }
 
-    //public void checkUpgradesCraftable()
-    //{
-    //    //items = GameObject.FindGameObjectsWithTag("Item").ToList();
+    public void checkUpgradesCraftable()
+    {
+        //items = GameObject.FindGameObjectsWithTag("Item").ToList();
 
-    //    Debug.Log("amount of items - " + items.Count);
+        Debug.Log("amount of items - " + items.Count);
 
-    //    foreach (buttonsToItems buttonI in buttons)
-    //    {
-    //        GameObject button = buttonI.button;
+        foreach (buttonsToUpgrades buttonI in upgradeButtons)
+        {
+            Debug.Log("up button " + buttonI.button.name);
+            GameObject button = buttonI.button;
 
-    //        bool craftable = true;
-    //        //the item to craft
-    //        GameObject item = button.GetComponent<ItemButton>().item;
+            bool craftable = true;
+            //the item to craft
+            upgradeNames item = button.GetComponent<ItemButton>().name;
 
-    //        //get the items needed
-    //        foreach (craftingItem craftItem in craftingList)
-    //        {
-    //            if (craftItem.itemToCraft == item)
-    //            {
-    //                //Debug.Log("item to craft - " + craftItem.itemToCraft.name);
-    //                foreach (theItemsToCraftWith itemToCraftW in craftItem.itemsToCraftWith)
-    //                {
-    //                    //Debug.Log("item to craft with - " + itemToCraftW.itemToCraftWith.name);
-    //                    int itemAmount = 0;
-    //                    foreach (GameObject anItem in items)
-    //                    {
-    //                        if (anItem.GetComponentInChildren<Item>().itemId == itemToCraftW.itemToCraftWith.GetComponentInChildren<Item>().itemId)
-    //                        {
-    //                            itemAmount++;
-    //                        }
-    //                    }
-    //                    //Debug.Log("amount in level - " + itemAmount);
+            //get the items needed
+            
+            foreach (craftingUpgrade craftItem in craftingUpgradeList)
+            {
+                if (craftItem.name == item)
+                {
+                    //Debug.Log("item to craft - " + craftItem.itemToCraft.name);
+                    foreach (theItemsToCraftWith itemToCraftW in craftItem.itemsToCraftWith)
+                    {
+                        //Debug.Log("item to craft with - " + itemToCraftW.itemToCraftWith.name);
+                        int itemAmount = 0;
+                        foreach (GameObject anItem in items)
+                        {
+                            if (anItem.GetComponentInChildren<Item>().itemId == itemToCraftW.itemToCraftWith.GetComponentInChildren<Item>().itemId)
+                            {
+                                itemAmount++;
+                            }
+                        }
+                        //Debug.Log("amount in level - " + itemAmount);
 
-    //                    if (itemToCraftW.amount > itemAmount)
-    //                    {
-    //                        craftable = false;
-    //                        //Debug.Log("no crafty");
-    //                    }
-    //                }
-    //                break;
-    //            }
-    //        }
+                        if (itemToCraftW.amount > itemAmount)
+                        {
+                            craftable = false;
+                            //Debug.Log("no crafty");
+                        }
+                    }
+                    break;
+                }
+            }
 
-    //        if (craftable)
-    //        {
-    //            button.GetComponent<Button>().interactable = true;
-    //            //Debug.Log(item.name + " craftable");
-    //        }
-    //        else
-    //        {
-    //            button.GetComponent<Button>().interactable = false;
-    //            //Debug.Log(item.name + " not craftable");
-    //        }
+            if (craftable)
+            {
+                button.GetComponent<Button>().interactable = true;
+                Debug.Log(buttonI.uName + " craftable");
+            }
+            else
+            {
+                button.GetComponent<Button>().interactable = false;
+                Debug.Log(buttonI.uName + " not craftable");
+            }
 
-    //        //Canvas.ForceUpdateCanvases();
-    //    }
-    //}
+            //Canvas.ForceUpdateCanvases();
+        }
+    }
 
     public void craftItem(GameObject item)
     {
@@ -257,6 +259,66 @@ public class CraftingManager : MonoBehaviour
         {
             items.Add(newItem);
         }
+
+        checkCraftable();
+    }
+
+    public void craftUprade(upgradeNames name)
+    {
+        items = GameObject.FindGameObjectsWithTag("Item").ToList();
+        List<GameObject> itemsToRemove = new List<GameObject>();
+
+        //Debug.Log("craft item hit");
+        foreach (craftingUpgrade cItem in craftingUpgradeList)
+        {
+            if (cItem.name == name)
+            {
+                //Debug.Log("got item");
+                foreach (theItemsToCraftWith cItemCW in cItem.itemsToCraftWith)
+                {
+                    int itemcount = cItemCW.amount;
+                    foreach (GameObject it in items)
+                    {
+                        //Debug.Log("item - " + it.name);
+                        if (it.GetComponentInChildren<Item>().itemId == cItemCW.itemToCraftWith.GetComponentInChildren<Item>().itemId)
+                        {
+                            //Debug.Log("got item to remove");
+                            it.GetComponentInChildren<Item>().reduceDurability();
+                            itemsToRemove.Add(it);
+                            itemcount--;
+                        }
+                        if (itemcount == 0)
+                            break;
+                    }
+                }
+
+                foreach (GameObject itTD in itemsToRemove)
+                {
+                    items.Remove(itTD);
+                    Debug.Log("removed " + itTD.name);
+                }
+
+                break;
+            }
+        }
+
+        switch (name)
+        {
+            case upgradeNames.Backpack:
+                upgradeBackpack();
+                break;
+            case upgradeNames.farm:
+                upgradeFarm(); 
+                break;
+        }
+
+        //List<Item> spawn = new List<Item>();
+        //spawn.Add(item.GetComponentInChildren<Item>());
+        //GameObject newItem = backpack.GetComponent<backpack>().addItemsToBag(spawn);
+        //if (newItem)
+        //{
+        //    items.Add(newItem);
+        //}
 
         checkCraftable();
     }

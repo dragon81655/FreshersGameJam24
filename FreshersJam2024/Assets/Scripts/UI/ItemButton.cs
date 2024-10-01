@@ -7,6 +7,7 @@ public class ItemButton : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject item;
+    public upgradeNames name;
     void Start()
     {
         
