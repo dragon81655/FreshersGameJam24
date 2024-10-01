@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using UnityEditor;
@@ -64,16 +65,17 @@ public class backpack : MonoBehaviour
     public void UpgradeBackPack(float factor)
     {
         Debug.Log("UpgradeBackPack hit");
-        foreach(List<Item> item in itemList.Values)
-        {
-            foreach(Item item2 in item)
+       List<GameObject> items = GameObject.FindGameObjectsWithTag("Item").ToList();
+        //foreach (List<Item> item in itemList.Values)
+        //{
+            foreach(GameObject item2 in items)
             {
-                Vector3 val = item2.gameObject.transform.parent.localScale;
+                Vector3 val = item2.gameObject.transform.localScale;
                 val *= factor;
-                item2.gameObject.transform.parent.localScale = new Vector3(val.x, val.y, 1);
+                item2.gameObject.transform.localScale = new Vector3(val.x, val.y, 1);
                 this.factor*= factor;
             }
-        }
+        //}
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
