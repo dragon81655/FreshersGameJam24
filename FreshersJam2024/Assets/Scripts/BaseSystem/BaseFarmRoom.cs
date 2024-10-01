@@ -46,6 +46,15 @@ public class BaseFarmRoom : BaseUpgradableRoom
 
     public void CollectPotatoes()
     {
+        // Add per day potatoes quantity to the inventory
+        List<Item> potatoes = new List<Item>();
+
+        for (int i = 0; i < PotatoesPerDayQuantity; i++)
+        {
+            potatoes.Add(new Item { itemId = PseudoItemId.Potato });
+        }
+
+        InventoryStaticClass.AddItems(potatoes);
     }
 
     public override void UpgradeRoom()

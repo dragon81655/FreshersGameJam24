@@ -6,7 +6,24 @@ public class BaseTableRoom : BaseRoom
 {
     // Sprite array for members of the family
     [SerializeField]
-    public List<SpriteRenderer> FamilyMembersSprites;
+    public Dictionary<Transform, List<SpriteRenderer>> FamilyMembersSprites = new Dictionary<Transform, List<SpriteRenderer>>();
+
+    public bool NewFamilyMemberFound;
+
+    public static BaseTableRoom instance { get; private set; }
+
+    // Called before Start
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +34,6 @@ public class BaseTableRoom : BaseRoom
     // Update is called once per frame
     void Update()
     {
-        // if (NewFamilyMemberFound)
-        //{
-        //  for
-        //  AddFamilymember();
-        //}
 
     }
 
@@ -29,11 +41,12 @@ public class BaseTableRoom : BaseRoom
     {
     }
 
-    void AddFamilyMember()
+    public void AddFamilyMember(Transform location, SpriteRenderer spriteRender)
     { 
-        if (FamilyMembersSprites.Count <= 3) 
+        if (!FamilyMembersSprites.ContainsKey(location))
         {
-            FamilyMembersSprites.Add(new SpriteRenderer());
+            FamilyMembersSprites[location] = new List<SpriteRenderer>();
         }
+        FamilyMembersSprites[location].Add(spriteRender);
     }
 }
