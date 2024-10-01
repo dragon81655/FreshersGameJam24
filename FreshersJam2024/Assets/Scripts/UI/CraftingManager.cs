@@ -74,7 +74,21 @@ public class CraftingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //checkCraftable();
+
+        if (!backpack)
+        {
+            backpack = GameObject.FindGameObjectsWithTag("Backpack")[0];
+            Debug.Log("no backpack");
+            //checkCraftable();
+        }
+
+        if (craftingList.Count < 2)
+        {
+            craftingList = backpack.GetComponent<backpack>().craftingList;
+            Debug.Log("no backpack craftig list");
+            //checkCraftable();
+        }
     }
 
     public void UpadteItems()
@@ -230,6 +244,7 @@ public class CraftingManager : MonoBehaviour
                 foreach(GameObject itTD in itemsToRemove)
                 {
                     items.Remove(itTD);
+                    Debug.Log("removed " + itTD.name);
                 }
 
                 break;

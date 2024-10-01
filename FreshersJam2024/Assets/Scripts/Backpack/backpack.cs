@@ -68,9 +68,9 @@ public class backpack : MonoBehaviour
         {
             foreach(Item item2 in item)
             {
-                Vector3 val = item2.gameObject.transform.localScale;
+                Vector3 val = item2.gameObject.transform.parent.localScale;
                 val *= factor;
-                item2.gameObject.transform.localScale = new Vector3(val.x, val.y, 1);
+                item2.gameObject.transform.parent.localScale = new Vector3(val.x, val.y, 1);
                 this.factor*= factor;
             }
         }
