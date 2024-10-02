@@ -17,6 +17,8 @@ public class ExplorationManager : MonoBehaviour
     [SerializeField] private UnityEvent onExplorationStarted;
 
     [SerializeField] private ExplorationLogUIController logs;
+
+    private StoryController storyController;
     
 
     private void Start()
@@ -34,6 +36,7 @@ public class ExplorationManager : MonoBehaviour
         optionController = FindAnyObjectByType<OptionControllerTables>();
         optionController.gameObject.SetActive(false);
         backpackC = GameObject.Find("BacpackObject")?.GetComponent<backpack>();
+        storyController = GetComponent<StoryController>();
         //DontDestroyOnLoad(gameObject);
     }
     public void StartExploration ()
@@ -103,7 +106,7 @@ public class ExplorationManager : MonoBehaviour
             backpackC.addItemsToBag(items);
             Debug.Log("Added items on loottable: " + items.Count);
         }
-
+        storyController.ProgressStory();
         if (t.hasOptions)
         {
             optionController.gameObject.SetActive(true);
