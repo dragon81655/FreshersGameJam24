@@ -1059,6 +1059,110 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a137c59074054c4438f68789eb3805f2, type: 3}
+--- !u!1 &1083908416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1083908418}
+  - component: {fileID: 1083908417}
+  m_Layer: 0
+  m_Name: StoryLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1083908417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083908416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b663fb95e79a84db243d422724f47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stories:
+  - currentProgression: 0
+    levelString:
+    - ' I''ve been looking everywhere for my family. I don''t see much of a trace
+      of something.., wait what is that surely it couldn''t be ? It''s my fathers
+      markings. Maybe he placed it here to find me. I think I''m going on the right
+      track. I must find him before it''s too late !'
+    - My father used to be a hunter so I can see he used a lot of his tips and tricks
+      to help me track him. I hope he's alright and glad he's alive. The secret messages
+      on the trees are showing me where to go, let's check it out !
+    - I'm sure he's close. There's been a bunch of markings and monsters on the floor
+      killing Jeez. Even nowadays my dad is a monster. The markings are fresh. He
+      must be close.
+    - "I can feel it in my bones\u2014he's near. Those markings lead deeper into
+      the forest. I just need to push through. I can\u2019t give up now!"
+    - "Dad! I found you! I knew those markings were a sign. I was so scared I\u2019d
+      lost you forever. And your advice was amazing. I'm alive because of the advice
+      from Indiana Jones. The fridge is indestructible .Together, we can find Mom
+      and my sister. Let\u2019s go!"
+    familyMemberName: Father
+    memberSprite: {fileID: 0}
+  - currentProgression: 0
+    levelString:
+    - "Now that I\u2019ve found Dad, we need to keep moving. He mentioned some old
+      hunting grounds nearby. She might have taken shelter there!"
+    - "Look at this! Her laptop she uses to go to uni with \u2014it\u2019s definitely
+      hers\u2026with the amount of undertale stickers is on there... I can almost
+      hear her voice echoing through the trees. I know she\u2019s out there!"
+    - "I need to stay sharp. If the monsters are around, we need to be careful. I
+      won\u2019t let anything happen to her. I can feel it\u2014she\u2019s close,
+      just beyond that ridge!"
+    - "There\u2019s a girl's voice complaining up ahead! She might have made it there
+      for safety. Let\u2019s approach it quietly. If she\u2019s here, I need to make
+      sure she knows we\u2019re coming and that indiana jones movies are our messiah
+      and return home of course !"
+    - "Sis! You\u2019re okay! I knew we\u2019d find you! Dad and I searched everywhere
+      for you. Now let me tell you about our messiah indiana jones movies the fridge
+      technique and how it saved us and let\u2019s find Mom and get us all back together.
+      We can do this!"
+    familyMemberName: Sister
+    memberSprite: {fileID: 0}
+  - currentProgression: 0
+    levelString:
+    - "Alright, it\u2019s just Mom left now. She must be waiting for us somewhere.
+      We\u2019ve come so far; I can\u2019t believe we\u2019re almost a complete family
+      again!"
+    - "Look, mom\u2019s knife markings! They lead toward the old place that looks
+      straight out of Indiana Jones !!. If she\u2019s been leaving clues for us,
+      she could be there, keeping watch for us!"
+    - "This place feels different. I hope she\u2019s been safe. Every shadow makes
+      me worry... I just need to focus and remember what Dad taught us and of course
+      Indiana Jones advice."
+    - "Please, let her be here... If we can just reach that place we might find her!
+      I can\u2019t shake this feeling\u2014she\u2019s out there, waiting for us"
+    - "Mom! You\u2019re really here! I can\u2019t believe it! After everything, we\u2019re
+      finally together! We\u2019re a family again, and nothing will tear us apart
+      this time. We\u2019ll face whatever comes next with the help of advice from
+      our great god and messiah Indiana Jones movies and advice\u2014together!"
+    familyMemberName: Mom
+    memberSprite: {fileID: 0}
+--- !u!4 &1083908418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083908416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 930.16876, y: 560.5801, z: 5.213279}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1222485659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,3 +2139,4 @@ SceneRoots:
   - {fileID: 1271297638699912729}
   - {fileID: 690477924524928824}
   - {fileID: 722370197}
+  - {fileID: 1083908418}

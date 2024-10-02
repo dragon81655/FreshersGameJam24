@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Experimental.GlobalIllumination;
 
 [Serializable]
 public struct ItemLootTable
@@ -65,4 +66,13 @@ public struct Options
 {
     public string text;
     public LootTableBase output;
+}
+
+[Serializable]
+public struct StoryProgression
+{
+    public int currentProgression;
+    public List<string> levelString;
+    public string familyMemberName;
+    public Sprite memberSprite;
 }
