@@ -10,7 +10,7 @@ public static class StoryProgressionClass
 
     public static List<StoryProgression> progressions;
 
-    private static int currentStory = 0;
+    public static int currentStory = 0;
 
 
     public static void AddMembers(List<StoryProgression> progression)
