@@ -8,10 +8,7 @@ public class EndDayManager : MonoBehaviour
     [SerializeField]
     private Button endDayButton;
 
-    [SerializeField]
-    private Transform familyMemberSpawnLocation; // The spawn location for new family members
-    [SerializeField]
-    private SpriteRenderer newFamilyMemberSprite; // The sprite for the new family member
+   private int dayNumber;
 
     public static EndDayManager instance { get; private set; }
 
@@ -31,6 +28,7 @@ public class EndDayManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dayNumber = 0;  // Initialize day number
         endDayButton.onClick.AddListener(EndDay);
     }
 
@@ -45,13 +43,37 @@ public class EndDayManager : MonoBehaviour
         // Collect potatoes from the farm room (adds PotatoesPerDayQuantity to the inventory)
         BaseFarmRoom.instance.CollectPotatoes();
 
-        if (BaseTableRoom.instance.NewFamilyMemberFound)
+        if (dayNumber == 3 || dayNumber == 5 || dayNumber == 7)
         {
-            // Adding the new family member to the room with sprite and location
-            BaseTableRoom.instance.AddFamilyMember(familyMemberSpawnLocation, newFamilyMemberSprite);
-
-            // Optionally reset the flag after processing
-            BaseTableRoom.instance.NewFamilyMemberFound = false;
+            BaseStorageRoom.instance.NewFamilyMemberFound = true;
         }
+
+        // Check for specific days to show family members
+        if (BaseStorageRoom.instance.NewFamilyMemberFound)
+        {
+            if (dayNumber == 3)
+            {
+                // Show the first family member
+                BaseStorageRoom.instance.ShowFamilyMember(0);  // Show the family member at index 0
+                BaseStorageRoom.instance.NewFamilyMemberFound = false;  // Reset the flag after processing
+            }
+
+            if (dayNumber == 5)
+            {
+                // Show the second family member
+                BaseStorageRoom.instance.ShowFamilyMember(1);  // Show the family member at index 1
+                BaseStorageRoom.instance.NewFamilyMemberFound = false;  // Reset the flag after processing
+            }
+
+            if (dayNumber == 7)
+            {
+                // Show the third family member
+                BaseStorageRoom.instance.ShowFamilyMember(2);  // Show the family member at index 2
+                BaseStorageRoom.instance.NewFamilyMemberFound = false;  // Reset the flag after processing
+
+            }
+        }
+
+        dayNumber++;
     }
 }
