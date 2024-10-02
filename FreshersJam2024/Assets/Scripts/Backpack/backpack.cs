@@ -170,13 +170,13 @@ public class backpack : MonoBehaviour
         return item2;
     }
 
-    void destroyAllOutsideOfContainer()
+    public void destroyAllOutsideOfContainer()
     {
         List<GameObject> items = GameObject.FindGameObjectsWithTag("Item").ToList();
 
-        foreach(GameObject item in items)
+        foreach (GameObject item in items)
         {
-            if(item.GetComponent<Item>() && !item.GetComponent<Item>().inContainer)
+            if(item.GetComponentInChildren<Item>() && !item.GetComponentInChildren<Item>().inContainer)
             {
                 Destroy(item);
             }

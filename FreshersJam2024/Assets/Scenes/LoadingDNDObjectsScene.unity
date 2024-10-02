@@ -481,11 +481,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5145510464466108637, guid: a137c59074054c4438f68789eb3805f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4799998
+      value: -4.52
       objectReference: {fileID: 0}
     - target: {fileID: 5145510464466108637, guid: a137c59074054c4438f68789eb3805f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.87
+      value: 8.36
       objectReference: {fileID: 0}
     - target: {fileID: 5145510464466108637, guid: a137c59074054c4438f68789eb3805f2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1531,9 +1531,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 360194841983980181, guid: 3480d01b780ada4449b97d807c57642a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 619733194769020790, guid: 3480d01b780ada4449b97d807c57642a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1576635858059514066, guid: 3480d01b780ada4449b97d807c57642a, type: 3}
       propertyPath: m_Name
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978803140402707219, guid: 3480d01b780ada4449b97d807c57642a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208233738865845443, guid: 3480d01b780ada4449b97d807c57642a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826763368570473627, guid: 3480d01b780ada4449b97d807c57642a, type: 3}
       propertyPath: m_LocalScale.x
@@ -1589,6 +1605,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826763368570473627, guid: 3480d01b780ada4449b97d807c57642a, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706291340636276583, guid: 3480d01b780ada4449b97d807c57642a, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
