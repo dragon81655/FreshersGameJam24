@@ -317,14 +317,6 @@ public class CraftingManager : MonoBehaviour
         currentUpgradeLevel[name]++;
         Debug.Log("upgraded " + name + " to " + currentUpgradeLevel[name]);
 
-        //List<Item> spawn = new List<Item>();
-        //spawn.Add(item.GetComponentInChildren<Item>());
-        //GameObject newItem = backpack.GetComponent<backpack>().addItemsToBag(spawn);
-        //if (newItem)
-        //{
-        //    items.Add(newItem);
-        //}
-
         checkCraftable();
     }
 

@@ -87,7 +87,8 @@ public class backpack : MonoBehaviour
     {
         if (collision.GetComponent<Item>())
         {
-            collision.GetComponent<Item>().untintItem();
+            //collision.GetComponent<Item>().untintItem();
+            collision.GetComponent<Item>().inContainer = true;
 
             if (itemList.ContainsKey(collision.GetComponent<Item>().itemId))
             {
@@ -110,8 +111,9 @@ public class backpack : MonoBehaviour
     {
         if (collision.GetComponent<Item>())
         {
-            
-            collision.GetComponent<Item>().tintItem();
+
+            //collision.GetComponent<Item>().tintItem();
+            collision.GetComponent<Item>().inContainer = false;
 
             if (itemList.ContainsKey(collision.GetComponent<Item>().itemId) &&
                 itemList[collision.GetComponent<Item>().itemId].Contains(collision.GetComponent<Item>())
@@ -168,8 +170,16 @@ public class backpack : MonoBehaviour
         return item2;
     }
 
-    public void upgradeBackpack()
+    void destroyAllOutsideOfContainer()
     {
+        List<GameObject> items = GameObject.FindGameObjectsWithTag("Item").ToList();
 
+        foreach(GameObject item in items)
+        {
+            if(item.GetComponent<Item>() && !item.GetComponent<Item>().inContainer)
+            {
+                Destroy(item);
+            }
+        }
     }
 }
