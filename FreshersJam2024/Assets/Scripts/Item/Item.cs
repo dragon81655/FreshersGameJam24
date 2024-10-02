@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
 
     public PseudoItemId itemId;
     public int durability;
+    public bool inContainer = false;
 
     [SerializeField] public Color tintColor;
     [SerializeField] public Color origonalColor;
@@ -17,12 +18,21 @@ public class Item : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject.transform.parent.gameObject);
-        tintItem();
+        //tintItem();
     }
 
     private void Update()
     {
         if (transform.position.y < -100) Destroy(transform.parent.gameObject);
+
+        if(inContainer && GetComponent<Renderer>().material.color == tintColor)
+        {
+            untintItem(); 
+        }else if(!inContainer && GetComponent<Renderer>().material.color == origonalColor)
+        {
+            tintItem();
+        }
+
     }
 
     public void tintItem()
