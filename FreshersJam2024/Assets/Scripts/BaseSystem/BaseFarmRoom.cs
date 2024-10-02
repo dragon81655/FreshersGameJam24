@@ -15,8 +15,7 @@ public class BaseFarmRoom : BaseUpgradableRoom
     [SerializeField]
     private int PotatoesUpdateQuantity;
 
-    [SerializeField]
-    public Tilemap[] tileMapArray;
+    
 
     // Called before Start
     private void Awake()

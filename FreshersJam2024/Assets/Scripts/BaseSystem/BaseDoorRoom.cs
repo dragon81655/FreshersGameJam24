@@ -35,10 +35,12 @@ public class BaseDoorRoom : BaseRoom
     {
         FamilyMemberCount = 0;  // Initialize family member count
         HideAllFamilyMembers();  // Ensure all family members are hidden at the start
+
         for (int i = 0; i < StoryProgressionClass.currentStory; i++)
         {
             ShowFamilyMember(i);
         }
+
         //openDoorButton.onClick.AddListener(OpenDoor);
     }
 
