@@ -25,10 +25,16 @@ public struct craftingItem
 }
 
 [Serializable]
+public struct theItemsToCraftWithListWrapper
+{
+    public List<theItemsToCraftWith> itemsToCraftWith;
+}
+
+[Serializable]
 public struct craftingUpgrade
 {
     public upgradeNames name;
-    public List<theItemsToCraftWith> itemsToCraftWith;
+    public List<theItemsToCraftWithListWrapper> itemsToCraftWithLevels;
 }
 
 public class backpack : MonoBehaviour

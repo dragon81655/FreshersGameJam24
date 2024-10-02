@@ -9,6 +9,9 @@ using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
 //using UnityEngine.UIElements;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
+//using UnityEngine.UIElements;
+using Unity.VisualScripting;
 
 [Serializable]
 public enum upgradeNames
@@ -41,6 +44,7 @@ public class CraftingManager : MonoBehaviour
     List<GameObject> items;
     List<craftingItem> craftingList;
     List<craftingUpgrade> craftingUpgradeList;
+    Dictionary<upgradeNames, int> currentUpgradeLevel = new Dictionary<upgradeNames, int>();
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,7 @@ public class CraftingManager : MonoBehaviour
         backpack = GameObject.FindGameObjectsWithTag("Backpack")[0];
         craftingList = backpack.GetComponent<backpack>().craftingList;
         craftingUpgradeList = backpack.GetComponent<backpack>().craftingUpgradeList;
+
 
         foreach (buttonsToItems buttonI in buttons)
         {
@@ -59,6 +64,7 @@ public class CraftingManager : MonoBehaviour
             Debug.Log("upg button " + upgradeButton.uName);
 
             upgradeButton.button.GetComponent<Button>().onClick.AddListener(() => craftUprade(upgradeButton.uName));
+            currentUpgradeLevel.Add(upgradeButton.uName, 0);
         }
 
         UpadteItems();
@@ -168,28 +174,24 @@ public class CraftingManager : MonoBehaviour
             bool craftable = true;
             //the item to craft
             upgradeNames item = button.GetComponent<ItemButton>().name;
-
             //get the items needed
-            
+
             foreach (craftingUpgrade craftItem in craftingUpgradeList)
             {
                 if (craftItem.name == item)
                 {
-                    //Debug.Log("item to craft - " + craftItem.itemToCraft.name);
-                    foreach (theItemsToCraftWith itemToCraftW in craftItem.itemsToCraftWith)
-                    {
-                        //Debug.Log("item to craft with - " + itemToCraftW.itemToCraftWith.name);
+                    foreach(theItemsToCraftWith itemsCW in craftItem.itemsToCraftWithLevels[currentUpgradeLevel[item]].itemsToCraftWith){
                         int itemAmount = 0;
                         foreach (GameObject anItem in items)
                         {
-                            if (anItem.GetComponentInChildren<Item>().itemId == itemToCraftW.itemToCraftWith.GetComponentInChildren<Item>().itemId)
+                            if (anItem.GetComponentInChildren<Item>().itemId == itemsCW.itemToCraftWith.GetComponentInChildren<Item>().itemId)
                             {
                                 itemAmount++;
                             }
                         }
                         //Debug.Log("amount in level - " + itemAmount);
 
-                        if (itemToCraftW.amount > itemAmount)
+                        if (itemsCW.amount > itemAmount)
                         {
                             craftable = false;
                             //Debug.Log("no crafty");
@@ -274,7 +276,7 @@ public class CraftingManager : MonoBehaviour
             if (cItem.name == name)
             {
                 //Debug.Log("got item");
-                foreach (theItemsToCraftWith cItemCW in cItem.itemsToCraftWith)
+                foreach (theItemsToCraftWith cItemCW in cItem.itemsToCraftWithLevels[currentUpgradeLevel[name]].itemsToCraftWith)
                 {
                     int itemcount = cItemCW.amount;
                     foreach (GameObject it in items)
@@ -311,6 +313,9 @@ public class CraftingManager : MonoBehaviour
                 upgradeFarm(); 
                 break;
         }
+
+        currentUpgradeLevel[name]++;
+        Debug.Log("upgraded " + name + " to " + currentUpgradeLevel[name]);
 
         //List<Item> spawn = new List<Item>();
         //spawn.Add(item.GetComponentInChildren<Item>());
