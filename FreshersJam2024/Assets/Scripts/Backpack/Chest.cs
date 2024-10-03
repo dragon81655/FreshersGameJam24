@@ -84,7 +84,7 @@ public class Chest : MonoBehaviour
         {
             collision.GetComponentInChildren<Item>().inContainer = false;
             Item i = collision.GetComponentInChildren<Item>();
-            i.inContainer = true;
+            i.inContainer = false;
             if (inventory.Keys.Contains(i.itemId))
             {
                 inventory[i.itemId].Remove(i);
