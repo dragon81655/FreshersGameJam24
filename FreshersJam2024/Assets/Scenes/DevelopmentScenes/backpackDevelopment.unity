@@ -349,6 +349,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7639660336720919355, guid: 8243ad9ea8b257245918ad6adf1b3671, type: 3}
+      propertyPath: m_text
+      value: Any items not in a container will be lost after 3 turns
+      objectReference: {fileID: 0}
     - target: {fileID: 8598644830441544481, guid: 8243ad9ea8b257245918ad6adf1b3671, type: 3}
       propertyPath: m_Name
       value: CraftingUI
