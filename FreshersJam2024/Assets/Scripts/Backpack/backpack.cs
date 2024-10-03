@@ -159,7 +159,7 @@ public class backpack : MonoBehaviour
                 if (pr.GetComponentInChildren<Item>() &&
                     pr.GetComponentInChildren<Item>().itemId == it.itemId)
                 {
-                    item2 = Instantiate(pr, gameObject.transform.position + new Vector3(0, 7, 1), Quaternion.identity);
+                    item2 = Instantiate(pr, gameObject.transform.position + new Vector3(0, 7, 0), Quaternion.identity);
                     Vector3 val = item2.gameObject.transform.localScale;
                     val *= factor;
                     item2.gameObject.transform.localScale = new Vector3(val.x, val.y, 1);
