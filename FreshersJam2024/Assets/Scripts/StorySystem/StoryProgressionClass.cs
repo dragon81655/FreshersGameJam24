@@ -15,7 +15,11 @@ public static class StoryProgressionClass
 
     public static void AddMembers(List<StoryProgression> progression)
     {
-        progressions = progression;
+        progressions = new List<StoryProgression>();
+        for(int i = 0; i < progression.Count; i++)
+        {
+            progressions.Add(new StoryProgression(0, progression[i].levelString, progression[i].familyMemberName));
+        }
     }
     public static string UpdateProgress()
     {

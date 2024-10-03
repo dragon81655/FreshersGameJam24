@@ -59,6 +59,7 @@ public class Chest : MonoBehaviour
             i.inContainer = true;
             if (inventory.Keys.Contains(i.itemId))
             {
+                if (inventory[i.itemId].Contains(i)) return;
                 inventory[i.itemId].Add(i);
             }
             else

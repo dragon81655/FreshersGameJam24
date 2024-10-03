@@ -74,5 +74,11 @@ public struct StoryProgression
     public int currentProgression;
     public List<string> levelString;
     public string familyMemberName;
-    public Sprite memberSprite;
+
+    public StoryProgression(int currentProgression, List<string> strings, string familyMemberName)
+    {
+        this.currentProgression = currentProgression;
+        this.levelString = strings;
+        this.familyMemberName = familyMemberName;
+    }
 }
