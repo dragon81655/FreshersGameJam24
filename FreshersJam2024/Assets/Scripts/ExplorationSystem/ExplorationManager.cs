@@ -66,6 +66,7 @@ public class ExplorationManager : MonoBehaviour
     public void QuitExploring(int scene)
     {
         GameObject.Find("SceneManager").GetComponent<SceneManagerGame>().ChangeScene(scene);
+        backpack.instance.destroyAllOutsideOfContainer();
         gameObject.SetActive(false);
     }
 
