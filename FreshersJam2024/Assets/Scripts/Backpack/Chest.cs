@@ -10,6 +10,7 @@ public class Chest : MonoBehaviour
     public Dictionary<PseudoItemId, List<Item>> inventory = new Dictionary<PseudoItemId, List<Item>>();
     public static Chest instance;
 
+    public bool isInScene;
     private void Awake()
     {
         instance = this;
@@ -104,6 +105,8 @@ public class Chest : MonoBehaviour
 
     public void dissapear()
     {
+        if (!isInScene) return;
+        isInScene = false;
         gameObject.transform.position = gameObject.transform.position + new Vector3(500, 0, 0);
 
         foreach(KeyValuePair<PseudoItemId, List<Item>> items in inventory)
@@ -118,6 +121,8 @@ public class Chest : MonoBehaviour
 
     public void appear()
     {
+        if(isInScene) return;
+        isInScene= true;
         gameObject.transform.position = gameObject.transform.position - new Vector3(500, 0, 0);
 
         foreach (KeyValuePair<PseudoItemId, List<Item>> items in inventory)
@@ -127,5 +132,6 @@ public class Chest : MonoBehaviour
                 item.transform.parent.position = item.transform.parent.position - new Vector3(500, 0, 0);
             }
         }
+        
     }
 }
