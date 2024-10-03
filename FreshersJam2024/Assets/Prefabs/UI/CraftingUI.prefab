@@ -1726,10 +1726,9 @@ MonoBehaviour:
   m_text: "Farm Upgrades: (remember that 1 Potato is consumed per day, per person
     at the bunker, and that 1 Potato = 2 rolls if in bag)\r\n1. N/A (start w/ it)\t\t-
     2/day\r\n2. 4 Wood\t\t\t        - 3/day\r\n3. 10 Wood\t\t\t- 5/day\r\n4. 15 Wood,
-    5 Scrap\t\t- 8/day\r\n5. 20 Wood, 10 Scrap\t\t- 12/day\n\nTemporary Storage &
-    Backpack Upgrades: (+50% area each level (-33.3% item scale))\r\n1. N/A (start
-    w/ it)\r\n2. 5 Cloth, 5 Scrap\r\n3. 8 Cloth, 8 Scrap, 3 Wood\r\n4. 12 Cloth,
-    12 Scrap, 8 Wood\r\n5. 15 Cloth, 15 Scrap, 2 Gun Parts\n\n"
+    5 Scrap\t\t- 8/day\r\n5. 20 Wood, 10 Scrap\t\t- 12/day\n\nStorage & Backpack
+    Upgrades:\r\n1. N/A (start w/ it)\r\n2. 5 Cloth, 5 Scrap\r\n3. 8 Cloth, 8 Scrap,
+    3 Wood\r\n4. 12 Cloth, 12 Scrap, 8 Wood\r\n5. 15 Cloth, 15 Scrap, 2 Gun Parts\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
