@@ -30,6 +30,8 @@ public class PauseMenu : MonoBehaviour
             Destroy(go);
         }
         SceneManager.LoadScene(0);
+        UpgradesStaticClass.farmRoomLvl= 0;
+        UpgradesStaticClass.storageRoomLvl= 0;
     }
 
     public void Quit()

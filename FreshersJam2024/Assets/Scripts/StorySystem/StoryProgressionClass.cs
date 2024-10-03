@@ -19,6 +19,7 @@ public static class StoryProgressionClass
         for(int i = 0; i < progression.Count; i++)
         {
             progressions.Add(new StoryProgression(0, progression[i].levelString, progression[i].familyMemberName));
+            currentStory = 0;
         }
     }
     public static string UpdateProgress()
