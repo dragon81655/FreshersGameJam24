@@ -20,6 +20,13 @@ public class Back : MonoBehaviour
 
     public void back()
     {
-        Debug.Log("back");
+        GameObject.Find("SceneManager").GetComponent<SceneManagerGame>().ChangeScene(2);
+        gameObject.SetActive(false);
     }
+
+    //public void QuitExploring(int scene)
+    //{
+    //    GameObject.Find("SceneManager").GetComponent<SceneManagerGame>().ChangeScene(scene);
+    //    gameObject.SetActive(false);
+    //}
 }

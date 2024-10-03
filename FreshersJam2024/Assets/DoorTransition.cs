@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class DoorTransition : MonoBehaviour
 {
+    public GameObject doorsound;
+
     [SerializeField] private int explorationScene;
    public void WhenClicked()
     {
         GameObject.Find("SceneManager")?.GetComponent<SceneManagerGame>().ChangeScene(explorationScene);
+
+        doorsound.GetComponent<AudioSource>().Play();
     }
     private void Update()
     {

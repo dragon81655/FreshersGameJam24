@@ -13,6 +13,8 @@ public class BaseStorageRoom : BaseUpgradableRoom
 
     public static BaseStorageRoom instance { get; private set; }
 
+    public GameObject chestSound;
+
     // Called before Start
     private void Awake()
     {
@@ -79,7 +81,7 @@ public class BaseStorageRoom : BaseUpgradableRoom
     void OpenCraftingMenu()
     {
         GameObject.Find("SceneManager")?.GetComponent<SceneManagerGame>().ChangeScene(craftingMenuScene);
-
+        chestSound.GetComponent<AudioSource>().Play();
     }
 
     public override void UpgradeRoom()
