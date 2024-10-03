@@ -897,11 +897,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ZoomedIn: 0
   NewRoomAfterUpgrade: {fileID: 0}
-  upgradeItemsNeeded:
-  - id: 0
-    count: 0
+  upgradeItemsNeeded: []
   PotatoesPerDayQuantity: 0
   PotatoesUpdateQuantity: 0
+  PotatoesSpriteArray:
+  - {fileID: 129186649}
+  - {fileID: 1859467419}
+  - {fileID: 1007580069}
+  - {fileID: 607958785}
+  - {fileID: 1355233543}
+  - {fileID: 1738978816}
+  - {fileID: 57895730}
+  - {fileID: 920144618}
+  - {fileID: 396627531}
+  - {fileID: 412059617}
+  - {fileID: 710146476}
+  - {fileID: 512228192}
 --- !u!1 &57895728
 GameObject:
   m_ObjectHideFlags: 0
