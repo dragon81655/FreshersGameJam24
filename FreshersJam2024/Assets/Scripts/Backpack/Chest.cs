@@ -99,4 +99,31 @@ public class Chest : MonoBehaviour
 
         }
     }
+
+    public void dissapear()
+    {
+        gameObject.transform.position = gameObject.transform.position + new Vector3(500, 0, 0);
+
+        foreach(KeyValuePair<PseudoItemId, List<Item>> items in inventory)
+        {
+            foreach(Item item in items.Value)
+            {
+                item.transform.parent.position = item.transform.parent.position + new Vector3(500, 0, 0);
+            }
+        }
+
+    }
+
+    public void appear()
+    {
+        gameObject.transform.position = gameObject.transform.position - new Vector3(500, 0, 0);
+
+        foreach (KeyValuePair<PseudoItemId, List<Item>> items in inventory)
+        {
+            foreach (Item item in items.Value)
+            {
+                item.transform.parent.position = item.transform.parent.position - new Vector3(500, 0, 0);
+            }
+        }
+    }
 }
