@@ -49,28 +49,6 @@ public class BaseDoorRoom : BaseRoom
     {
         // Call the update from room parent class
         BaseRoomUpdate();
-
-        // Activate door button click possibility for door
-        //TilemapCollider2D doorTileMapCollider = doorTileMap.GetComponent<TilemapCollider2D>();
-
-        /*if (doorTileMapCollider != null ) 
-        { 
-            if (doorTileMapCollider.gameObject.activeInHierarchy)
-            {
-                if(Input.GetMouseButtonDown(0)) 
-                {
-                    Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    Vector3Int tilePos = doorTileMap.WorldToCell(mouseWorldPos);
-
-                    if (doorTileMap.HasTile(tilePos)) 
-                    {
-                        OpenDoor();
-                    }
-                    
-                }
-                
-            }
-        }*/
     }
 
     protected override void OnRoomEntered()

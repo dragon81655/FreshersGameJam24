@@ -7463,7 +7463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZoomedIn: 0
-  doorTileMap: {fileID: 0}
+  doorTileMap: {fileID: 1195532123}
   FamilyMemberSpritesArray:
   - {fileID: 1538118816}
   - {fileID: 1402260575}

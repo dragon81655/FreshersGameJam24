@@ -40,7 +40,8 @@ public class BaseFarmRoom : BaseUpgradableRoom
     // Update is called once per frame
     void Update()
     {
-
+        // Call the update from room parent class
+        BaseRoomUpdate();
     }
 
     protected override void OnRoomEntered()
