@@ -79,19 +79,19 @@ public class BaseFarmRoom : BaseUpgradableRoom
         switch (farmLevel)
         {
             case 0:
-                potatoesToShow = 2;
-                break;
-            case 1:
                 potatoesToShow = 3;
                 break;
-            case 2:
+            case 1:
                 potatoesToShow = 4;
                 break;
-            case 3:
+            case 2:
                 potatoesToShow = 5;
                 break;
+            case 3:
+                potatoesToShow = 7;
+                break;
             case 4:
-                potatoesToShow = 8;
+                potatoesToShow = 9;
                 break;
             case 5:
                 potatoesToShow = 12;
