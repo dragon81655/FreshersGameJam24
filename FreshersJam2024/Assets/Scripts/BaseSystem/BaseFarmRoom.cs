@@ -58,7 +58,7 @@ public class BaseFarmRoom : BaseUpgradableRoom
             potatoes.Add(new Item { itemId = PseudoItemId.Potato });
         }
 
-        InventoryStaticClass.AddItems(potatoes);
+        backpack.instance.addItemsToBag(potatoes);
     }
 
     // Hide all potatoes method
@@ -103,6 +103,7 @@ public class BaseFarmRoom : BaseUpgradableRoom
 
         // Show the random potatoes
         ShowRandomPotatoes(potatoesToShow);
+        PotatoesPerDayQuantity = potatoesToShow;
     }
 
     // Method to show a specific number of random potatoes

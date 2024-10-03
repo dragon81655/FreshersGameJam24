@@ -39,6 +39,7 @@ public class BaseDoorRoom : BaseRoom
         for (int i = 0; i < StoryProgressionClass.currentStory; i++)
         {
             ShowFamilyMember(i);
+            FamilyMemberCount++;
         }
 
         //openDoorButton.onClick.AddListener(OpenDoor);

@@ -164,8 +164,8 @@ public class backpack : MonoBehaviour
                     val *= factor;
                     item2.gameObject.transform.localScale = new Vector3(val.x, val.y, 1);
 
-                    
 
+                    Debug.Log("Fucking spawn my potatos!");
                     //Debug.Log("reeee");
                     //Debug.Log("instatteate hit - " + pr.GetComponentInChildren<Item>().itemId);
                 }

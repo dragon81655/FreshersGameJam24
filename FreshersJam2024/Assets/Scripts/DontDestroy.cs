@@ -8,6 +8,7 @@ public class DontDestroy : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        PauseMenu.toDestroy.Add(gameObject);
     }
 
     // Update is called once per frame

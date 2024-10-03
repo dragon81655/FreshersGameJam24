@@ -62,7 +62,6 @@ public class EndDayManager : MonoBehaviour
             Debug.LogError("No items in classes");
             return;
         }
-        Dictionary<PseudoItemId, List<Item >> t =backpack.instance.getItemsInBag();
     }
 
     void EndDay()
@@ -70,6 +69,8 @@ public class EndDayManager : MonoBehaviour
         // Collect potatoes from the farm room (adds PotatoesPerDayQuantity to the inventory)
         CheckDeath();
         CheckWin();
+
+        backpack.instance.destroyAllOutsideOfContainer();
         BaseFarmRoom.instance.CollectPotatoes();
 
         for (int i = 0; i < BaseDoorRoom.instance.FamilyMemberSpritesArray.Length; i++)

@@ -18,6 +18,7 @@ public class Chest : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        PauseMenu.toDestroy.Add(gameObject);
     }
 
     // Update is called once per frame
