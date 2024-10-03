@@ -40,6 +40,11 @@ public class ExplorationEventController : MonoBehaviour
         if (KeepExploring())
         {
             manager.RollLootTables();
+            foreach(GameObject g in GameObject.FindGameObjectsWithTag("Item"))
+            {
+                Item t = g.GetComponentInChildren<Item>();
+                t.LifeCycle();
+            }
         }
         else
         {

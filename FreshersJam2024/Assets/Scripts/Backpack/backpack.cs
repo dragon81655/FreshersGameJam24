@@ -9,7 +9,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
-
 [Serializable]
 public struct theItemsToCraftWith
 {
@@ -54,12 +53,18 @@ public class backpack : MonoBehaviour
 
     private float factor = 1f;
 
+    public static backpack instance;
+
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         PauseMenu.toDestroy.Add(gameObject);
-
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -93,11 +98,13 @@ public class backpack : MonoBehaviour
             if (itemList.ContainsKey(collision.GetComponent<Item>().itemId))
             {
                 itemList[collision.GetComponent<Item>().itemId].Add(collision.GetComponent<Item>());
+                InventoryStaticClass.AddItem(collision.GetComponent<Item>());
             }
             else
             {
                 itemList.Add(collision.GetComponent<Item>().itemId, new List<Item>());
                 itemList[collision.GetComponent<Item>().itemId].Add(collision.GetComponent<Item>());
+                InventoryStaticClass.AddItem(collision.GetComponent<Item>());
             }
             //List<Item> test = new List<Item>();
             //test.Add(collision.GetComponent<Item>());
@@ -120,6 +127,8 @@ public class backpack : MonoBehaviour
                 )
             {
                 itemList[collision.GetComponent<Item>().itemId].Remove(collision.GetComponent<Item>());
+                InventoryStaticClass.RemoveItem(collision.GetComponent<Item>());
+
             }
             else
             {
@@ -133,9 +142,10 @@ public class backpack : MonoBehaviour
     {
 
     }
-
+    
     public Dictionary<PseudoItemId, List<Item>> getItemsInBag()
     {
+        //itemList = RefreshItems();
         return itemList;
     }
 
@@ -168,6 +178,32 @@ public class backpack : MonoBehaviour
         }
 
         return item2;
+    }
+
+    public bool RemoveItem(Item item)
+    {
+        if(itemList.Keys.Contains(item.itemId))
+        {
+            bool toReturn = itemList[item.itemId].Remove(item);
+            if(toReturn) Destroy(item.transform.parent.gameObject);
+            return toReturn;
+        }
+        return false;
+    }
+
+    public bool RemoveItem(PseudoItemId id)
+    {
+        if (itemList.Keys.Contains(id))
+        {
+            if (itemList[id].Count> 0)
+            {
+                Item t = itemList[id][0];
+                bool toReturn = itemList[id].Remove(t);
+                if (toReturn) Destroy(t.transform.parent.gameObject);
+                return toReturn;
+            }
+        }
+        return false;
     }
 
     public void destroyAllOutsideOfContainer()

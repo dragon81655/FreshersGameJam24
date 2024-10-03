@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,10 +35,41 @@ public class EndDayManager : MonoBehaviour
     {
         
     }
+    private void CheckWin()
+    {
+        if(BaseDoorRoom.instance.FamilyMemberCount >= 3)
+        {
+            SceneManagerGame.instance.ChangeScene(7);
+            return;
+        }
+    }
+    private void CheckDeath()
+    {
+        int amount = 0;
+        if (backpack.instance.getItemsInBag().Keys.Contains(PseudoItemId.Potato)) amount += backpack.instance.getItemsInBag()[PseudoItemId.Potato].Count;
+        if (Chest.instance.inventory.Keys.Contains(PseudoItemId.Potato)) amount += Chest.instance.inventory[PseudoItemId.Potato].Count;
+
+        if (BaseDoorRoom.instance.FamilyMemberCount+1 > amount)
+        {
+            
+            SceneManagerGame.instance.ChangeScene(5);
+            return;
+        }
+        for (int i = 0; i < BaseDoorRoom.instance.FamilyMemberCount + 1; i++)
+        {
+            if (Chest.instance.RemoveItem(PseudoItemId.Potato)) continue;
+            if (backpack.instance.RemoveItem(PseudoItemId.Potato)) continue;
+            Debug.LogError("No items in classes");
+            return;
+        }
+        Dictionary<PseudoItemId, List<Item >> t =backpack.instance.getItemsInBag();
+    }
 
     void EndDay()
     {
         // Collect potatoes from the farm room (adds PotatoesPerDayQuantity to the inventory)
+        CheckDeath();
+        CheckWin();
         BaseFarmRoom.instance.CollectPotatoes();
 
         for (int i = 0; i < BaseDoorRoom.instance.FamilyMemberSpritesArray.Length; i++)

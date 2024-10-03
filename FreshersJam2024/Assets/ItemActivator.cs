@@ -26,7 +26,7 @@ public class ItemActivator : MonoBehaviour
             if (go != null)
             {
                 Debug.Log("Foreach in turn off");
-                go.GetComponent<Rigidbody2D>().simulated = false;
+                //go.GetComponent<Rigidbody2D>().simulated = false;
                 go.GetComponentInChildren<SpriteRenderer>().enabled = false;
             }
         }

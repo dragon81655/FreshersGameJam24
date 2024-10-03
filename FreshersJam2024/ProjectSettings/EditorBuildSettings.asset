@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DevelopmentScenes/backpackDevelopment.unity
     guid: edc49247f8d5e184ebe6b9a5b19e6117
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 020173449ee412341b766dc6cafd71eb
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

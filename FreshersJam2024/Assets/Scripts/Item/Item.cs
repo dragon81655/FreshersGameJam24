@@ -10,7 +10,7 @@ public class Item : MonoBehaviour
     public PseudoItemId itemId;
     public int durability;
     public bool inContainer = false;
-
+    private int life = 3;
     [SerializeField] public Color tintColor;
     [SerializeField] public Color origonalColor;
 
@@ -34,7 +34,11 @@ public class Item : MonoBehaviour
         }
 
     }
-
+    public void LifeCycle()
+    {
+        if (!inContainer) life--;
+        if(life <= 0) Destroy(transform.parent.gameObject);
+    }
     public void tintItem()
     {
         GetComponent<Renderer>().material.color = tintColor;

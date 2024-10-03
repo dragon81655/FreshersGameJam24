@@ -9,6 +9,13 @@ public class SceneManagerGame : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private UnityEvent onExit;
+
+    public static SceneManagerGame instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         PauseMenu.toDestroy.Add(gameObject);
