@@ -5,9 +5,11 @@ using UnityEngine;
 public class RoomVanisher : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private Chest chest;
+    [SerializeField] private bool appear;
     void Start()
     {
-        chest.dissapear();
+        
+        if(appear) Chest.instance.appear();
+        else Chest.instance.dissapear();
     }
 }
